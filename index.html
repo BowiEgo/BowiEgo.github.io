@@ -158,10 +158,12 @@
     
         <p>几个月前就有搭建个人博客的想法，当时一头雾水，还纠结过用jekyll还是Hexo来搭建。扫了一下各自提供的主题，还是Hexo的好看呐！一拍脑袋就是Hexo了。也就是当时建了我的第一个Github账号。。。可是，Hexo的使用需要依赖Git之外，还有node。那是还用的Windows,安装各种麻烦，遇到了一些问题也没解决。后来为了抓紧学习前端基础也就暂时搁置了。现在有了MacOS安装各种依赖组件实在是太方便啦！！</p>
 <p>废话不多说，下面就来说说搭建的基本流程吧！</p>
-<h2 id="一、配置环境"><a href="#一、配置环境" class="headerlink" title="一、配置环境"></a>一、配置环境</h2><p>先看看Hexo的官方文档下的说明 <a href="https://hexo.io/docs/index.html" target="_blank" rel="external">https://hexo.io/docs/index.html</a><br>这时我们知道Hexo需要配置以下两个环境：Node.js  和  Git</p>
+<p><strong> 一、配置环境 </strong></p>
+<p>先看看Hexo的官方文档下的说明 <a href="https://hexo.io/docs/index.html" target="_blank" rel="external">https://hexo.io/docs/index.html</a><br>这时我们知道Hexo需要配置以下两个环境：Node.js  和  Git</p>
 <p>Node<br>到Node.js官网下载相应平台的最新版本，一路安装即可。</p>
 <p>Git(装有Xcode的话就自带Git喽)</p>
-<h2 id="二、安装Hexo"><a href="#二、安装Hexo" class="headerlink" title="二、安装Hexo"></a>二、安装Hexo</h2><p>先创建自己本地放置博客文件的目录，这里作为示范将文件夹起名为‘BLOG’，目录为 Documents/BLOG，</p>
+<p><strong> 二、安装Hexo </strong></p>
+<p>先创建自己本地放置博客文件的目录，这里作为示范将文件夹起名为‘BLOG’，目录为 Documents/BLOG，</p>
 <p>终端输入命令切换阿里的node源(非必需，但是切换后安装速度大大增快)</p>
 <pre><code>$ npm --registry=https://registry.npm.taobao.org install koa
 $ npm --registry=https://registry.npm.taobao.org install cnpm -g
@@ -185,7 +187,8 @@ $ npm --registry=https://registry.npm.taobao.org install cnpm -g
 </code></pre><p>本地启动<br>启动本地服务，进行文章预览调试，命令：</p>
 <pre><code>$ hexo server
 </code></pre><p>浏览器输入 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 就可以预览了！要关闭服务器就在终端按下‘ctrl+c’</p>
-<h2 id="三、部署到Github"><a href="#三、部署到Github" class="headerlink" title="三、部署到Github"></a>三、部署到Github</h2><p>先配置Github，建立Respository，以 your_user_name.github.io 格式为名称创建仓库。<br>现在我们需要修改BLOG本地目录下的_config.yml文件，来建立关联。<br>翻到最下面，改成如下这样子的</p>
+<p><strong> 三、部署到Github </strong></p>
+<p>先配置Github，建立Respository，以 your_user_name.github.io 格式为名称创建仓库。<br>现在我们需要修改BLOG本地目录下的_config.yml文件，来建立关联。<br>翻到最下面，改成如下这样子的</p>
 <pre><code>deploy: 
   type: git
   repo: https://github.com/bowiego/bowiego.github.io.git  (这里改为你自己的Git目录)
@@ -231,8 +234,10 @@ $ npm --registry=https://registry.npm.taobao.org install cnpm -g
     
     <div class="post-content" id="post-content" itemprop="postContent" >
     
-        <p><img src="http://o9kkuebr4.bkt.clouddn.com/blog/siff2016201604011616211174.jpg" alt=""><br><img src="http://o9kkuebr4.bkt.clouddn.com/blog/siff20162.pic.jpg" alt=""><br><img src="http://o9kkuebr4.bkt.clouddn.com/blog/siff20163.pic.jpg" alt=""></p>
-<p><img src="http://o9kkuebr4.bkt.clouddn.com/blog/siff2016p2329684438.jpg" alt=""><br><img src="http://o9kkuebr4.bkt.clouddn.com/blog/siff2016p2264942503.jpg" alt=""><br><img src="http://o9kkuebr4.bkt.clouddn.com/blog/siff2016p1985283899.jpg" alt=""><br><img src="http://o9kkuebr4.bkt.clouddn.com/blog/siff2016p2315858049.jpg" alt=""><br><img src="http://o9kkuebr4.bkt.clouddn.com/blog/siff2016p2325212536.jpg" alt=""></p>
+        <p><img src="http://o9kkuebr4.bkt.clouddn.com/blog/siff2016201604011616211174.jpg" alt=""></p>
+<p><img src="http://o9kkuebr4.bkt.clouddn.com/blog/siff20162.pic.jpg" alt=""></p>
+<p><img src="http://o9kkuebr4.bkt.clouddn.com/blog/siff20163.pic.jpg" alt=""></p>
+<p><img src="http://o9kkuebr4.bkt.clouddn.com/blog/siff20161.jpg" alt=""></p>
 
     
     </div>
