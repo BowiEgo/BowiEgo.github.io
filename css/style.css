@@ -3323,7 +3323,7 @@ a[title="站长统计"] {
 }
 .post-content img {
   display: block;
-  max-width: 96%;
+  max-width: 60%;
   margin: 40px auto;
   padding: 8px;
   background: #fff;

@@ -1,44 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
-  
+  <title>Bowiego的小窝</title>
+  <subtitle>咦～</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-06-30T03:47:48.000Z</updated>
+  <updated>2016-06-30T06:47:30.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Bowiego</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2016/06/30/hello-world/"/>
-    <id>http://yoursite.com/2016/06/30/hello-world/</id>
-    <published>2016-06-30T03:47:48.000Z</published>
-    <updated>2016-06-30T03:47:48.000Z</updated>
+    <title>OS下用Hexo+Github搭建个人博客</title>
+    <link href="http://yoursite.com/2016/06/30/OS%E4%B8%8B%E7%94%A8Hexo+Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yoursite.com/2016/06/30/OS下用Hexo+Github搭建个人博客/</id>
+    <published>2016-06-30T05:30:53.000Z</published>
+    <updated>2016-06-30T06:47:30.000Z</updated>
     
-    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo server&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo generate&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo deploy&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;几个月前就有搭建个人博客的想法，当时一头雾水，还纠结过用jekyll还是Hexo来搭建。扫了一下各自提供的主题，还是Hexo的好看呐！一拍脑袋就是Hexo了。也就是当时建了我的第一个Github账号。。。可是，Hexo的使用需要依赖Git之外，还有node。那是还用的Windows,安装各种麻烦，遇到了一些问题也没解决。后来为了抓紧学习前端基础也就暂时搁置了。现在有了MacOS安装各种依赖组件实在是太方便啦！！&lt;/p&gt;
+&lt;p&gt;废话不多说，下面就来说说搭建的基本流程吧！&lt;/p&gt;
+&lt;p&gt;一、配置环境&lt;/p&gt;
+&lt;p&gt;先看看Hexo的官方文档下的说明 &lt;a href=&quot;https://hexo.io/docs/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://hexo.io/docs/index.html&lt;/a&gt;&lt;br&gt;这时我们知道Hexo需要配置以下两个环境：Node.js  和  Git&lt;/p&gt;
+&lt;p&gt;Node&lt;br&gt;到Node.js官网下载相应平台的最新版本，一路安装即可。&lt;/p&gt;
+&lt;p&gt;Git(装有Xcode的话就自带Git喽)&lt;/p&gt;
+&lt;p&gt;二、安装Hexo&lt;/p&gt;
+&lt;p&gt;先创建自己本地放置博客文件的目录，这里作为示范将文件夹起名为‘BLOG’，目录为 Documents/BLOG，&lt;/p&gt;
+&lt;p&gt;终端输入命令切换阿里的node源(非必需，但是切换后安装速度大大增快)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ npm --registry=https://registry.npm.taobao.org install koa
+$ npm --registry=https://registry.npm.taobao.org install cnpm -g
+$ npm --registry=https://registry.npm.taobao.org install cnpm -g
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;终端打开本地’BLOG’目录&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ cd Documents/BLOG  (后面的目录太长的话可以直接将文件夹拖入终端窗口) 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;安装Hexo&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ sudo npm install -g hexo-cli 或 $ sudo cnpm install -g hexo-cli (切换为阿里源就将npm改为cnpm)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;初始化Hexo&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hexo init
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这时候就能在BLOG本地目录下看到如下的目录结构&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;├── _config.yml
+├── package.json
+├── scaffolds
+├── source
+|   ├── _drafts
+|   └── _posts
+└── themes
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;生成静态页面&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hexo generate（hexo g也可以）
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;本地启动&lt;br&gt;启动本地服务，进行文章预览调试，命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hexo server
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;浏览器输入 &lt;a href=&quot;http://localhost:4000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000&lt;/a&gt; 就可以预览了！要关闭服务器就在终端按下‘ctrl+c’&lt;/p&gt;
+&lt;p&gt;三、部署到Github&lt;/p&gt;
+&lt;p&gt;先配置Github，建立Respository，以 your_user_name.github.io 格式为名称创建仓库。&lt;br&gt;现在我们需要修改BLOG本地目录下的_config.yml文件，来建立关联。&lt;br&gt;翻到最下面，改成如下这样子的&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;deploy: 
+  type: git
+  repo: https://github.com/bowiego/bowiego.github.io.git  (这里改为你自己的Git目录)
+  branch: master
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后执行命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ npm install hexo-deployer-git --save
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这时候执行deploy来向Git推送本地文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hexo deploy
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;现在打开 &lt;a href=&quot;http://bowiego.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://bowiego.github.io/&lt;/a&gt; (改为你自己的Git账户)就能发现Git Page已和本地文件同步。&lt;/p&gt;
+&lt;p&gt;以后每次修改本地文件之后按以下步骤命令重新部署就可以了。&lt;br&gt;    $ hexo clean  (本地清除cache文件db.json并重新生成public文件夹)&lt;br&gt;    $ hexo generate (生成静态页面文件)&lt;br&gt;    $ hexo deploy (推送到Git)&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;p&gt;几个月前就有搭建个人博客的想法，当时一头雾水，还纠结过用jekyll还是Hexo来搭建。扫了一下各自提供的主题，还是Hexo的好看呐！一拍脑袋就是Hexo了。也就是当时建了我的第一个Github账号。。。可是，Hexo的使用需要依赖Git之外，还有node。那是还用的Win
     
     </summary>
     
+    
+      <category term="技术" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2016魔都电影节之行</title>
+    <link href="http://yoursite.com/2016/06/30/2016%E9%AD%94%E9%83%BD%E7%94%B5%E5%BD%B1%E8%8A%82%E4%B9%8B%E8%A1%8C/"/>
+    <id>http://yoursite.com/2016/06/30/2016魔都电影节之行/</id>
+    <published>2016-06-30T04:58:36.000Z</published>
+    <updated>2016-06-30T06:08:23.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://o9kkuebr4.bkt.clouddn.com/blog/siff2016201604011616211174.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://o9kkuebr4.bkt.clouddn.com/blog/siff20162.pic.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://o9kkuebr4.bkt.clouddn.com/blog/siff20163.pic.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://o9kkuebr4.bkt.clouddn.com/blog/siff2016p2329684438.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://o9kkuebr4.bkt.clouddn.com/blog/siff2016p2264942503.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://o9kkuebr4.bkt.clouddn.com/blog/siff2016p1985283899.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://o9kkuebr4.bkt.clouddn.com/blog/siff2016p2315858049.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://o9kkuebr4.bkt.clouddn.com/blog/siff2016p2325212536.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://o9kkuebr4.bkt.clouddn.com/blog/siff2016201604011616211174.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://o9kkuebr4.bkt.clouddn.com/blo
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
