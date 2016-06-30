@@ -3844,3 +3844,6 @@ pre .javascript .function {
     box-shadow: none;
   }
 }
+.icon-works:before {
+  content: "\f016";
+}
