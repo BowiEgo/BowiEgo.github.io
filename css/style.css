@@ -2582,7 +2582,7 @@ a.waves-effect .waves-ripple {
   height: 100%;
 }
 #menu .brand-wrap {
-  background: url(../img/brand.jpg);
+  background: url(http://o9kkuebr4.bkt.clouddn.com/blog/layoutbrand.jpg);
   background-size: 100% 100%;
 }
 #menu .brand {
@@ -2777,7 +2777,7 @@ a[title="站长统计"] {
 }
 .content-header {
   margin-left: -240px;
-  padding: 104px 16px 48px 256px;
+  padding: 104px 16px 27px 256px;
   color: #fff;
   background: #bfc8ca;
 }
