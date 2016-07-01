@@ -3847,3 +3847,6 @@ pre .javascript .function {
 .icon-works:before {
   content: "\f016";
 }
+.visitor-title {
+  margin-left: 40px;
+}
