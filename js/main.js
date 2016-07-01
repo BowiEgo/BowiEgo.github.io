@@ -209,6 +209,7 @@
 
 })(window, document);
 
+$(function(){
   var duoshuoQuery = {short_name:"bowiego"};
   (function() {
       var ds = document.createElement('script');
@@ -217,4 +218,4 @@
       ds.charset = 'UTF-8';
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
   })();
-
+});
