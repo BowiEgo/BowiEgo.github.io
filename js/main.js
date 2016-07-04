@@ -225,3 +225,39 @@
 
 })(window, document);
 
+function hasClass(ele,cls) { 
+    return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)')); 
+} 
+
+function addClass(ele,cls) { 
+    if (!this.hasClass(ele,cls)) ele.className += " "+cls; 
+} 
+
+function removeClass(ele,cls) { 
+    if (hasClass(ele,cls)) { 
+        var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)'); 
+        ele.className=ele.className.replace(reg,' '); 
+    } 
+} 
+
+window.onload=function(){
+
+    var menu = document.getElementById('menu');
+    var navLi = menu.getElementsByTagName('li');
+
+    
+    console.log(menu);
+
+    setTimeout(function(){
+        removeClass(menu,'hide');
+    },300)
+
+    setTimeout(function(){
+        for(i = 0; i < navLi.length; i++){
+            removeClass(navLi[i],'hide');
+        }
+    },500)
+}
+
+
+
