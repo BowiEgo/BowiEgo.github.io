@@ -3,6 +3,8 @@
     var body = d.body,
         gotop = d.getElementById('gotop'),
         menu = d.getElementById('menu'),
+        navLi = menu.getElementsByTagName('li');
+        console.log(navLi);
         header = d.getElementById('header'),
         mask = d.getElementById('mask'),
         menuToggle = d.getElementById('menu-toggle'),
@@ -163,6 +165,8 @@
         }
     };
 
+
+
     menu.addEventListener('touchmove', function(e) {
         e.preventDefault();
     });
@@ -182,11 +186,23 @@
     menuToggle.addEventListener(even, function(e) {
         Blog.toggleMenu(true);
         e.preventDefault();
+        setTimeout(function(){
+            for(i = 0; i < navLi.length; i++){
+                navLi[i].classList.remove('hide');
+            }
+        },200)
     }, false);
+
+
 
     menuOff.addEventListener(even, function() {
         menu.classList.add('hide');
+        for(i=0;i<navLi.length;i++){
+            navLi[i].classList.add('hide');
+        }
     }, false);
+
+    
 
     mask.addEventListener(even, function() {
         Blog.toggleMenu();
