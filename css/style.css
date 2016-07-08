@@ -2636,30 +2636,33 @@ a.waves-effect .waves-ripple {
   line-height: 44px;
   overflow-y: auto;
 }
-#menu .nav li.hide {
-  padding: 0;
-  opacity: 0;
-  transition: all 0.4s ease;
-}
-#menu .nav li:nth-child(1) {
+#menu .nav li:nth-child(1) a {
   transition-delay: 0s;
 }
-#menu .nav li:nth-child(2) {
+#menu .nav li:nth-child(2) a {
   transition-delay: 0.08s;
 }
-#menu .nav li:nth-child(3) {
+#menu .nav li:nth-child(3) a {
   transition-delay: 0.16s;
 }
-#menu .nav li:nth-child(4) {
+#menu .nav li:nth-child(4) a {
   transition-delay: 0.24s;
 }
-#menu .nav li:nth-child(5) {
+#menu .nav li:nth-child(5) a {
   transition-delay: 0.32s;
 }
 #menu .nav li {
-  opacity: 1;
   padding: 0 20px;
   transition: all 0.4s ease;
+}
+#menu .nav li a {
+  opacity: 1;
+  margin-left: 0;
+  transition: all 0.6s ease;
+}
+#menu .nav li a.hide {
+  margin-left: -50px;
+  opacity: 0;
 }
 #menu .nav li .icon {
   padding-right: 30px;

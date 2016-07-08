@@ -239,39 +239,60 @@ function removeClass(ele,cls) {
     } 
 } 
 
+function del_spacetxt(elem) {
+
+	var elem_child = elem.childNodes;
+
+	for(var i = 0; i < elem_child.length; i++) {
+		// console.log(elem_child[i].nodeName);
+		if(elem_child[i].nodeName == "#text") {
+			// console.log(1);
+			elem.removeChild(elem_child[i]);
+		}
+	}
+
+	return elem.childNodes[0];
+}
+
 window.onload=function(){
+
+	
+
 
     var menu = document.getElementById('menu');
     var navLi = menu.getElementsByTagName('li');
 
-    
+    console.log(del_spacetxt(navLi[1]));
 
+
+	//menu延迟动画
     setTimeout(function(){
         removeClass(menu,'hide');
     },300)
 
     setTimeout(function(){
         for(i = 0; i < navLi.length; i++){
-            removeClass(navLi[i],'hide');
+        	var child = del_spacetxt(navLi[i]);
+            removeClass(child,'hide');
         }
     },500)
 
-    var allA = document.getElementsByTagName('a');
-    var loc = window.location.toString().split("//");
-    loc = loc[1].replace("/","");
     
-
-
-
-    for(i in allA){
-    	// console.log(1);
-    	if(allA[i].innerText == "Read More…" && loc != window.location.host){
-    		addClass(allA[i],'hide');
-    		console.log(loc);
-    		console.log(allA[i].innerText);
-    	}
-    }
 }
 
 
+//去除Read More
+
+var allA = document.getElementsByTagName('a');
+var loc = window.location.toString().split("//");
+loc = loc[1].replace("/","");
+
+for(i in allA){
+	// console.log(1);
+	if(allA[i].innerText == "Read More…" && loc != window.location.host){
+		addClass(allA[i],'hide');
+		console.log(loc);
+		console.log(allA[i].innerText);
+	}
+}
 
