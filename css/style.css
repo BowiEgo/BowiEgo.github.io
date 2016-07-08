@@ -2244,11 +2244,11 @@ textarea {
 a {
   background-color: transparent;
   background-image: none;
-  color: #1d4042;
+  color: #bee0dd;
   text-decoration: none;
 }
 a:hover {
-  color: #c9b7a6;
+  color: #e5c073;
   outline: 0;
 }
 hr,
@@ -2390,7 +2390,7 @@ hr,
   z-index: 70;
   width: 100%;
   height: 3px;
-  background: #FF4081;
+  background: #e5c073;
 }
 #loading.active {
   -webkit-animation: loading-anim 1s ease-in-out infinite;
@@ -2585,12 +2585,12 @@ a.waves-effect .waves-ripple {
   height: 100%;
 }
 #menu .brand-wrap {
-  background: url(http://o9kkuebr4.bkt.clouddn.com/blog/layoutbrand.jpg);
+  background: url(http://o9kkuebr4.bkt.clouddn.com/blog/layoutbrand-201678.jpg);
   background-size: 100% 100%;
 }
 #menu .brand {
   padding: 40px 20px 2em;
-  background: rgba(29, 64, 66, 0.5);
+  background: rgba(190, 224, 221, 0);
 }
 #menu .avatar {
   display: block;
@@ -2637,19 +2637,19 @@ a.waves-effect .waves-ripple {
   overflow-y: auto;
 }
 #menu .nav li:nth-child(1) a {
-  transition-delay: 0s;
+  transition: margin-left 0.6s ease 0s, opacity 1s ease 0;
 }
 #menu .nav li:nth-child(2) a {
-  transition-delay: 0.08s;
+  transition: margin-left 0.6s ease 0.08s, opacity 1s ease 0.08s;
 }
 #menu .nav li:nth-child(3) a {
-  transition-delay: 0.16s;
+  transition: margin-left 0.6s ease 0.16s, opacity 1s ease 0.16s;
 }
 #menu .nav li:nth-child(4) a {
-  transition-delay: 0.24s;
+  transition: margin-left 0.6s ease 0.24s, opacity 1s ease 0.24s;
 }
 #menu .nav li:nth-child(5) a {
-  transition-delay: 0.32s;
+  transition: margin-left 0.6s ease 0.32s, opacity 1s ease 0.32s;
 }
 #menu .nav li {
   padding: 0 20px;
@@ -2658,7 +2658,7 @@ a.waves-effect .waves-ripple {
 #menu .nav li a {
   opacity: 1;
   margin-left: 0;
-  transition: all 0.6s ease;
+  transition: color 0.4s ease;
 }
 #menu .nav li a.hide {
   margin-left: -50px;
@@ -2675,7 +2675,7 @@ a.waves-effect .waves-ripple {
 #menu .nav li.active a,
 #menu .nav li:hover .icon,
 #menu .nav li.active .icon {
-  color: #1d4042;
+  color: #bee0dd;
 }
 #menu .nav a {
   display: block;
@@ -2774,7 +2774,7 @@ a[title="站长统计"] {
   width: 100%;
   color: #fff;
   height: 56px;
-  background: #1d4042;
+  background: #bee0dd;
   -webkit-transition: padding-left 0.6s ease-in-out, background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s linear;
   transition: padding-left 0.6s ease-in-out, background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s linear;
   z-index: 30;
@@ -2807,14 +2807,14 @@ a[title="站长统计"] {
   margin-left: -240px;
   padding: 104px 16px 27px 256px;
   color: #fff;
-  background: #1d4042;
+  background: #bee0dd;
 }
 .content-header .subtitle {
   padding-top: 6px;
   color: #fff;
 }
 .content-header .article-category-list-link {
-  color: #ff73a3;
+  color: #edd39e;
 }
 @media screen and (max-width: 1240px) {
   .header-title {
@@ -2852,7 +2852,7 @@ a[title="站长统计"] {
   margin: 0 0 16px;
 }
 .post-title-link {
-  color: #1d4042;
+  color: #bee0dd;
   position: relative;
   display: inline-block;
 }
@@ -2863,7 +2863,7 @@ a[title="站长统计"] {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #c9b7a6;
+  background-color: #e5c073;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -2903,10 +2903,10 @@ a[title="站长统计"] {
   display: inline;
 }
 .article-category-list a {
-  color: #FF4081;
+  color: #e5c073;
 }
 .article-category-list a:hover {
-  color: #FF4081;
+  color: #e5c073;
 }
 .article-tag-list {
   overflow: hidden;
@@ -2930,7 +2930,7 @@ a[title="站长统计"] {
 .article-tag-list-link:active {
   font-size: 13px;
   color: #fff;
-  background: #FF4081;
+  background: #e5c073;
 }
 .post-more {
   float: right;
@@ -2939,7 +2939,7 @@ a[title="站长统计"] {
   line-height: 32px;
   padding: 0 1.2em;
   color: #fff !important;
-  background: #1d4042;
+  background: #bee0dd;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
@@ -2950,7 +2950,7 @@ a[title="站长统计"] {
 }
 .post-more:hover,
 .post-more:active {
-  background: #1d4042;
+  background: #bee0dd;
 }
 #page-nav {
   margin: 30px 0 0;
@@ -2975,12 +2975,12 @@ a[title="站长统计"] {
 }
 #page-nav a:hover,
 #page-nav a:active {
-  color: #1d4042;
+  color: #bee0dd;
   background: #dadada;
 }
 #page-nav .current {
   color: #fff;
-  background: #1d4042;
+  background: #bee0dd;
 }
 @media screen and (max-width: 760px) {
   .post-title {
@@ -3003,7 +3003,7 @@ a[title="站长统计"] {
   line-height: 56px;
   text-align: center;
   color: #fff;
-  background: #FF4081;
+  background: #e5c073;
   border-radius: 50%;
   opacity: 0;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -3114,7 +3114,7 @@ a[title="站长统计"] {
   white-space: nowrap;
   line-height: 20px;
   font-size: 12px;
-  color: #1d4042;
+  color: #bee0dd;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
 }
@@ -3190,7 +3190,7 @@ a[title="站长统计"] {
   margin: 0 !important;
   padding-left: 20px;
   max-width: 226px;
-  border-left: 5px solid #1d4042;
+  border-left: 5px solid #bee0dd;
 }
 .post-toc-wrap .post-toc a {
   display: block;
@@ -3243,7 +3243,7 @@ a[title="站长统计"] {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #1d4042;
+  background-color: #bee0dd;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -3267,22 +3267,22 @@ a[title="站长统计"] {
 }
 .post-content p a,
 .post-content li a {
-  color: #FF4081;
-  border-bottom: 1px solid #ffe3ed;
+  color: #e5c073;
+  border-bottom: 1px solid #fffefd;
   word-break: break-all;
 }
 .post-content p a:hover,
 .post-content li a:hover,
 .post-content p a:active,
 .post-content li a:active {
-  border-color: #FF4081;
+  border-color: #e5c073;
 }
 .post-content strong {
   font-size: 20px;
   font-weight: 600;
 }
 .post-content strong a {
-  border-color: #FF4081;
+  border-color: #e5c073;
 }
 .post-content h1 {
   font-size: 24px;
@@ -3326,7 +3326,7 @@ a[title="站长统计"] {
 .post-content h4,
 .post-content h5,
 .post-content h6 {
-  color: #1d4042;
+  color: #bee0dd;
 }
 .post-content blockquote p:first-child,
 .post-content blockquote:first-child,
@@ -3362,7 +3362,7 @@ a[title="站长统计"] {
 .post-content blockquote {
   position: relative;
   padding: 16px 20px;
-  border-left: 4px solid #1d4042;
+  border-left: 4px solid #bee0dd;
   color: #6e6e6e;
   background: #f5f5f5;
   font-size: 14px;
@@ -3420,7 +3420,7 @@ a[title="站长统计"] {
 }
 .post-content p code,
 .post-content li code {
-  color: #FF4081;
+  color: #e5c073;
   line-height: 1;
   margin: 0 4px;
   font-size: 80%;
@@ -3451,7 +3451,7 @@ a[title="站长统计"] {
 }
 .archive-separator {
   margin: 35px 0 13px;
-  color: #1d4042;
+  color: #bee0dd;
   font-size: 16px;
   font-weight: bold;
   text-transform: uppercase;
@@ -3530,7 +3530,7 @@ a[title="站长统计"] {
          }*/
 }
 .tag-list-item:hover .tag-list-link {
-  color: #FF4081;
+  color: #e5c073;
 }
 .tag-list-item::after {
   content: "";
@@ -3539,7 +3539,7 @@ a[title="站长统计"] {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #FF4081;
+  background-color: #e5c073;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -3667,7 +3667,7 @@ a[title="站长统计"] {
   font: 0.85em Consolas, Monaco, courier, monospace;
 }
 .post-content .gist .gist-meta a {
-  color: #FF4081;
+  color: #e5c073;
   font-weight: normal;
 }
 .post-content .gist .gist-meta a:hover {
@@ -3813,7 +3813,7 @@ pre .javascript .function {
   padding: 10px 20px;
 }
 .search-result .title {
-  color: #1d4042;
+  color: #bee0dd;
 }
 .search-result .title:hover {
   color: #fff;
@@ -3852,7 +3852,7 @@ pre .javascript .function {
     z-index: 10;
     width: 100%;
     padding: 0 16px 0 56px;
-    background: #1d4042;
+    background: #bee0dd;
   }
   .search-wrap.in .search-input {
     width: 100%;
