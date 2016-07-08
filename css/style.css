@@ -2075,6 +2075,9 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+a.hide {
+  display: none;
+}
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;

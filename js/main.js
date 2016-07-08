@@ -4,7 +4,6 @@
         gotop = d.getElementById('gotop'),
         menu = d.getElementById('menu'),
         navLi = menu.getElementsByTagName('li');
-        console.log(navLi);
         header = d.getElementById('header'),
         mask = d.getElementById('mask'),
         menuToggle = d.getElementById('menu-toggle'),
@@ -246,7 +245,6 @@ window.onload=function(){
     var navLi = menu.getElementsByTagName('li');
 
     
-    console.log(menu);
 
     setTimeout(function(){
         removeClass(menu,'hide');
@@ -257,6 +255,22 @@ window.onload=function(){
             removeClass(navLi[i],'hide');
         }
     },500)
+
+    var allA = document.getElementsByTagName('a');
+    var loc = window.location.toString().split("//");
+    loc = loc[1].replace("/","");
+    
+
+
+
+    for(i in allA){
+    	// console.log(1);
+    	if(allA[i].innerText == "Read More…" && loc != window.location.host){
+    		addClass(allA[i],'hide');
+    		console.log(loc);
+    		console.log(allA[i].innerText);
+    	}
+    }
 }
 
 
