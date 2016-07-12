@@ -1,22 +1,34 @@
 
 $(document).ready(function() {
   	var color = ['#ff5722', '#ff9800', '#4caf50', '#009688', '#006bbf', '#3f51b5', '#673ab7', '#e91e63', '#f44336'];
-	var curNum = 0;  
-	var count = 0;	
+	var curNum = 0;  	
+	var count = 0;
 
   	changeColor();
 
   	showQuote();
 
 	$("#btn").click(function() {
-		if(count == 9) {
-			alert("约吗？");
+
+		if(count > 1 && count%2 == 0) {
+			$(".confirm").removeClass("hide");
+			$(".wrap").addClass("blur");
 		}
 		if(!$("#quote").is(":animated")){
 			changeColor();
 			showQuote();
 			count ++;
 		}
+	});
+
+	$(".btn-confirm").click(function() {
+		if($(this).hasClass("active")){
+			$(".confirm").addClass("hide");
+			$(".wrap").removeClass("blur");
+		}
+		$(".confirm p").text("么么哒～");
+		$(this).addClass("active");
+		$(this).text("关闭");
 	});
 
 	function randomNum() {
