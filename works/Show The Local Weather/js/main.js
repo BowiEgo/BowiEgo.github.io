@@ -43,8 +43,8 @@
 
 $(document).ready(function(){
 
-	getLocation();
-	getWeather();
+	// getLocation();
+	getWeather("无锡");
 
 	// switch (weather) {
 	// 	case ("晴"):
@@ -119,7 +119,7 @@ $(document).ready(function(){
 				console.log(array);
 				console.log(typeof(loc));
 				console.log(loc);
-				getWeather(loc);
+				getWeather("无锡");
 			}
 		// });
 		// 	var j;
