@@ -1,0 +1,28 @@
+body{
+	header{
+		width: 300px;
+		nav{
+			width: 300px;
+			margin-top: 20px;
+			ul{
+				border: none;
+				height: 0;
+				overflow: hidden;
+			}
+		}
+	}
+	#content{
+			width: 300px;
+			.archiveThumb{
+				height: 205px;
+			}
+	}
+}
+
+
+
+
+
+
+
+
