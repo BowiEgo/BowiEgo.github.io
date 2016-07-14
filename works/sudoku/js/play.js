@@ -5,6 +5,8 @@ window.onload = function(){
 
 	//开局入场特效
 
+	var body = document.getElementsByTagName("body");
+			console.log(body);
 	var oPlay = document.getElementById("playground");
 	var oBtnStart = document.getElementById("btn-start");
 	var chooseDifficult = document.getElementById("difficult");
@@ -23,6 +25,7 @@ window.onload = function(){
 		if(confirmBtn.innerText == "关闭") {
 			addClass(confirm,"hide");
 			removeClass(heart,"hide");
+			body[0].style.background = "#000";
 			setTimeout(function(){
 				toggle.checked = true;
 			}, 1000)	
@@ -50,7 +53,7 @@ window.onload = function(){
 
 	easyBtn.onclick = function() {
 
-		showPlay(10);
+		showPlay(1);
 		
 	}
 
