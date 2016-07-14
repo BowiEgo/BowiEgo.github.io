@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Bowiego的啵客儿</title>
+  <subtitle>龟速建设ing</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://bowiego.github.io/"/>
+  <updated>2016-07-01T13:07:53.000Z</updated>
+  <id>http://bowiego.github.io/</id>
+  
+  <author>
+    <name>Bowiego &quot;啵一哥&quot;</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MacOS下用Hexo+Github搭建个人博客</title>
+    <link href="http://bowiego.github.io/2016/06/30/MacOS%E4%B8%8B%E7%94%A8Hexo+Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://bowiego.github.io/2016/06/30/MacOS下用Hexo+Github搭建个人博客/</id>
+    <published>2016-06-30T05:30:53.000Z</published>
+    <updated>2016-07-01T13:07:53.000Z</updated>
+    
+    <content type="html">&lt;p&gt;几个月前就有搭建个人博客的想法，当时一头雾水，用WordPress比较专业，但是要花钱买域名，虽然不贵，但是能省则省。。。于是纠结用jekyll还是Hexo来搭建。扫了一下各自提供的主题，还是Hexo的好看！一拍脑袋就是Hexo了。也就是当时建了我的第一个Github账号。。。可是，Hexo的使用需要依赖Git之外，还有node。那是还用的Windows,安装各种麻烦，遇到了一些问题也没解决。后来为了抓紧学习前端基础也就暂时搁置了。现在有了MacOS安装各种依赖组件实在是太方便啦！！&lt;/p&gt;
+&lt;p&gt;废话不多说，下面就开始搭建的基本流程吧！&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/2016/06/30/MacOS下用Hexo+Github搭建个人博客/&quot;&gt;Read More…&lt;/a&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 一、配置环境 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;先看看Hexo的官方文档下的说明 &lt;a href=&quot;https://hexo.io/docs/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://hexo.io/docs/index.html&lt;/a&gt;&lt;br&gt;这时我们知道Hexo需要配置以下两个环境：Node.js  和  Git&lt;/p&gt;
+&lt;p&gt;Node&lt;br&gt;到Node.js官网下载相应平台的最新版本，一路安装即可。&lt;/p&gt;
+&lt;p&gt;Git(装有Xcode的话就自带Git喽)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 二、安装Hexo &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;先创建自己本地放置博客文件的目录，这里作为示范将文件夹起名为‘BLOG’，目录为 Documents/BLOG，&lt;/p&gt;
+&lt;p&gt;终端输入命令切换阿里的node源(非必需，但是切换后安装速度大大增快)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ npm --registry=https://registry.npm.taobao.org install koa
+$ npm --registry=https://registry.npm.taobao.org install cnpm -g
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;终端打开本地’BLOG’目录&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ cd Documents/BLOG  (后面的目录太长的话可以直接将文件夹拖入终端窗口) 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;安装Hexo&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ sudo npm install -g hexo-cli 或 $ sudo cnpm install -g hexo-cli (切换为阿里源就将npm改为cnpm)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;初始化Hexo&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hexo init
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这时候就能在BLOG本地目录下看到如下的目录结构&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;├── _config.yml
+├── package.json
+├── scaffolds
+├── source
+|   ├── _drafts
+|   └── _posts
+└── themes
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;生成静态页面&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hexo generate（hexo g也可以）
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;本地启动&lt;br&gt;启动本地服务，进行文章预览调试，命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hexo server
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;浏览器输入 &lt;a href=&quot;http://localhost:4000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000&lt;/a&gt; 就可以预览了！要关闭服务器就在终端按下‘ctrl+c’&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 三、部署到Github &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;先配置Github，建立Respository，以 your_user_name.github.io 格式为名称创建仓库。&lt;br&gt;现在我们需要修改BLOG本地目录下的_config.yml文件，来建立关联。&lt;br&gt;翻到最下面，改成如下这样子的&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;deploy: 
+  type: git
+  repo: https://github.com/bowiego/bowiego.github.io.git  (这里改为你自己的Git目录)
+  branch: master
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后执行命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ npm install hexo-deployer-git --save
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这时候执行deploy来向Git推送本地文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hexo deploy
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;现在打开 &lt;a href=&quot;http://bowiego.github.io/&quot;&gt;http://bowiego.github.io/&lt;/a&gt; (改为你自己的Git账户)就能发现Git Page已和本地文件同步。&lt;/p&gt;
+&lt;p&gt;以后每次修改本地文件之后按以下步骤命令重新部署就可以了。&lt;br&gt;    $ hexo clean  (本地清除cache文件db.json并重新生成public文件夹)&lt;br&gt;    $ hexo generate (生成静态页面文件)&lt;br&gt;    $ hexo deploy (推送到Git)&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;几个月前就有搭建个人博客的想法，当时一头雾水，用WordPress比较专业，但是要花钱买域名，虽然不贵，但是能省则省。。。于是纠结用jekyll还是Hexo来搭建。扫了一下各自提供的主题，还是Hexo的好看！一拍脑袋就是Hexo了。也就是当时建了我的第一个Github账号。。。可是，Hexo的使用需要依赖Git之外，还有node。那是还用的Windows,安装各种麻烦，遇到了一些问题也没解决。后来为了抓紧学习前端基础也就暂时搁置了。现在有了MacOS安装各种依赖组件实在是太方便啦！！&lt;/p&gt;
+&lt;p&gt;废话不多说，下面就开始搭建的基本流程吧！&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/2016/06/30/MacOS下用Hexo+Github搭建个人博客/&quot;&gt;Read More…&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://bowiego.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="笔记" scheme="http://bowiego.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="博客" scheme="http://bowiego.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2016魔都电影节之行(草稿)</title>
+    <link href="http://bowiego.github.io/2016/06/20/2016%E9%AD%94%E9%83%BD%E7%94%B5%E5%BD%B1%E8%8A%82%E4%B9%8B%E8%A1%8C/"/>
+    <id>http://bowiego.github.io/2016/06/20/2016魔都电影节之行/</id>
+    <published>2016-06-20T04:58:36.000Z</published>
+    <updated>2016-07-01T13:06:22.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://o9kkuebr4.bkt.clouddn.com/blog/siff2016201604011616211174.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;5月的时候，就开始在网上被2016年SIFF的相关信息刷屏，突然就想去凑个热闹，感觉也是自然而然萌生的念头。当年才喜欢上日影的时候，就听说过SIFF有很多日片放映，当时就特别向往一窥。不过由于个人时间安排问题，以及当时电影节的购票、赶场服务还不是很方便。这个冲动也就只能一直留在了脑海之中了。现在无锡到上海1个小时，还能见见老朋友，何乐而不为呢。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/2016/06/20/2016魔都电影节之行/&quot;&gt;Read More…&lt;/a&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;抢票&lt;/strong&gt;&lt;br&gt;去年的淘宝购票据说还是比较坑爹的，界面很不人性化不说，连基本的买票都很难买到，服务器各种崩。今年淘宝电影依旧是主办方唯一指定购票渠道，但是改名为淘票票了，似有一雪前耻度的决心。官方片单公布之时，下好了淘票票的APP，专题下多了个日程安排，每次的地点时间，赶场次之间的时间间隔也都自动帮你设定好了，非常清楚，顿时觉得非常人性化，无比赞啊～立马对照片单，列了一堆想看的片。摩拳擦掌等开票日。&lt;br&gt;开票日前天晚上定好了早上8点前的闹钟，只为能抢到心仪的票。可是现实让我一脸懵逼。开票的一个多小时之内，APP还是浏览器端所有场次的电影都刷不出购票界面。到了差不多中午才真正可以买票，期间官方一度关闭了购票窗口，没有任何的声明和解释，也是醉了。到能买到时候，最想看的片全被卖光了😢。扣掉媒体记者，组委会评委一干人，看来托关系，第三方预留占去的票不少啊。哎，最后真正留给影迷朋友的也没多少。别说那些热门和超热门了。&lt;br&gt;当时抢票的时候，拿手机的手都是发抖的，激动之下一口气买了5张，要是给我请一个礼拜的假，我得买个十几张才过瘾吧。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://o9kkuebr4.bkt.clouddn.com/blog/siff20162.pic.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;下面是片单：&lt;br&gt;《着魔》－－波兰导演安德烈·祖拉斯基的经典恐怖片，女神阿佳妮为此奉献了生涯最癫狂，变态，大尺度的表演，轻松拿下当年戛纳电影节和凯撒奖双料影后。&lt;br&gt;《最后一课》－－北影节天坛奖入围，法国老牌知性女演员桑德里娜·伯奈尔主演。&lt;br&gt;《伤心往事》－－小泉今日子和二阶堂富美母女档，加上高良健吾，到场的迷妹也不少。电影节公映早于日本国内哦，东京艺术院线70周年纪念作品，其实看演员就行了。&lt;br&gt;《史蒂夫·乔布斯》－－丹尼·鲍尔去年上映的申奥片，评价两极。&lt;br&gt;《火星异种》－－对漫改不是很感冒，看着三池崇史的份上，凑个数吧。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://o9kkuebr4.bkt.clouddn.com/blog/siff20163.pic.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;赶场&lt;/strong&gt;&lt;br&gt;这次5场电影院都不同，第一天晚上南京西路的大光明，比较老牌的影院了，布置和设施都很有氛围。第二场陆家嘴，ifc商场内的百丽宫，商场很高大上，影院到真的挺难找的。然后是虹桥那边的的凌空SOHO。再到交大旁的SFC上影，也是这次SIFF的主要影院之一，比人烟稀少的前两个气氛好多了。最后一个我发现在奥特莱斯的时候就知道很偏远了，坐着公交车走了好远。。。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://o9kkuebr4.bkt.clouddn.com/blog/siff20161.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;短评&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&quot;着魔&quot;&gt;&lt;a href=&quot;#着魔&quot; class=&quot;headerlink&quot; title=&quot;着魔&quot;&gt;&lt;/a&gt;&lt;a name=&quot;fenced-code-block&quot; style=&quot;font-size: 15px;&quot;&gt;着魔&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;blablabla~&lt;/p&gt;
+&lt;h4 id=&quot;最后一课&quot;&gt;&lt;a href=&quot;#最后一课&quot; class=&quot;headerlink&quot; title=&quot;最后一课&quot;&gt;&lt;/a&gt;&lt;a name=&quot;fenced-code-block&quot; style=&quot;font-size: 15px;&quot;&gt;最后一课&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;blablabla~&lt;/p&gt;
+&lt;h4 id=&quot;伤心往事&quot;&gt;&lt;a href=&quot;#伤心往事&quot; class=&quot;headerlink&quot; title=&quot;伤心往事&quot;&gt;&lt;/a&gt;&lt;a name=&quot;fenced-code-block&quot; style=&quot;font-size: 15px;&quot;&gt;伤心往事&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;blablabla~&lt;/p&gt;
+&lt;h4 id=&quot;乔布斯&quot;&gt;&lt;a href=&quot;#乔布斯&quot; class=&quot;headerlink&quot; title=&quot;乔布斯&quot;&gt;&lt;/a&gt;&lt;a name=&quot;fenced-code-block&quot; style=&quot;font-size: 15px;&quot;&gt;乔布斯&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;blablabla~&lt;/p&gt;
+&lt;h4 id=&quot;火星异种&quot;&gt;&lt;a href=&quot;#火星异种&quot; class=&quot;headerlink&quot; title=&quot;火星异种&quot;&gt;&lt;/a&gt;&lt;a name=&quot;fenced-code-block&quot; style=&quot;font-size: 15px;&quot;&gt;火星异种&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;blablabla~&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://o9kkuebr4.bkt.clouddn.com/blog/siff2016201604011616211174.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;5月的时候，就开始在网上被2016年SIFF的相关信息刷屏，突然就想去凑个热闹，感觉也是自然而然萌生的念头。当年才喜欢上日影的时候，就听说过SIFF有很多日片放映，当时就特别向往一窥。不过由于个人时间安排问题，以及当时电影节的购票、赶场服务还不是很方便。这个冲动也就只能一直留在了脑海之中了。现在无锡到上海1个小时，还能见见老朋友，何乐而不为呢。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/2016/06/20/2016魔都电影节之行/&quot;&gt;Read More…&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="http://bowiego.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="电影" scheme="http://bowiego.github.io/tags/%E7%94%B5%E5%BD%B1/"/>
+    
+  </entry>
+  
+</feed>
