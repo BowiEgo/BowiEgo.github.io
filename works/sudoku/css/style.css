@@ -34,7 +34,7 @@ button {
 
 @media screen and (max-width: 400px) {
 	#wrap {
-		transform: scale(1.2);
+		transform: scale(1.1);
 	}
 }
 
