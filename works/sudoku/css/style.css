@@ -68,7 +68,8 @@ button {
 	z-index: 5;
 }
 
-#difficult h1 {
+#difficult h1, h2 {
+	margin-top: 20px;
 	color: #19c2d8;
 	text-align: center;
 }
