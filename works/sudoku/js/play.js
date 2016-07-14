@@ -53,7 +53,7 @@ window.onload = function(){
 
 	easyBtn.onclick = function() {
 
-		showPlay(1);
+		showPlay(10);
 		
 	}
 
