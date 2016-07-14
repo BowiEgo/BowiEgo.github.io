@@ -32,6 +32,12 @@ button {
 	padding: 100px;
 }
 
+@media screen and (max-width: 400px) {
+	#wrap {
+		transform: scale(1.2);
+	}
+}
+
 #btn-start {
 	position: absolute;
 	left: 30%;
