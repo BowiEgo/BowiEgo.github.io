@@ -20,20 +20,20 @@ window.onload = function(){
 	var confirmP = confirm.getElementsByTagName("p");
 	console.log(confirmP);
 
-	confirmBtn.onclick = function() {
-		console.log(1);
-		if(confirmBtn.innerText == "关闭") {
-			addClass(confirm,"hide");
-			removeClass(heart,"hide");
-			body[0].style.background = "#000";
-			setTimeout(function(){
-				toggle.checked = true;
-			}, 1000)	
-		}
-		confirmP[0].innerText = "嗒哒～";
-		confirmBtn.innerText = "关闭";
+	// confirmBtn.onclick = function() {
+	// 	console.log(1);
+	// 	if(confirmBtn.innerText == "关闭") {
+	// 		addClass(confirm,"hide");
+	// 		removeClass(heart,"hide");
+	// 		body[0].style.background = "#000";
+	// 		setTimeout(function(){
+	// 			toggle.checked = true;
+	// 		}, 1000)	
+	// 	}
+	// 	confirmP[0].innerText = "嗒哒～";
+	// 	confirmBtn.innerText = "关闭";
 
-	}
+	// }
 
 	function showPlay(dif) {
 
@@ -316,8 +316,8 @@ window.onload = function(){
 									alert("恭喜你，过关了！");
 									removeClass(oPlay,"active");
 									addClass(oPlay,"hide");
-									removeClass(confirm,"hide");
-									// location.reload();
+									// removeClass(confirm,"hide");
+									location.reload();
 								}
 							}
 						}
