@@ -22,8 +22,18 @@ window.onload = function() {
 		return -1;
 	}
 
-	function playAudio(e) {
-		var n = e.innerText;
+	function playResult(e) {
+		console.log(e);
+		e = String(e);
+		var arr = e.split("");
+		console.log(arr);
+		for(var i = 0; i < e.length; i++) {
+			playAudio(e[i]);
+		}
+	}
+
+	function playAudio(n) {
+		var n;
 		var m;
 		if(!isNaN(n)) {
 			m = n;
@@ -54,14 +64,16 @@ window.onload = function() {
 		}
 		console.log(m);
 		var audio = document.getElementById(m);
-		audio.play();
+		if(audio !== null) {
+			audio.play();
+		}
 	}
 
 	for(var i = 0; i < btnNum.length; i++) {
 		btnNum[i].onclick = function() {
 			console.log(btnNum[0]);
 			console.log(this);
-			playAudio(this);
+			playAudio(this.innerText);
 			// console.log(btnNum.indexOf(this));
 			if(flag) {
 				arr[arr.length - 1] = parseInt(this.innerText);
@@ -81,7 +93,8 @@ window.onload = function() {
 
 	for(i in btnOperator) {
 		btnOperator[i].onclick = function() {
-			playAudio(this);
+			flag = false;
+			playAudio(this.innerText);
 			if(arr.length > 0 && !isNaN(arr[arr.length - 1])) {
 				display.innerText += this.innerText;
 				arr.push(this.innerText);
@@ -96,7 +109,7 @@ window.onload = function() {
 	}
 
 	btnAC.onclick = function() {
-		playAudio(this);
+		playAudio(this.innerText);
 		arr = [];
 		display.innerText = "";
 		flag = false;
@@ -111,14 +124,16 @@ window.onload = function() {
 	}
 
 	btnDot.onclick = function() {
-		playAudio(this);
-		arr.push(this.innerText);
-		display.innerText += this.innerText;
-		console.log(arr);
+		if(display.innerText.indexOf(".") == -1) {
+			playAudio(this.innerText);
+			arr.push(this.innerText);
+			display.innerText += this.innerText;
+			console.log(arr);
+		}
 	}
 
 	btnEqual.onclick = function() {	
-		playAudio(this);
+		playAudio(this.innerText);
 		flag = true;
 		console.log(flag);
 		result = eval(display.innerText);
@@ -126,5 +141,6 @@ window.onload = function() {
 		arr = [];
 		arr.push(result);
 		console.log(arr);
+		// playResult(result);
 	}
 }
