@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<title>calculator</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- <link rel="stylesheet" media="screen and (max-width: 480px)" href="css/mobile.css"/> -->
+	<!-- <link rel="stylesheet" media="screen and (max-width: 480px)" href="css/mobile.css" type="text/css" /> -->
 </head>
 <body>
 	<div class="container">
@@ -18,7 +21,7 @@
 			<button class="btn btn-default btn-num">9</button>
 			<button class="btn btn-default btn-operator">*</button>
 			<button class="btn btn-default btn-num">4</button>
-			<button class="btn btn-default btn-num">5</button>
+			<button class="btn btn-default btn-num" onclick="5">5</button>
 			<button class="btn btn-default btn-num">6</button>
 			<button class="btn btn-default btn-operator">-</button>
 			<button class="btn btn-default btn-num">1</button>
@@ -30,6 +33,23 @@
 			<button class="btn btn-success btn-wide" id="btn-equal">=</button>
 		</div>
 	</div>
+	<audio id="1" src="audio/1.wav"></audio>
+	<audio id="2" src="audio/2.wav"></audio>
+	<audio id="3" src="audio/3.wav"></audio>
+	<audio id="4" src="audio/4.wav"></audio>
+	<audio id="5" src="audio/5.wav"></audio>
+	<audio id="6" src="audio/6.wav"></audio>
+	<audio id="7" src="audio/7.wav"></audio>
+	<audio id="8" src="audio/8.wav"></audio>
+	<audio id="9" src="audio/9.wav"></audio>
+	<audio id="0" src="audio/0.wav"></audio>
+	<audio id="dot" src="audio/点.wav"></audio>
+	<audio id="plus" src="audio/加.wav"></audio>
+	<audio id="minus" src="audio/减.wav"></audio>
+	<audio id="multiply" src="audio/乘.wav"></audio>
+	<audio id="divide" src="audio/除以.wav"></audio>
+	<audio id="equal" src="audio/等于.wav"></audio>
+	<audio id="clear" src="audio/清除.wav"></audio>
 	<script src="js/main.js"></script>
 </body>
 </html>

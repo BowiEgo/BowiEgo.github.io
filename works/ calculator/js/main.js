@@ -11,9 +11,58 @@ window.onload = function() {
 	var result = 0;
 	var arr = [];
 	var flag = false;
+	btn.reverse
 
-	for(i in btnNum) {
+	Object.prototype.getIndex = function(val) {
+		for(var i = 0; i < this.length; i++) {
+			if(this[i] == val) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	function playAudio(e) {
+		var n = e.innerText;
+		var m;
+		if(!isNaN(n)) {
+			m = n;
+		}else{
+			switch(n) {
+				case ".":
+					m = "dot";
+					break;
+				case "+":
+					m = "plus";
+					break;
+				case "-":
+					m = "minus";
+					break;
+				case "*":
+					m = "multiply";
+					break;
+				case "/":
+					m = "divide";
+					break;
+				case "=":
+					m = "equal";
+					break;
+				case "AC":
+					m = "clear";
+					break;
+			}
+		}
+		console.log(m);
+		var audio = document.getElementById(m);
+		audio.play();
+	}
+
+	for(var i = 0; i < btnNum.length; i++) {
 		btnNum[i].onclick = function() {
+			console.log(btnNum[0]);
+			console.log(this);
+			playAudio(this);
+			// console.log(btnNum.indexOf(this));
 			if(flag) {
 				arr[arr.length - 1] = parseInt(this.innerText);
 				display.innerText = this.innerText;
@@ -32,7 +81,7 @@ window.onload = function() {
 
 	for(i in btnOperator) {
 		btnOperator[i].onclick = function() {
-
+			playAudio(this);
 			if(arr.length > 0 && !isNaN(arr[arr.length - 1])) {
 				display.innerText += this.innerText;
 				arr.push(this.innerText);
@@ -47,6 +96,7 @@ window.onload = function() {
 	}
 
 	btnAC.onclick = function() {
+		playAudio(this);
 		arr = [];
 		display.innerText = "";
 		flag = false;
@@ -61,12 +111,14 @@ window.onload = function() {
 	}
 
 	btnDot.onclick = function() {
+		playAudio(this);
 		arr.push(this.innerText);
 		display.innerText += this.innerText;
 		console.log(arr);
 	}
 
 	btnEqual.onclick = function() {	
+		playAudio(this);
 		flag = true;
 		console.log(flag);
 		result = eval(display.innerText);
