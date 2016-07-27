@@ -5,10 +5,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<title>calculator</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<!-- <link rel="stylesheet" media="screen and (max-width: 480px)" href="css/mobile.css"/> -->
 	<!-- <link rel="stylesheet" media="screen and (max-width: 480px)" href="css/mobile.css" type="text/css" /> -->
 </head>
 <body>
+	<div class="progress">
+		<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+			<span class="sr-only">45% Complete</span>
+		</div>
+	</div>
+
 	<div class="container">
 		<div class="display"></div>
 		<div class="btn-group">
@@ -33,6 +40,11 @@
 			<button class="btn btn-success btn-wide" id="btn-equal">=</button>
 		</div>
 	</div>
+	<script type="text/javascript"> 
+		var bar = document.querySelector(".progress-bar");
+		bar.style.width = "20%";
+		//第一个进度节点 
+	</script> 
 	<audio id="1" src="audio/1.wav"></audio>
 	<audio id="2" src="audio/2.wav"></audio>
 	<audio id="3" src="audio/3.wav"></audio>
@@ -50,6 +62,18 @@
 	<audio id="divide" src="audio/除以.wav"></audio>
 	<audio id="equal" src="audio/等于.wav"></audio>
 	<audio id="clear" src="audio/清除.wav"></audio>
+	<script type="text/javascript"> 
+		var bar = document.querySelector(".progress-bar");
+		bar.style.width = "50%";
+		//第二个进度节点 
+	</script> 
+	<script src="js/jquery-1.12.3.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 	<script src="js/main.js"></script>
+	<script type="text/javascript"> 
+		var bar = document.querySelector(".progress-bar");
+		bar.style.width = "100%";
+		//第三个进度节点 
+	</script> 
 </body>
 </html>

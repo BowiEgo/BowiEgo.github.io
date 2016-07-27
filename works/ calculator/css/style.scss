@@ -6,12 +6,12 @@
 
 }
 
+
 body {
 	width: 100%;
 	height: 800px;
 	background: linear-gradient(140deg, #ffabe2 0%, #0068ad 100%);
 	.container {
-		// position: relative;
 		width: 400px;
 		height: 500px;
 		margin: 50px auto;
@@ -19,7 +19,6 @@ body {
 		background: #bfbfbf;
 		box-shadow: 0 5px 30px #01245f;
 		.display { 
-			// position: absolute;
 			width: 350px;
 			height: 50px;
 			margin: 40px 24px;
