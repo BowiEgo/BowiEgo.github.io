@@ -111,11 +111,10 @@ function clearDatePos() {
 
 			console.log(dataArr);
 			var noteText = document.querySelector(".note-text");
+			noteText.innerText = "";
 			for(var i = 0; i < dataArr.length; i++) {
 				if(dataArr[i].year == curYear && dataArr[i].month == curMonth && dataArr[i].date == this.getElementsByTagName("p")[0].innerText) {
 					noteText.innerText = dataArr[i].text;
-				}else{
-					noteText.innerText = "";
 				}
 			}
 		}
