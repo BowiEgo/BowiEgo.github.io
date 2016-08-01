@@ -162,6 +162,9 @@ body {
 					animation: pop-in 0.5s;	
 					animation-fill-mode: forwards;
 				}
+				p.edited {
+					color: $salmon;
+				}
 			}
 			.day.now {
 				p{

@@ -109,11 +109,10 @@ function clearDatePos() {
 			addClass(oCalendar,"active");
 			addClass(oNote,"active");
 
-
+			console.log(dataArr);
 			var noteText = document.querySelector(".note-text");
-			var curDate;
 			for(var i = 0; i < dataArr.length; i++) {
-				if(dataArr[i].year == curYear && dataArr[i].month == curMonth &&dataArr[i].date == this.getElementsByTagName("p")[0].innerText) {
+				if(dataArr[i].year == curYear && dataArr[i].month == curMonth && dataArr[i].date == this.getElementsByTagName("p")[0].innerText) {
 					noteText.innerText = dataArr[i].text;
 				}else{
 					noteText.innerText = "";
@@ -210,14 +209,13 @@ window.onload = function() {
 			addClass(oCalendar,"active");
 			addClass(oNote,"active");
 
+			console.log(dataArr);
 
 			var noteText = document.querySelector(".note-text");
-			var curDate;
+			noteText.innerText = "";
 			for(var i = 0; i < dataArr.length; i++) {
-				if(dataArr[i].year == curYear && dataArr[i].month == curMonth &&dataArr[i].date == this.getElementsByTagName("p")[0].innerText) {
+				if(dataArr[i].year == curYear && dataArr[i].month == curMonth && dataArr[i].date == this.getElementsByTagName("p")[0].innerText) {
 					noteText.innerText = dataArr[i].text;
-				}else{
-					noteText.innerText = "";
 				}
 			}
 		}
@@ -256,7 +254,15 @@ window.onload = function() {
 		}
 		dataArr.push(dataDate);
 		noteText.innerText = text;
+		console.log(dataArr);
 		document.querySelector(".note-input").value = "";
+		removeClass(oCalendar,"active");
+		removeClass(oNote,"active");
+		if(text != "") {
+			addClass(dateActive,"edited")
+		}else{
+			removeClass(dateActive,"edited");
+		}
 	}
 
 
