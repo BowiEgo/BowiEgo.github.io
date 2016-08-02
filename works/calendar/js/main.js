@@ -102,7 +102,6 @@ function toggleExpand() {
 
 function dateClick() {
 	for(var i = 0; i < oDays.length; i++) {
-		// console.log(oDays[i]);
 		oDays[i].onclick = function() {
 
 			var noteText = document.querySelector(".note-text");
@@ -177,10 +176,8 @@ function setDatePos(year, month) {
 		oDays[i + firstDay - 2].getElementsByTagName("p")[0].innerText = i;
 		addClass(oDays[i + firstDay - 2],"show");
 		var od = new DateObject(curYear,curMonth,i,"",true);
-		console.log(od);
 		for(var j = 0; j < dataArr.length; j++) {
 			if(dataArr[j].year == od.year && dataArr[j].month == od.month && dataArr[j].date == od.date && dataArr[j].edited == true) {
-				console.log(22222);
 				addClass(oDays[i + firstDay - 2].getElementsByTagName("p")[0],"edited");
 			}
 		}
@@ -251,14 +248,12 @@ window.onload = function() {
 	}
 
 	var noteSub = document.querySelector(".note-submit");
-	console.log(noteSub);
 	noteSub.onclick = function() {
 		var noteText = document.querySelector(".note-text");
 		var text = document.querySelector(".note-input").value;
 
 		var dateActive = document.querySelector(".select");
 		var dataDate = new DateObject(curYear,curMonth,dateActive.innerText,text,true);
-		console.log(dataDate.text);
 		var flag = true;
 		for(var i = 0; i < dataArr.length; i++) {
 			if(dataArr[i].year == dataDate.year && dataArr[i].month == dataDate.month && dataArr[i].date == dataDate.date) {
@@ -273,7 +268,6 @@ window.onload = function() {
 		}
 		dataArr.push(dataDate);
 		noteText.innerText = text;
-		console.log(dataArr);
 		document.querySelector(".note-input").value = "";
 	}
 
