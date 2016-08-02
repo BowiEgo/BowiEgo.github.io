@@ -110,17 +110,26 @@ function dateClick() {
 				if(hasClass(oP,"select")) {
 					toggleExpand();
 				}else{
-					noteText.innerText = "";
-					removeClass(oCalendar,"active");
-					removeClass(oNote,"active");
-					setTimeout(function() {
+					if(hasClass(oCalendar,"active")) {
+						noteText.innerText = "";
+						removeClass(oCalendar,"active");
+						removeClass(oNote,"active");
+						setTimeout(function() {
+							toggleExpand();
+							for(var i = 0; i < dataArr.length; i++) {
+								if(dataArr[i].year == curYear && dataArr[i].month == curMonth && dataArr[i].date == oP.innerText) {
+									noteText.innerText = dataArr[i].text;
+								}
+							}
+						},300);
+					}else{
 						toggleExpand();
 						for(var i = 0; i < dataArr.length; i++) {
 							if(dataArr[i].year == curYear && dataArr[i].month == curMonth && dataArr[i].date == oP.innerText) {
 								noteText.innerText = dataArr[i].text;
 							}
 						}
-					},300);
+					}
 				}
 
 			for(var j = 0; j < oDays.length; j++) {
