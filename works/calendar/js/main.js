@@ -52,6 +52,16 @@ function DayObject(time) {
 	return o;
 }
 
+function DateObject(year,month,date,text,edited) {
+	var o = new Object();
+	o.year = year;
+	o.month = month;
+	o.date = date;
+	o.text = text;
+	o.edited = edited;
+	return o;
+}
+
 function getMonthName(month) {
 	var arrMonth = ["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"];
 	return arrMonth[month];
@@ -80,6 +90,48 @@ function getLastDay(year, month) {
 	return lastDayTime;
 }
 
+function toggleExpand() {
+	if(hasClass(oCalendar,"active")) {
+			removeClass(oCalendar,"active");
+			removeClass(oNote,"active");
+	}else{
+		addClass(oCalendar,"active");
+		addClass(oNote,"active");
+	}
+}
+
+function dateClick() {
+	for(var i = 0; i < oDays.length; i++) {
+		// console.log(oDays[i]);
+		oDays[i].onclick = function() {
+
+			var noteText = document.querySelector(".note-text");
+			var oP = this.getElementsByTagName("p")[0];
+				if(hasClass(oP,"select")) {
+					toggleExpand();
+				}else{
+					noteText.innerText = "";
+					removeClass(oCalendar,"active");
+					removeClass(oNote,"active");
+					setTimeout(function() {
+						toggleExpand();
+						for(var i = 0; i < dataArr.length; i++) {
+							if(dataArr[i].year == curYear && dataArr[i].month == curMonth && dataArr[i].date == oP.innerText) {
+								noteText.innerText = dataArr[i].text;
+							}
+						}
+					},300);
+				}
+
+			for(var j = 0; j < oDays.length; j++) {
+				removeClass(oDays[j].getElementsByTagName("p")[0],"select");
+			}
+			if(!hasClass(this,"now")){
+				addClass(oP,"select");
+			}
+		}
+	}
+}
 
 function clearDatePos() {
 	for(var i = oDays.length-1;i>=0;i--) {
@@ -95,30 +147,7 @@ function clearDatePos() {
 		document.getElementById("days").appendChild(oDiv);
 	}
 
-
-	for(var i = 0; i < oDays.length; i++) {
-		// console.log(oDays[i]);
-		oDays[i].onclick = function() {
-
-			for(var j = 0; j < oDays.length; j++) {
-				removeClass(oDays[j].getElementsByTagName("p")[0],"select");
-			}
-			if(!hasClass(this,"now")){
-				addClass(this.getElementsByTagName("p")[0],"select");
-			}
-			addClass(oCalendar,"active");
-			addClass(oNote,"active");
-
-			console.log(dataArr);
-			var noteText = document.querySelector(".note-text");
-			noteText.innerText = "";
-			for(var i = 0; i < dataArr.length; i++) {
-				if(dataArr[i].year == curYear && dataArr[i].month == curMonth && dataArr[i].date == this.getElementsByTagName("p")[0].innerText) {
-					noteText.innerText = dataArr[i].text;
-				}
-			}
-		}
-	}
+	dateClick();
 }
 
 
@@ -135,10 +164,17 @@ function setDatePos(year, month) {
 		firstDay = 7;
 	}
 
-	for(i = 1; i <= lastDate; i++) {
+	for(var i = 1; i <= lastDate; i++) {
 		oDays[i + firstDay - 2].getElementsByTagName("p")[0].innerText = i;
 		addClass(oDays[i + firstDay - 2],"show");
-
+		var od = new DateObject(curYear,curMonth,i,"",true);
+		console.log(od);
+		for(var j = 0; j < dataArr.length; j++) {
+			if(dataArr[j].year == od.year && dataArr[j].month == od.month && dataArr[j].date == od.date && dataArr[j].edited == true) {
+				console.log(22222);
+				addClass(oDays[i + firstDay - 2].getElementsByTagName("p")[0],"edited");
+			}
+		}
 	}
 
 	nowDayHighLight();
@@ -154,10 +190,14 @@ function nowDayHighLight() {
 	}
 }
 
+
+
 window.onload = function() {
 	setDatePos(nowYear, nowMonth);
 	oMonth.innerText = getMonthName(nowMonth);
 	oYear.innerText = nowYear;
+
+	dateClick(); //日期按钮功能
 
 	//月份切换按钮功能
 	var lastMtBtn = document.getElementById("lastMt");
@@ -195,45 +235,10 @@ window.onload = function() {
 		removeClass(oNote,"active");
 	}
 
-	for(var i = 0; i < oDays.length; i++) {
-		// console.log(oDays[i]);
-		oDays[i].onclick = function() {
-
-			for(var j = 0; j < oDays.length; j++) {
-				removeClass(oDays[j].getElementsByTagName("p")[0],"select");
-			}
-			if(!hasClass(this,"now")){
-				addClass(this.getElementsByTagName("p")[0],"select");
-			}
-			addClass(oCalendar,"active");
-			addClass(oNote,"active");
-
-			console.log(dataArr);
-
-			var noteText = document.querySelector(".note-text");
-			noteText.innerText = "";
-			for(var i = 0; i < dataArr.length; i++) {
-				if(dataArr[i].year == curYear && dataArr[i].month == curMonth && dataArr[i].date == this.getElementsByTagName("p")[0].innerText) {
-					noteText.innerText = dataArr[i].text;
-				}
-			}
-		}
-	}
-
 	var closeNote = document.querySelector(".close-note");
 	closeNote.onclick = function() {
 		removeClass(oCalendar,"active");
 		removeClass(oNote,"active");
-	}
-
-
-	function DateObject(year,month,date,text) {
-		var o = new Object();
-		o.year = year;
-		o.month = month;
-		o.date = date;
-		o.text = text;
-		return o;
 	}
 
 	var noteSub = document.querySelector(".note-submit");
@@ -243,7 +248,7 @@ window.onload = function() {
 		var text = document.querySelector(".note-input").value;
 
 		var dateActive = document.querySelector(".select");
-		var dataDate = new DateObject(curYear,curMonth,dateActive.innerText,text);
+		var dataDate = new DateObject(curYear,curMonth,dateActive.innerText,text,true);
 		console.log(dataDate.text);
 		var flag = true;
 		for(var i = 0; i < dataArr.length; i++) {
@@ -251,19 +256,17 @@ window.onload = function() {
 				dataArr.splice(i,1);
 			}
 		}
-		dataArr.push(dataDate);
-		noteText.innerText = text;
-		console.log(dataArr);
-		document.querySelector(".note-input").value = "";
-		removeClass(oCalendar,"active");
-		removeClass(oNote,"active");
 		if(text != "") {
 			addClass(dateActive,"edited")
 		}else{
 			removeClass(dateActive,"edited");
+			dataDate.edited = false;
 		}
+		dataArr.push(dataDate);
+		noteText.innerText = text;
+		console.log(dataArr);
+		document.querySelector(".note-input").value = "";
 	}
-
 
 
 }
