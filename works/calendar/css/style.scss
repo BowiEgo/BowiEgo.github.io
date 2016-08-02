@@ -48,13 +48,15 @@ body {
 }
 
 #calendar.active {
-	left: 250px;
+	left: 350px;
+	background: linear-gradient( #29323f 80%, #364252 100%);
 }
 
 #calendar {
 	position: absolute;
 	width: 480px;
 	height: 520px; 
+	top: 100px;
 	left: 400px;
 	background: linear-gradient( #29323f 80%, #364252 100%);
 	box-shadow: 5px 5px 30px #29323f;
@@ -206,13 +208,14 @@ body {
 #note {
 	position: absolute;
 	left: 500px;
-	top: 20px;
+	top: 120px;
 	width: 300px;
 	height: 480px;
 	background: #172231;
 	box-shadow: 5px 5px 30px #29323f;
+	opacity: 0;
 	z-index: 1;
-	transition: all 0.3s ease;
+	transition: all 0.8s ease;
 	.note-container {
 		position: relative;
 		width: 100%;
@@ -284,5 +287,6 @@ body {
 }
 
 #note.active {
-	left: 730px;
+	opacity: 1;
+	left: 830px;
 }

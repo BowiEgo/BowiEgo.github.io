@@ -121,7 +121,7 @@ function dateClick() {
 									noteText.innerText = dataArr[i].text;
 								}
 							}
-						},300);
+						},400);
 					}else{
 						toggleExpand();
 						for(var i = 0; i < dataArr.length; i++) {
