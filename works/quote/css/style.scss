@@ -110,39 +110,6 @@ button {
 	opacity: .8;
 }
 
-.confirm {
-	position: absolute;
-	top: 300px;
-	left: 380px;
-	width: 300px;
-	height: 100px;
-	background: #fff;
-	z-index: 99;
-	box-shadow: 10px 10px  10px #888;
-	opacity: 1;
-	transition: all 0.4s ease;
-	p {
-		// padding: 10px 100px;
-		text-align: center;
-		font-size: 3em;
-	}
-	.btn-confirm {
-		position: absolute;
-		top: 60px;
-		right: 130px;
-		width: 60px;
-		height: 30px;
-		border-radius: .2em;
-		border: none;
-		background: #03a9f4;
-		color: #fff;
-	}
-}
-
-.confirm.hide {
-	opacity: 0;
-	transform: scale(0.3);
-}
 
 
 

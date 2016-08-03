@@ -21,16 +21,6 @@ $(document).ready(function() {
 		}
 	});
 
-	$(".btn-confirm").click(function() {
-		if($(this).hasClass("active")){
-			$(".confirm").addClass("hide");
-			$(".wrap").removeClass("blur");
-		}
-		$(".confirm p").text("么么哒～");
-		$(this).addClass("active");
-		$(this).text("关闭");
-	});
-
 	function randomNum() {
 		 
 		var	indRandom = Math.floor(Math.random()*9);
