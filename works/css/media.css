@@ -1,0 +1,15 @@
+body header {
+  width: 300px; }
+  body header nav {
+    width: 300px;
+    margin-top: 20px; }
+    body header nav ul {
+      border: none;
+      height: 0;
+      overflow: hidden; }
+body #content {
+  width: 300px; }
+  body #content .archiveThumb {
+    height: 205px; }
+
+/*# sourceMappingURL=media.css.map */
