@@ -9,11 +9,6 @@ $(document).ready(function() {
   	showQuote();
 
 	$("#btn").click(function() {
-
-		if(count > 1 && count%2 == 0) {
-			$(".confirm").removeClass("hide");
-			$(".wrap").addClass("blur");
-		}
 		if(!$("#quote").is(":animated")){
 			changeColor();
 			showQuote();
