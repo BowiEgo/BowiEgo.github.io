@@ -24,6 +24,8 @@ function toggleClass(obj,cls){
     }  
 }  
 
+
+
 //设置日期
 var now = new Date();
 var nowObject = new DayObject(now);
@@ -42,7 +44,7 @@ var curMonth = nowMonth;
 var curYear = nowYear;
 var dataArr = [];
 
-
+//定义日期对象
 function DayObject(time) {
 	var o = new Object();
 	o.year = time.getFullYear();
@@ -51,7 +53,7 @@ function DayObject(time) {
 	o.day = time.getDay();
 	return o;
 }
-
+//定义日期数据对象
 function DateObject(year,month,date,text,edited) {
 	var o = new Object();
 	o.year = year;
@@ -91,10 +93,13 @@ function getLastDay(year, month) {
 }
 
 function toggleExpand() {
+	var oInput = document.querySelector(".note-input");
+
 	if(hasClass(oCalendar,"active")) {
 			removeClass(oCalendar,"active");
 			removeClass(oNote,"active");
 	}else{
+		oInput.focus();  //输入框默认获取焦点
 		addClass(oCalendar,"active");
 		addClass(oNote,"active");
 	}
@@ -202,6 +207,7 @@ window.onload = function() {
 	setDatePos(nowYear, nowMonth);
 	oMonth.innerText = getMonthName(nowMonth);
 	oYear.innerText = nowYear;
+
 
 	dateClick(); //日期按钮功能
 
