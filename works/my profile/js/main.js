@@ -101,11 +101,22 @@ window.onscroll = function() {
 
 window.onload = function() {
 
+	//导航条按钮
+	var navBtn = document.querySelector(".nav-btn");
+	var navContact = document.querySelector(".nav-contact");
+	var oNav = document.querySelector(".top-nav");
+	navBtn.onclick = function() {
+		toggleClass(navContact, "active");
+		if(hasClass(navContact, "active")) {
+			oNav.style.boxShadow = "none";
+		}else{
+			oNav.style.boxShadow = "0 10px 30px rgba(0,0,0,0.4)";
+		}
+	}
+
 	//标签切换
 	var oTabContent = document.getElementsByClassName("tab-content");
-	console.log(oTabContent);
 	var tabs = document.querySelector(".tablist").getElementsByTagName("a");
-	console.log(tabs);
 	for(var n = 0; n < tabs.length; n++) {
 		tabs[n].onclick = function() {
 			for(var j = 0; j < tabs.length; j++) {
@@ -113,7 +124,6 @@ window.onload = function() {
 			}
 			toggleClass(this,"active");
 			var index = tabs.indexOf(this);
-			console.log(index);
 			for(var i = 0; i < oTabContent.length; i++) {
 				if(i == index) {
 					addClass(oTabContent[i],"show");
@@ -133,18 +143,14 @@ window.onload = function() {
 		imgList = document.querySelector(".img-container").getElementsByTagName("ul")[0],
 		imgClone = clone(imgList.getElementsByTagName("li"));
 	var oDot = document.querySelector(".dot").getElementsByTagName("li");
-	console.log(oDot[0]);
-		console.log(imgList);
-		console.log(imgClone);
-		console.log(typeof imgList.getElementsByTagName("li")[0]);
 
-	// imgList.appendChild(imgClone);
 	var n = 0;
+	var len = document.querySelector(".img-container").getElementsByTagName("li").length;
+	console.log(len);
 
 	for(var i = 0; i < oDot.length; i++) {
 		oDot[i].onclick = function() {
 			n = oDot.indexOf(this);
-			console.log(oDot.indexOf(this));
 			imgList.style.left = -420*n + "px";
 			for(var i = 0; i < oDot.length; i++) {
 				removeClass(oDot[i],"active");
@@ -157,8 +163,7 @@ window.onload = function() {
 
 	btnR.onclick = function() {
 		n++;
-		console.log(n);
-		if(n >= 3) {
+		if(n >= len) {
 			n = 0;
 		}
 		imgList.style.left = -420*n + "px";
@@ -172,7 +177,6 @@ window.onload = function() {
 
 	btnL.onclick = function() {
 		n--;
-		console.log(n);
 		if(n <= -1) {
 			n = 2;
 		}
