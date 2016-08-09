@@ -216,11 +216,6 @@ window.onload = function() {
 			}
 		}
 	}
-
-
-
-
-
 	
 }
 
