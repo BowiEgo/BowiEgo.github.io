@@ -30,10 +30,10 @@ $pikachu-tail: #823e00;
 // }
 
 .loading {
+  position: fixed;
   width: 100%;
   height: 100%;
   background: #e5e5e5;
-  position: fixed;
   z-index: 99;
 }
 .loading.hide {
@@ -41,10 +41,9 @@ $pikachu-tail: #823e00;
 }
 
 .loading h1{
-  position: absolute;
-  // margin: 50% auto;
-  top: 65%;
-  left: 46%;
+  display: 200px;
+  margin: 20px auto;
+  text-align: center;
 }
 
 #ash,
@@ -56,9 +55,9 @@ $pikachu-tail: #823e00;
 }
 
 #loading-animate {
-  position: absolute;
-  top: 50%;
-  left: 45%;
+  width: 200px;
+  padding-left: 20px;
+  margin: 150px auto 0;
 }
 #ash:before, #ash:after,
 #pikachu:before,
