@@ -100,7 +100,7 @@ window.onscroll = function() {
 }
 
 window.onload = function() {
-
+	
 	//导航条按钮
 	var navBtn = document.querySelector(".nav-btn");
 	var navContact = document.querySelector(".nav-contact");
@@ -131,8 +131,38 @@ window.onload = function() {
 					removeClass(oTabContent[i],"show");	
 				}
 			}
+			console.log(window.screen.width);
+			console.log(window.innerWidth);
+
+			if(tabs.indexOf(this) == 2 && window.innerWidth > 400) {
+
+				//瀑布流
+				var oFavourite = document.querySelector(".favourite");
+				var imgFavourite = oFavourite.getElementsByClassName("fav-img");
+				var wid = oFavourite.offsetWidth;
+				console.log(wid);
+				var heightArr = [];
+				var minHeight, minIndex;
+
+				for(var i = 0; i < 2; i++) {
+					heightArr.push(imgFavourite[i].offsetHeight);
+					imgFavourite[i].style.left = wid/2.5*i + "px";
+				}
+				minHeight = Math.min.apply(null, heightArr);
+				minIndex = heightArr.indexOf(minHeight);
+
+				for(var i = 2; i < imgFavourite.length; i++) {
+					imgFavourite[i].style.left = wid/2.5*minIndex + "px";
+					imgFavourite[i].style.top = minHeight + parseInt(i/2)*20 + "px";
+					heightArr[minIndex] = minHeight + imgFavourite[i].offsetHeight;
+					minHeight = Math.min.apply(null, heightArr);
+					minIndex = heightArr.indexOf(minHeight);
+				}
+
+			}
 		}
 	}
+
 
 
 
@@ -146,7 +176,6 @@ window.onload = function() {
 
 	var n = 0;
 	var len = document.querySelector(".img-container").getElementsByTagName("li").length;
-	console.log(len);
 
 	for(var i = 0; i < oDot.length; i++) {
 		oDot[i].onclick = function() {
