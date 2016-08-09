@@ -1,6 +1,8 @@
 $green: #4caf50;
-$purple: #634caf;
 $blue: #4c7aaf;
+$purple: #634caf;
+$orange: #ff9e57;
+$theme: $orange;
 
 
 * {
@@ -278,7 +280,7 @@ body {
 
 
 .top-nav.show {
-	background: rgba($purple, 0.9);
+	background: rgba($theme, 0.9);
 	box-shadow: 0 10px 30px rgba(#000, 0.4);
 	.nav-contact {
 		ul {
@@ -293,8 +295,9 @@ body {
 
 .header {
 	height: 380px;
-	background: url(../img/bg.jpeg) center;
+	background: url(../img/bg8.jpeg);
 	background-size: cover;
+	background-position: 50% 10%;
 }
 
 .main {
@@ -372,8 +375,8 @@ body {
 						background: #f5f5f5;
 					}
 					a.active {
-						background: $purple;
-						box-shadow: 0 20px 20px -10px rgba($purple, 0.4),  0 4px 25px 0 rgba(#000, 0.2);
+						background: $theme;
+						box-shadow: 0 20px 20px -10px rgba($theme, 0.4),  0 4px 25px 0 rgba(#000, 0.2);
 						color: #fff;
 					}
 				}
@@ -425,7 +428,7 @@ body {
 					@include transition;
 				}
 				.btn:hover {
-					color: $purple;
+					color: $theme;
 				}
 				.btn-l {
 					margin-left: 30px;
@@ -451,7 +454,7 @@ body {
 							border-radius: 100%;
 						}
 						li.active {
-							background: $purple;
+							background: $theme;
 						}
 					}
 				}
