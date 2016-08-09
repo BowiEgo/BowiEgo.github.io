@@ -100,6 +100,10 @@ window.onscroll = function() {
 }
 
 window.onload = function() {
+	var oLoading = document.querySelector(".loading");
+	setTimeout(function() {
+		addClass(oLoading, "hide");
+	},1000);
 	
 	//导航条按钮
 	var navBtn = document.querySelector(".nav-btn");
