@@ -131,8 +131,63 @@ window.onload = function() {
 					removeClass(oTabContent[i],"show");	
 				}
 			}
-			console.log(window.screen.width);
-			console.log(window.innerWidth);
+
+			if(tabs.indexOf(this) == 1) {
+				//轮播图
+				var btnL = document.querySelector(".btn-l"),
+					btnR = document.querySelector(".btn-r"),
+					imgList = document.querySelector(".img-container").getElementsByTagName("ul")[0],
+					imgClone = clone(imgList.getElementsByTagName("li"));
+				var oDot = document.querySelector(".dot").getElementsByTagName("li");
+				var imgWid = imgList.getElementsByTagName("li")[0].offsetWidth;
+				console.log(imgWid);
+
+				var n = 0;
+				var len = document.querySelector(".img-container").getElementsByTagName("li").length;
+
+				for(var i = 0; i < oDot.length; i++) {
+					oDot[i].onclick = function() {
+						n = oDot.indexOf(this);
+						imgList.style.left = -(imgWid+20)*n + "px";
+						for(var i = 0; i < oDot.length; i++) {
+							removeClass(oDot[i],"active");
+							if(i == n) {
+								addClass(oDot[i],"active");
+							}
+						}
+					}
+				}
+
+				btnR.onclick = function() {
+					n++;
+					if(n >= len) {
+						n = 0;
+					}
+					imgList.style.left = -(imgWid+20)*n + "px";
+					for(var i = 0; i < oDot.length; i++) {
+						removeClass(oDot[i],"active");
+						if(i == n) {
+							addClass(oDot[i],"active");
+						}
+					}
+				}
+
+				btnL.onclick = function() {
+					n--;
+					if(n <= -1) {
+						n = 2;
+					}
+					imgList.style.left = -(imgWid+20)*n + "px";
+					for(var i = 0; i < oDot.length; i++) {
+						removeClass(oDot[i],"active");
+						if(i == n) {
+							addClass(oDot[i],"active");
+						}
+					}
+				}
+
+			}
+
 
 			if(tabs.indexOf(this) == 2 && window.innerWidth > 400) {
 
@@ -158,7 +213,6 @@ window.onload = function() {
 					minHeight = Math.min.apply(null, heightArr);
 					minIndex = heightArr.indexOf(minHeight);
 				}
-
 			}
 		}
 	}
@@ -166,57 +220,6 @@ window.onload = function() {
 
 
 
-
-	//轮播图
-	var btnL = document.querySelector(".btn-l"),
-		btnR = document.querySelector(".btn-r"),
-		imgList = document.querySelector(".img-container").getElementsByTagName("ul")[0],
-		imgClone = clone(imgList.getElementsByTagName("li"));
-	var oDot = document.querySelector(".dot").getElementsByTagName("li");
-
-	var n = 0;
-	var len = document.querySelector(".img-container").getElementsByTagName("li").length;
-
-	for(var i = 0; i < oDot.length; i++) {
-		oDot[i].onclick = function() {
-			n = oDot.indexOf(this);
-			imgList.style.left = -420*n + "px";
-			for(var i = 0; i < oDot.length; i++) {
-				removeClass(oDot[i],"active");
-				if(i == n) {
-					addClass(oDot[i],"active");
-				}
-			}
-		}
-	}
-
-	btnR.onclick = function() {
-		n++;
-		if(n >= len) {
-			n = 0;
-		}
-		imgList.style.left = -420*n + "px";
-		for(var i = 0; i < oDot.length; i++) {
-			removeClass(oDot[i],"active");
-			if(i == n) {
-				addClass(oDot[i],"active");
-			}
-		}
-	}
-
-	btnL.onclick = function() {
-		n--;
-		if(n <= -1) {
-			n = 2;
-		}
-		imgList.style.left = -420*n + "px";
-		for(var i = 0; i < oDot.length; i++) {
-			removeClass(oDot[i],"active");
-			if(i == n) {
-				addClass(oDot[i],"active");
-			}
-		}
-	}
 
 	
 }
