@@ -202,13 +202,17 @@ body {
         .top-nav .nav-contact ul li a {
           line-height: 50px;
           font-size: 2em;
-          color: #fff; }
+          color: #fff;
+          -webkit-transition: all 0.3s ease;
+          -moz-transition: all 0.3s ease;
+          -o-transition: all 0.3s ease;
+          transition: all 0.3s ease; }
 
 .top-nav.show {
   background: rgba(255, 158, 87, 0.9);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); }
   .top-nav.show .nav-contact ul li a {
-    background: transparent; }
+    background: rgba(255, 158, 87, 0.9); }
 
 .header {
   height: 380px;
