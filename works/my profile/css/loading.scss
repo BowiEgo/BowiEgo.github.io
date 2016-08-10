@@ -41,8 +41,16 @@ $pikachu-tail: #823e00;
 }
 
 .loading h1{
-  display: 200px;
-  margin: 20px auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 200px;
+  height: 100px;
+  margin: auto;
+  padding-top: 80px;
   text-align: center;
 }
 
@@ -55,9 +63,15 @@ $pikachu-tail: #823e00;
 }
 
 #loading-animate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 200px;
+  height: 100px;
   padding-left: 20px;
-  margin: 150px auto 0;
+  margin: auto;
 }
 #ash:before, #ash:after,
 #pikachu:before,
