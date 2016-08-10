@@ -179,7 +179,7 @@ window.onload = function() {
 				btnL.onclick = function() {
 					n--;
 					if(n <= -1) {
-						n = 2;
+						n = len - 1;
 					}
 					imgList.style.left = -(imgWid+20)*n + "px";
 					for(var i = 0; i < oDot.length; i++) {
