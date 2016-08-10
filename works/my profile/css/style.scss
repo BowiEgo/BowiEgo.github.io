@@ -229,12 +229,13 @@ body {
 		font-size: 2em;
 		color: #fff;
 	}
-	@media screen and (min-width: 768px) { 
+	@media screen and (max-width: 768px) { 
 		.nav-btn {
-			display: none;
+			display: block;
 		}
 	}
 	.nav-btn {
+		display: none;
 		position: relative;
 		float: right;
 		margin: 15px 60px 0 0;
@@ -257,6 +258,11 @@ body {
 			top: 20px;
 		}
 		
+	}
+	@media screen and (max-width: 768px) { 
+		.nav-btn {
+			display: block;
+		}
 	}
 	.nav-contact {
 		float: right;

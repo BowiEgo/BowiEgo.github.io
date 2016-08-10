@@ -169,10 +169,11 @@ body {
     line-height: 50px;
     font-size: 2em;
     color: #fff; }
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     .top-nav .nav-btn {
-      display: none; } }
+      display: block; } }
   .top-nav .nav-btn {
+    display: none;
     position: relative;
     float: right;
     margin: 15px 60px 0 0; }
@@ -190,6 +191,9 @@ body {
     .top-nav .nav-btn span:nth-child(3) {
       position: absolute;
       top: 20px; }
+  @media screen and (max-width: 768px) {
+    .top-nav .nav-btn {
+      display: block; } }
   .top-nav .nav-contact {
     float: right;
     margin-right: 30px;
