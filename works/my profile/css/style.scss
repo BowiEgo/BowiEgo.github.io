@@ -284,15 +284,21 @@ body {
 .top-nav.show {
 	background: rgba($theme, 0.9);
 	box-shadow: 0 10px 30px rgba(#000, 0.4);
-	.nav-contact {
-		ul {
-			li {
-				a {
+	@media screen and (max-width: 768px) { 
+		.nav-contact {
+			ul {
+				li {
+					a {
+						background: rgba($theme, 0.9);
+					}
 				}
 			}
 		}
 	}
 }
+
+
+
 
 .header {
 	height: 380px;
@@ -628,35 +634,37 @@ footer {
 
 
 @media screen and (max-width: 768px) { 
-	.nav-contact {
-		width: 100%;
-		height: 0;
-		margin-top: 20px;
-		margin-right: 0 !important;
-		box-shadow: 0 20px 30px rgba(#000, 0.4);
-		overflow: hidden;
-		@include transition;
-		ul {
+	.top-nav {
+		.nav-contact {
 			width: 100%;
-			position: relative;
-			box-sizing: border-box;
-			margin: 0;
-			li {
+			height: 0;
+			margin-top: 20px;
+			margin-right: 0 !important;
+			box-shadow: 0 20px 30px rgba(#000, 0.4);
+			overflow: hidden;
+			@include transition;
+			ul {
 				width: 100%;
 				position: relative;
-				margin: 0 !important;
-				a {
-					display: block;
+				box-sizing: border-box;
+				margin: 0;
+				li {
 					width: 100%;
-					height: 50px;
-					background: transparent;
-					text-align: center;
+					position: relative;
+					margin: 0 !important;
+					a {
+						display: block;
+						width: 100%;
+						height: 50px;
+						background: transparent;
+						text-align: center;
+					}
 				}
 			}
 		}
-	}
-	.nav-contact.active {
-		height: 100px;
+		.nav-contact.active {
+			height: 100px;
+		}
 	}
 	.wrap {
 		.header {
