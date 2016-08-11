@@ -58,7 +58,7 @@ $(document).ready(function() {
 	function showQuote() {
 	    	$.ajax({
 				type: "GET",
-				url: "http://apis.baidu.com/txapi/dictum/dictum",
+				url: "https://apis.baidu.com/txapi/dictum/dictum",
 				beforeSend: function(request) {
 					request.setRequestHeader("apikey","488c586c7bc2e5794aecf0ba4fe4d66b");
 				},
