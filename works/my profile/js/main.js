@@ -86,8 +86,7 @@ window.onload = function() {
 				//轮播图
 				var btnL = document.querySelector(".btn-l"),
 					btnR = document.querySelector(".btn-r"),
-					imgList = document.querySelector(".img-container").getElementsByTagName("ul")[0],
-					imgClone = clone(imgList.getElementsByTagName("li"));
+					imgList = document.querySelector(".img-container").getElementsByTagName("ul")[0];
 				var oDot = document.querySelector(".dot").getElementsByTagName("li");
 				var imgWid = imgList.getElementsByTagName("li")[0].offsetWidth;
 				console.log(imgWid);
