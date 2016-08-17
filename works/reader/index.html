@@ -434,7 +434,7 @@
 					});
 				}
 				var getCurChapterContent = function(chapter_id, callback) {
-					$.getJSON('data/data' + chapter_id + '.json', function(data) {
+					$.getJSON('https:/bowiego.github.io/works/reader/data/data' + chapter_id + '.json', function(data) {
 						if(data.result == 0) {
 							var url = data.jsonp;
 							Util.getJSONP(url, function(data){
