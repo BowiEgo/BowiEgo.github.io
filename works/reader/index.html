@@ -427,7 +427,7 @@
 					});
 				}
 				var getFictionInfo = function(callback) {
-					$.getJSON('data/chapter.json', function(data){
+					$.getJSON('https:/bowiego.github.io/works/reader/data/chapter.json', function(data){
 						//todo 获得章节信息之后的回调
 						ChapterTotal = data.chapters.length;
 						callback && callback();
