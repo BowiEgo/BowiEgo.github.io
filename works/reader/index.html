@@ -427,14 +427,14 @@
 					});
 				}
 				var getFictionInfo = function(callback) {
-					$.get('data/chapter.json', function(data){
+					$.getJSON('data/chapter.json', function(data){
 						//todo 获得章节信息之后的回调
 						ChapterTotal = data.chapters.length;
 						callback && callback();
 					}, 'json');
 				}
 				var getCurChapterContent = function(chapter_id, callback) {
-					$.get('data/data' + chapter_id + '.json', function(data) {
+					$.getJSON('data/data' + chapter_id + '.json', function(data) {
 						if(data.result == 0) {
 							var url = data.jsonp;
 							Util.getJSONP(url, function(data){
