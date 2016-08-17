@@ -427,16 +427,16 @@
 					});
 				}
 				var getFictionInfo = function(callback) {
-					$.getJSON('https:/bowiego.github.io/works/reader/data/chapter.json', function(data){
+					$.get('data/chapter.json', function(data){
 						//todo 获得章节信息之后的回调
 						ChapterTotal = data.chapters.length;
 						callback && callback();
-					});
+					}, 'json');
 				}
 				var getCurChapterContent = function(chapter_id, callback) {
-					$.getJSON('https:/bowiego.github.io/works/reader/data/data' + chapter_id + '.json', function(data) {
+					$.get('data/data' + chapter_id + '.json', function(data) {
 						if(data.result == 0) {
-							var url = data.jsonp;
+							var url = 'https://' + data.jsonp;
 							Util.getJSONP(url, function(data){
 								callback && callback(data);
 							});
