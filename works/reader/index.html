@@ -414,6 +414,9 @@
 			function RenderModel() {
 				//todo 实现和阅读器相关的数据交互方法
 				var Chapter_id = chapterSave;  //获得localstorage下的chapter_id
+				if(!Chapter_id) {
+					Chapter_id = 1;
+				}
 				var ChapterTotal;
 				var init = function(UIcallback) {
 					getFictionInfo(function(){
