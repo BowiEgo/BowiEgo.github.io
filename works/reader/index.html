@@ -431,7 +431,7 @@
 						//todo 获得章节信息之后的回调
 						ChapterTotal = data.chapters.length;
 						callback && callback();
-					}, 'json');
+					});
 				}
 				var getCurChapterContent = function(chapter_id, callback) {
 					$.getJSON('data/data' + chapter_id + '.json', function(data) {
