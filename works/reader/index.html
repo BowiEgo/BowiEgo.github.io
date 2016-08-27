@@ -337,21 +337,16 @@
 					return localStorage.setItem(prefix + key, val);
 				}
 				var getJSONP = function(url, callback) {
-					// return $.jsonp({
-					// 	url: url,
-					// 	cache: true,
-					// 	callback: 'duokan_fiction_chapter',
-					// 	success: function(result) {
-					// 		var data = $.base64.decode(result);
-					// 		var json = decodeURIComponent(escape(data));
-					// 		callback(json);
-					// 	}
-					// });
-					$.getJSON(url, function(result) {
-						var data = $.base64.decode(result);
-						var json = decodeURIComponent(escape(data));
-						callback(json);
-					})
+					return $.jsonp({
+						url: url,
+						cache: true,
+						callback: 'duokan_fiction_chapter',
+						success: function(result) {
+							var data = $.base64.decode(result);
+							var json = decodeURIComponent(escape(data));
+							callback(json);
+						}
+					});
 				}
 				return {
 					getJSONP: getJSONP,
