@@ -27,7 +27,7 @@ var H5ComponentFriend = function(name, cfg) {
 	$.ajax({
 		type: "GET",
 		async:false,
-		url: 'http://apis.baidu.com/txapi/xingzuo/xingzuo?me='+consNameCN+'&he='+qFriendNameCN+'',
+		url: 'https://apis.baidu.com/txapi/xingzuo/xingzuo?me='+consNameCN+'&he='+qFriendNameCN+'',
 		beforeSend: function(request) {
 			request.setRequestHeader("apikey","488c586c7bc2e5794aecf0ba4fe4d66b");
 		},
