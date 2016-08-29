@@ -51,13 +51,13 @@ var H5ComponentTodayBrief = function(name, cfg) {
 	var nowDateText = nowYear + '年' + nowMonth + '月' + nowDate + '日';
 
 	addParagraph('date', '今天是：', nowDateText);
-	addParagraph('sumRate', '综合指数：', data['today']['all']);
+	// addParagraph('sumRate', '综合指数：', data['today']['all']);
 	addParagraph('luckyColor', '幸运色：', data['today']['color']);
 	addParagraph('luckyNum', '幸运数字：', data['today']['number']);
-	addParagraph('healthRate', '健康指数：', data['today']['health']);
-	addParagraph('love', '爱情指数：', data['today']['love']);
-	addParagraph('money', '财运指数：', data['today']['money']);
-	addParagraph('work', '工作指数：', data['today']['work']);
+	// addParagraph('healthRate', '健康指数：', data['today']['health']);
+	// addParagraph('love', '爱情指数：', data['today']['love']);
+	// addParagraph('money', '财运指数：', data['today']['money']);
+	// addParagraph('work', '工作指数：', data['today']['work']);
 	addParagraph('summary', '总体运势：', data['today']['summary']);
 
 	contain.find('.tab').css('color', colorArr[consName]);

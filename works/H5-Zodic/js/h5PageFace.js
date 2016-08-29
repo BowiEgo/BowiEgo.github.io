@@ -1,6 +1,6 @@
 //基本封面对象
 
-var H5PageFace = function(name) {
+var H5PageFace = function(consName) {
 	
 	this.el = $('<div class="section h5_page h5_page_face h5_page_face_'+name+'"></div>');
 
@@ -25,10 +25,9 @@ var H5PageFace = function(name) {
 			return this;
 		}
 
-
 	this.addComponent('name', {
   	  	type: 'base',
-  	  	text: '水瓶座',
+  	  	text: consArr[consName],
   	  	width: 116,
   	  	height: 365,
   	  	css: {
@@ -67,7 +66,7 @@ var H5PageFace = function(name) {
   	  })
   	  .addComponent('nameEn', {
   	  	type: 'base',
-  	  	text: 'Aquarius',
+  	  	text: ucfirst(consName),
   	  	height: 56,
   	  	css: {
   	  		top: 164,
@@ -98,7 +97,7 @@ var H5PageFace = function(name) {
   	  		left: 50,
   	  		opacity: 0
   	  	},
-  	  	bg: '../imgs/stars/aquarius_star.png',
+  	  	bg: '../imgs/stars/'+consName+'_star.png',
   	  	animateIn: {
   	  		opacity: 1
   	  	},

@@ -1,9 +1,6 @@
 //基本今日运势简述页面
 
 var H5PageTodayBrief = function(consName) {
-	var nameArr = {'aquarius': '水瓶座'};
-	var dateArr = {'aquarius': '1.20-2.18'};
-	var colorArr = {'aquarius': '#41b0c4'};
 
   	this.el = $('<div class="section h5_page h5_page_today_brief h5_page_today_brief_'+name+'"></div>');
 
@@ -27,18 +24,26 @@ var H5PageTodayBrief = function(consName) {
 
 			return this;
 		}
+
     this.addComponent('logo', {
 	    	width: 130,
 	    	height: 130,
 	  	  	bg: '../imgs/logos/'+consName+'_logo.png',
 	  	  	css: {
 	  	  		top: 50,
+                opacity: 0,
 	  	  	},
+            animateIn: {
+                opacity: 1,
+            },
+            animateOut: {
+                opacity: 0,
+            },
 	    	center: true,
     	})
     	.addComponent('name', {
     		width: 180,
-    		text: nameArr[consName],
+    		text: consArr[consName],
     		css: {
     			top: 140,
     			color: '#fff',
@@ -46,7 +51,15 @@ var H5PageTodayBrief = function(consName) {
     			paddingLeft: 8,
     			textAlign: 'center',
     			letterSpacing: 10,
+                opacity: 0,
     		},
+            animateIn: {
+                opacity: 1,
+            },
+            animateOut: {
+                opacity: 0,
+            },
+            animateDelay: 200,
     		center: true,
     	})
     	.addComponent('date', {
@@ -59,7 +72,15 @@ var H5PageTodayBrief = function(consName) {
     			paddingLeft: 4,
     			textAlign: 'center',
     			letterSpacing: 4,
+                opacity: 0,
     		},
+            animateIn: {
+                opacity: 1,
+            },
+            animateOut: {
+                opacity: 0,
+            },
+            animateDelay: 400,
     		center: true,
     	})
     	.addComponent('title', {
@@ -75,16 +96,32 @@ var H5PageTodayBrief = function(consName) {
     			color: '#fff',
     			textAlign: 'center',
     			letterSpacing: 4,
+                opacity: 0,
     		},
+            animateIn: {
+                opacity: 1,
+            },
+            animateOut: {
+                opacity: 0,
+            },
+            animateDelay: 600,
     		center: true,
     	})
     	.addComponent('brief', {
     		type: 'today_brief',
     		consName: consName,
-    		width: 600,
+    		width: 700,
     		css: {
-    			top: 40+'%'
+    			top: 40+'%',
+                opacity: 0,
     		},
+            animateIn: {
+                opacity: 1,
+            },
+            animateOut: {
+                opacity: 0,
+            },
+            animateDelay: 800,
     		center: true,
     	})
 

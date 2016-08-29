@@ -1,4 +1,4 @@
-//基本图文组件对象
+	//基本图文组件对象
 
 var H5ComponentBase = function(name, cfg) {
 	var cfg = cfg || {};
@@ -25,15 +25,15 @@ var H5ComponentBase = function(name, cfg) {
 		setTimeout(function() {
 			component.addClass(cls+'_load')
 					 .removeClass(cls+'_leave');
-			cfg.animateIn && component.animate(cfg.animateIn, 1000);
+			cfg.animateIn && component.delay(cfg.animateDelay).animate(cfg.animateIn, 1000);
 			
 			return false;
-		},cfg.animateDelay)
+		});
 	});
 	component.on('onLeave', function() {
 		component.addClass(cls+'_leave')
 				 .removeClass(cls+'_load');
-		cfg.animateOut && component.animate(cfg.animateOut, 500);
+		cfg.animateOut && component.delay(cfg.animateDelay).animate(cfg.animateOut, 500);
 
 		return false;
 	})

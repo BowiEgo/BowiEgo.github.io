@@ -1,4 +1,7 @@
 /*内容管理对象*/
+var consArr = {'aries': '白羊座', 'taurus': '金牛座', 'gemini': '双子座', 'cancer': '巨蟹座', 'leo': '狮子座', 'virgo': '处女座', 'libra': '天秤座', 'scorpio': '天蝎座', 'sagittarius': '射手座', 'capricorn': '摩羯座', 'aquarius': '水瓶座', 'pisces': '双鱼座'};
+var colorArr = {'aquarius': '#41b0c4'};
+var dateArr = {'aries': '3.21-4.19', 'taurus': '4.20-5.20', 'gemini': '5.21-6.21', 'cancer': '6.22-7.22', 'leo': '7.23-8.22', 'virgo': '8.23-9.22', 'libra': '9.23-10.23', 'scorpio': '10.24-11.22', 'sagittarius': '11.23-12.21', 'capricorn': '12.22-1.19', 'aquarius': '1.20-2.18', 'pisces': '2.19-3.20'};
 
 var H5 = function() {
 
@@ -6,6 +9,7 @@ var H5 = function() {
 	this.el = $('<div class="h5" id="'+ this.id +'"></div>');
 	this.page = [];
 	$('body').append(this.el);
+
 
 	/*
 	 *	新增一个页面
@@ -15,10 +19,11 @@ var H5 = function() {
 	*/	
 	this.addPage = function(type, consName) {
 		var page;
+		consName = consName || '';
 
 		switch(type) {
 			case 'face':
-				page = new H5PageFace(name);
+				page = new H5PageFace(consName);
 				page.css('background', '#000021');
 				break;
 			case 'today_brief':
@@ -30,8 +35,12 @@ var H5 = function() {
 				page.css('backgroundImage', 'url(../imgs/today_chart_bg.png)');
 				break;
 			case 'today_friend':
-				page = new H5PageTodayFriend(consName);
+				page = new H5PageFriend(consName);
 				page.css('backgroundImage', 'url(../imgs/today_friend_bg.png)');
+				break;
+			case 'back':
+				page = new H5PageBack(type);
+				page.css('background', '#000021');
 				break;
 			// case 'week_brief':
 			// 	page = new H5PageWeekBiref(name);
@@ -76,7 +85,7 @@ var H5 = function() {
 	}
 
 	/*H5对象元素的初始化呈现*/
-	this.loader = function() {
+	this.loader = function(page) {
 		this.el.fullpage({
 			onLeave: function(index, nextIndex, direction) {
 				// console.log($(this).find('.h5_component').offset().top);
@@ -87,6 +96,9 @@ var H5 = function() {
 			}
 		});
 		// this.el.show();
+		if(page){
+			$.fn.fullpage.moveTo(page);
+		}
 	}
 
 
