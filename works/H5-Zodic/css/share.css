@@ -37,8 +37,7 @@ body {
   position: absolute;
   color: #f5ce67;
   text-transform: uppercase;
-  font-size: 22px;
-  text-align: center;
+  font-size: 32px;
   letter-spacing: 1px;
   transition: all 0.25s ease-in-out;
   top: 50%;
@@ -46,7 +45,7 @@ body {
   transform: translateX(-50%) translateY(-50%);
 }
 .share-btn .QRcode {
-  opacity: 0;
+	opacity: 0;
 }
 .share-btn .close {
   position: absolute;
@@ -64,20 +63,20 @@ body {
 }
 
 .share-btn .close span {
-  position: absolute;
-  top: 18px;
-  display: block;
-  width: 40px;
-  height: 4px;
-  background: #cfd2d9;
+	position: absolute;
+	top: 18px;
+	display: block;
+	width: 40px;
+	height: 4px;
+	background: #cfd2d9;
 }
 
 .share-btn .close span:nth-child(1) {
-  transform: rotate(-45deg);
+	transform: rotate(-45deg);
 }
 
 .share-btn .close span:nth-child(2) {
-  transform: rotate(45deg);
+	transform: rotate(45deg);
 }
 
 .share-btn .social {
@@ -129,7 +128,7 @@ body {
   color: #cfd2d9;
 }
 .share-btn.clicked .QRcode {
-  opacity: 1;
+	opacity: 1;
 }
 .share-btn.clicked .close {
   opacity: 1;
