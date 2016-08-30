@@ -71,7 +71,7 @@ var H5PageFace = function(consName) {
   	  	css: {
   	  		top: 164,
   	  		right: 20,
-          writingMode: 'vertical-lr',
+          writingMode: 'tb-rl',
   	  		color: '#fff',
   	  		fontSize: 28,
   	  		textOrientation: 'sideways',
