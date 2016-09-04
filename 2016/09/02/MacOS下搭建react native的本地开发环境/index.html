@@ -24,7 +24,7 @@ Read More…">
 xcode-select --install
  建议安装完后重启系统，保证本地变量的正确性。
 Read More…">
-<meta property="og:updated_time" content="2016-09-04T04:05:00.000Z">
+<meta property="og:updated_time" content="2016-09-04T06:03:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MacOS下搭建react native的本地开发环境">
 <meta name="twitter:description" content="一、准备工作 
@@ -39,7 +39,7 @@ Read More…">
 &lt;p&gt; 1、把系统升级到最新（-_-#，防止后面遇上突如其来的坑）。&lt;br&gt; 2、下载最新版的Xcode，Xcode是开发iOS app的必备武器。&lt;br&gt; 输入命令&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;xcode-select --install
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 建议安装完后重启系统，保证本地变量的正确性。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;/2016/09/2/MacOS下搭建react native的本地开发环境/&quot;&gt;Read More…&lt;/a&gt;&lt;br&gt;">
+&lt;p&gt;&lt;a href=&quot;/2016/09/02/MacOS下搭建react native的本地开发环境/&quot;&gt;Read More…&lt;/a&gt;&lt;br&gt;">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
   
@@ -217,7 +217,7 @@ Read More…">
 <p> 1、把系统升级到最新（-_-#，防止后面遇上突如其来的坑）。<br> 2、下载最新版的Xcode，Xcode是开发iOS app的必备武器。<br> 输入命令</p>
 <pre><code>xcode-select --install
 </code></pre><p> 建议安装完后重启系统，保证本地变量的正确性。</p>
-<p><a href="/2016/09/2/MacOS下搭建react native的本地开发环境/">Read More…</a><br><a id="more"></a><br> <strong> 二、安装工具 </strong></p>
+<p><a href="/2016/09/02/MacOS下搭建react native的本地开发环境/">Read More…</a><br><a id="more"></a><br> <strong> 二、安装工具 </strong></p>
 <p> 1、安装homebrew，Mac系统的包管理器，用于安装NodeJS和一些其他必需的工具软件(如后面的watchman和flow)。</p>
 <pre><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
 </code></pre><p> 2、安装Watchman和Flow。<br> Watchman是facebook的一个开源项目，它开源用来监视文件并且记录文件的改动情况。安装此工具可以提高开发时的性能（packager可以快速捕捉文件的变化从而实现实时刷新）。</p>
@@ -251,6 +251,34 @@ Read More…">
 </code></pre><p>再次检查一下Xcode是否安装，以及是否是最新版本：</p>
 <pre><code>xcode-select --install
 </code></pre><p><strong> 三、测试尝鲜 </strong></p>
+<p>安装脚手架，搭建初始项目结构：<br>安装最新版：</p>
+<pre><code>cnpm install -g react-native-cli
+</code></pre><p>安装特定版本：</p>
+<pre><code>cnpm install -g react-native-cli@0.1.10 -g
+</code></pre><p>查看版本号：</p>
+<pre><code>react-native -v
+</code></pre><p>在本地目录下初始化项目：</p>
+<pre><code>react-native init myFirstApp
+</code></pre><p>一般intalling阶段会很慢甚至不成功。这时候可以手动来进行项目的初始化。</p>
+<p>1.设置npm镜像</p>
+<pre><code>$ npm config set registry https://registry.npm.taobao.org
+$ npm config set disturl https://npm.taobao.org/dist
+</code></pre><p>2.创建项目目录</p>
+<pre><code>$ mkdir myFirstApp
+$ cd myFirstApp
+</code></pre><p>3.创建package.json，安装react-native依赖</p>
+<pre><code>$ npm init
+$ npm install --save react-native
+</code></pre><p>4.初始化react-native项目</p>
+<pre><code>$ node -e &quot;require(&apos;react-native/local-cli/cli&apos;).init(&apos;.&apos;,&apos;myFirstApp&apos;)&quot;
+</code></pre><p>运行app项目，2种方式：<br>（1）命令行运行</p>
+<pre><code>cd myFirstApp
+react-native run-ios    
+react-native run-android
+</code></pre><p>（2）Xcode下运行，输入打开当前目录</p>
+<pre><code>open .
+</code></pre><p>打开ios目录下的.xcodeproj文件，选择设备，点击运行按钮</p>
+<p>（模拟器快捷键：调整窗口大小  command＋1／2／3／4；模拟器的Home键  Command+Shift+H；调出双指拖动效果 Option+Shift；调出双指放大缩小效果  Option；切换横竖屏  Cmd+向左箭头/向右箭头。）<br>（模拟器置顶设置：Window-Stay in Front）</p>
 
 
             </div>
