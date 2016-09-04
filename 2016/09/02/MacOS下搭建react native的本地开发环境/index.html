@@ -3,29 +3,43 @@
 <head>
   <meta charset="utf-8">
   
-  <title>MacOS下用Hexo+Github搭建个人博客 | Bowiego的啵客儿 | 龟速建设ing</title>
+  <title>MacOS下搭建react native的本地开发环境 | Bowiego的啵客儿 | 龟速建设ing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="theme-color" content="#bee0dd">
   
   
-  <meta name="keywords" content="技术,笔记,博客">
-  <meta name="description" content="几个月前就有搭建个人博客的想法，当时一头雾水，用WordPress比较专业，但是要花钱买域名，虽然不贵，但是能省则省。。。于是纠结用jekyll还是Hexo来搭建。扫了一下各自提供的主题，还是Hexo的好看！一拍脑袋就是Hexo了。也就是当时建了我的第一个Github账号。。。可是，Hexo的使用需要依赖Git之外，还有node。那是还用的Windows,安装各种麻烦，遇到了一些问题也没解决。后来">
+  <meta name="keywords" content="技术,笔记">
+  <meta name="description" content="一、准备工作 
+ 1、把系统升级到最新（-_-#，防止后面遇上突如其来的坑）。 2、下载最新版的Xcode，Xcode是开发iOS app的必备武器。 输入命令
+xcode-select --install
+ 建议安装完后重启系统，保证本地变量的正确性。
+Read More…">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MacOS下用Hexo+Github搭建个人博客">
-<meta property="og:url" content="http://bowiego.github.io/2016/06/30/MacOS下用Hexo+Github搭建个人博客/index.html">
+<meta property="og:title" content="MacOS下搭建react native的本地开发环境">
+<meta property="og:url" content="http://bowiego.github.io/2016/09/02/MacOS下搭建react native的本地开发环境/index.html">
 <meta property="og:site_name" content="Bowiego的啵客儿">
-<meta property="og:description" content="几个月前就有搭建个人博客的想法，当时一头雾水，用WordPress比较专业，但是要花钱买域名，虽然不贵，但是能省则省。。。于是纠结用jekyll还是Hexo来搭建。扫了一下各自提供的主题，还是Hexo的好看！一拍脑袋就是Hexo了。也就是当时建了我的第一个Github账号。。。可是，Hexo的使用需要依赖Git之外，还有node。那是还用的Windows,安装各种麻烦，遇到了一些问题也没解决。后来">
-<meta property="og:updated_time" content="2016-07-01T13:07:53.000Z">
+<meta property="og:description" content="一、准备工作 
+ 1、把系统升级到最新（-_-#，防止后面遇上突如其来的坑）。 2、下载最新版的Xcode，Xcode是开发iOS app的必备武器。 输入命令
+xcode-select --install
+ 建议安装完后重启系统，保证本地变量的正确性。
+Read More…">
+<meta property="og:updated_time" content="2016-09-04T04:05:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MacOS下用Hexo+Github搭建个人博客">
-<meta name="twitter:description" content="几个月前就有搭建个人博客的想法，当时一头雾水，用WordPress比较专业，但是要花钱买域名，虽然不贵，但是能省则省。。。于是纠结用jekyll还是Hexo来搭建。扫了一下各自提供的主题，还是Hexo的好看！一拍脑袋就是Hexo了。也就是当时建了我的第一个Github账号。。。可是，Hexo的使用需要依赖Git之外，还有node。那是还用的Windows,安装各种麻烦，遇到了一些问题也没解决。后来">
+<meta name="twitter:title" content="MacOS下搭建react native的本地开发环境">
+<meta name="twitter:description" content="一、准备工作 
+ 1、把系统升级到最新（-_-#，防止后面遇上突如其来的坑）。 2、下载最新版的Xcode，Xcode是开发iOS app的必备武器。 输入命令
+xcode-select --install
+ 建议安装完后重启系统，保证本地变量的正确性。
+Read More…">
   
     <link rel="alternative" href="/atom.xml" title="Bowiego的啵客儿" type="application/atom+xml">
   
-  <meta name="summary" content="&lt;p&gt;几个月前就有搭建个人博客的想法，当时一头雾水，用WordPress比较专业，但是要花钱买域名，虽然不贵，但是能省则省。。。于是纠结用jekyll还是Hexo来搭建。扫了一下各自提供的主题，还是Hexo的好看！一拍脑袋就是Hexo了。也就是当时建了我的第一个Github账号。。。可是，Hexo的使用需要依赖Git之外，还有node。那是还用的Windows,安装各种麻烦，遇到了一些问题也没解决。后来为了抓紧学习前端基础也就暂时搁置了。现在有了MacOS安装各种依赖组件实在是太方便啦！！&lt;/p&gt;
-&lt;p&gt;废话不多说，下面就开始搭建的基本流程吧！&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;/2016/06/30/MacOS下用Hexo+Github搭建个人博客/&quot;&gt;Read More…&lt;/a&gt;&lt;br&gt;">
+  <meta name="summary" content="&lt;p&gt;&lt;strong&gt; 一、准备工作 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt; 1、把系统升级到最新（-_-#，防止后面遇上突如其来的坑）。&lt;br&gt; 2、下载最新版的Xcode，Xcode是开发iOS app的必备武器。&lt;br&gt; 输入命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;xcode-select --install
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 建议安装完后重启系统，保证本地变量的正确性。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/2016/09/2/MacOS下搭建react native的本地开发环境/&quot;&gt;Read More…&lt;/a&gt;&lt;br&gt;">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
   
@@ -105,7 +119,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">MacOS下用Hexo+Github搭建个人博客</div>
+        <div class="flex-col header-title ellipsis">MacOS下搭建react native的本地开发环境</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -126,11 +140,11 @@
 </header>
 <header class="content-header">
   <div class="container">
-    <h1 class="author">MacOS下用Hexo+Github搭建个人博客</h1>
+    <h1 class="author">MacOS下搭建react native的本地开发环境</h1>
     <h5 class="subtitle">
           
-            <time datetime="2016-06-30T05:30:53.000Z" itemprop="datePublished" class="page-time">
-  2016-06-30
+            <time datetime="2016-09-02T05:30:53.000Z" itemprop="datePublished" class="page-time">
+  2016-09-02
 </time>
 
  
@@ -140,11 +154,11 @@
 </header>
 
     <div class="container body-wrap">
-      <article id="新文章-MacOS下用Hexo+Github搭建个人博客" 
+      <article id="新文章-MacOS下搭建react native的本地开发环境" 
   class="article article-type-新文章" itemprop="blogPost">
     <div class="post-meat flex-row">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博客/">博客</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
 
     </div>
     <div class="post-body">
@@ -199,68 +213,56 @@
         <div class="post-main">
 
             <div class="post-content" id="post-content" itemprop="postContent">
-            <p>几个月前就有搭建个人博客的想法，当时一头雾水，用WordPress比较专业，但是要花钱买域名，虽然不贵，但是能省则省。。。于是纠结用jekyll还是Hexo来搭建。扫了一下各自提供的主题，还是Hexo的好看！一拍脑袋就是Hexo了。也就是当时建了我的第一个Github账号。。。可是，Hexo的使用需要依赖Git之外，还有node。那是还用的Windows,安装各种麻烦，遇到了一些问题也没解决。后来为了抓紧学习前端基础也就暂时搁置了。现在有了MacOS安装各种依赖组件实在是太方便啦！！</p>
-<p>废话不多说，下面就开始搭建的基本流程吧！</p>
-<p><a href="/2016/06/30/MacOS下用Hexo+Github搭建个人博客/">Read More…</a><br><a id="more"></a></p>
-<p><strong> 一、配置环境 </strong></p>
-<p>先看看Hexo的官方文档下的说明 <a href="https://hexo.io/docs/index.html" target="_blank" rel="external">https://hexo.io/docs/index.html</a><br>这时我们知道Hexo需要配置以下两个环境：Node.js  和  Git</p>
-<p>Node<br>到Node.js官网下载相应平台的最新版本，一路安装即可。</p>
-<p>Git(装有Xcode的话就自带Git喽)</p>
-<p><strong> 二、安装Hexo </strong></p>
-<p>先创建自己本地放置博客文件的目录，这里作为示范将文件夹起名为‘BLOG’，目录为 Documents/BLOG，</p>
-<p>终端输入命令切换阿里的node源(非必需，但是切换后安装速度大大增快)</p>
-<pre><code>$ npm --registry=https://registry.npm.taobao.org install koa
-$ npm --registry=https://registry.npm.taobao.org install cnpm -g
-</code></pre><p>终端打开本地’BLOG’目录</p>
-<pre><code>$ cd Documents/BLOG  (后面的目录太长的话可以直接将文件夹拖入终端窗口) 
-</code></pre><p>安装Hexo</p>
-<pre><code>$ sudo npm install -g hexo-cli 或 $ sudo cnpm install -g hexo-cli (切换为阿里源就将npm改为cnpm)
-</code></pre><p>初始化Hexo</p>
-<pre><code>$ hexo init
-</code></pre><p>这时候就能在BLOG本地目录下看到如下的目录结构</p>
-<pre><code>├── _config.yml
-├── package.json
-├── scaffolds
-├── source
-|   ├── _drafts
-|   └── _posts
-└── themes
-</code></pre><p>生成静态页面</p>
-<pre><code>$ hexo generate（hexo g也可以）
-</code></pre><p>本地启动<br>启动本地服务，进行文章预览调试，命令：</p>
-<pre><code>$ hexo server
-</code></pre><p>浏览器输入 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 就可以预览了！要关闭服务器就在终端按下‘ctrl+c’</p>
-<p><strong> 三、部署到Github </strong></p>
-<p>先配置Github，建立Respository，以 your_user_name.github.io 格式为名称创建仓库。<br>现在我们需要修改BLOG本地目录下的_config.yml文件，来建立关联。<br>翻到最下面，改成如下这样子的</p>
-<pre><code>deploy: 
-  type: git
-  repo: https://github.com/bowiego/bowiego.github.io.git  (这里改为你自己的Git目录)
-  branch: master
-</code></pre><p>然后执行命令：</p>
-<pre><code>$ npm install hexo-deployer-git --save
-</code></pre><p>这时候执行deploy来向Git推送本地文件</p>
-<pre><code>$ hexo deploy
-</code></pre><p>现在打开 <a href="http://bowiego.github.io/">http://bowiego.github.io/</a> (改为你自己的Git账户)就能发现Git Page已和本地文件同步。</p>
-<p>以后每次修改本地文件之后按以下步骤命令重新部署就可以了。<br>    $ hexo clean  (本地清除cache文件db.json并重新生成public文件夹)<br>    $ hexo generate (生成静态页面文件)<br>    $ hexo deploy (推送到Git)</p>
+            <p><strong> 一、准备工作 </strong></p>
+<p> 1、把系统升级到最新（-_-#，防止后面遇上突如其来的坑）。<br> 2、下载最新版的Xcode，Xcode是开发iOS app的必备武器。<br> 输入命令</p>
+<pre><code>xcode-select --install
+</code></pre><p> 建议安装完后重启系统，保证本地变量的正确性。</p>
+<p><a href="/2016/09/2/MacOS下搭建react native的本地开发环境/">Read More…</a><br><a id="more"></a><br> <strong> 二、安装工具 </strong></p>
+<p> 1、安装homebrew，Mac系统的包管理器，用于安装NodeJS和一些其他必需的工具软件(如后面的watchman和flow)。</p>
+<pre><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre><p> 2、安装Watchman和Flow。<br> Watchman是facebook的一个开源项目，它开源用来监视文件并且记录文件的改动情况。安装此工具可以提高开发时的性能（packager可以快速捕捉文件的变化从而实现实时刷新）。</p>
+<pre><code>brew install watchman
+</code></pre><p> Flow是JavaScript的静态类型检查器，用于找出JavaScript代码中的类型错误。(你在很多示例中看到的奇奇怪怪的冒号问号，以及方法参数中像类型一样的写法，都是属于这个flow工具的语法。这一语法并不属于ES标准，只是Facebook自家的代码规范。所以新手可以直接跳过（即不需要安装这一工具，也不建议去费力学习flow相关语法）)。</p>
+<pre><code>brew install flow
+</code></pre><p>建议不仅仅安装这两个，可以一次安装如下一些常用的工具。</p>
+<pre><code>brew install watchman flow git gcc pkg-config cairo libpng jpeg gitlib mongodb
+</code></pre><p>3、安装Nodejs，建议用nvm安装。nvm的详细使用方法可以参考<a href="https://github.com/creationix/nvm" target="_blank" rel="external">官方Git页</a>。<br>先安装nvm</p>
+<pre><code>curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.7/install.sh | bash
+</code></pre><p>然后就能通过nvm安装Nodejs</p>
+<pre><code>nvm install 4.2.3
+</code></pre><p>建议安装为本地默认版本</p>
+<pre><code>nvm alias default 4.2.3    
+</code></pre><p>如果遇到</p>
+<pre><code>-bash: nvm: command not found
+</code></pre><p>应该是本地的nvm路径变量在脚本中生效有问题。解决办法如下：</p>
+<pre><code>cd ~
+</code></pre><p>然后分别创建文件.bash_profile，.bashrc，.profile，.zshrc，如下面代码所示：</p>
+<pre><code>touch .bash_profile
+</code></pre><p>分别打开这几个文件，如：</p>
+<pre><code>open -e .bash_profile
+</code></pre><p>将如下代码粘贴到这几个文件中保存即可。<br>    export NVM_DIR=”$HOME/.nvm”<br>[ -s “$NVM_DIR/nvm.sh” ] &amp;&amp; . “$NVM_DIR/nvm.sh” # This loads nvm</p>
+<p>然后手动source .bash_profile或者电脑重启一下应该就可以用nvm了。</p>
+<p>检查node版本:</p>
+<pre><code>node -v
+</code></pre><p>检查npm版本:</p>
+<pre><code>npm -v
+</code></pre><p>安装淘宝源cnpm:</p>
+<pre><code>sudo npm install cnpm -g
+</code></pre><p>再次检查一下Xcode是否安装，以及是否是最新版本：</p>
+<pre><code>xcode-select --install
+</code></pre><p><strong> 三、测试尝鲜 </strong></p>
 
 
             </div>
             
 <nav class="post-nav">
   
-    <div class="waves-block waves-effect prev fl">
-      <a href="/2016/09/02/MacOS下搭建react native的本地开发环境/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">MacOS下搭建react native的本地开发环境</h4>
-      </a>
-    </div>
-  
 
   
     <div class="waves-block waves-effect next fr">
-      <a href="/2016/06/20/2016魔都电影节之行/" id="post-next" class="post-nav-link">
+      <a href="/2016/06/30/MacOS下用Hexo+Github搭建个人博客/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2016魔都电影节之行(草稿)</h4>
+        <h4 class="title">MacOS下用Hexo+Github搭建个人博客</h4>
       </a>
     </div>
   
@@ -271,7 +273,7 @@ $ npm --registry=https://registry.npm.taobao.org install cnpm -g
             
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="MacOS下用Hexo+Github搭建个人博客" data-title="MacOS下用Hexo+Github搭建个人博客" data-url="http://bowiego.github.io/2016/06/30/MacOS下用Hexo+Github搭建个人博客/index.html"></div>
+	<div class="ds-thread" data-thread-key="MacOS下搭建react native的本地开发环境" data-title="MacOS下搭建react native的本地开发环境" data-url="http://bowiego.github.io/2016/09/02/MacOS下搭建react native的本地开发环境/index.html"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -306,10 +308,10 @@ $ npm --registry=https://registry.npm.taobao.org install cnpm -g
 
 <script>
 var BLOG_SHARE = {
-    title: "MacOS下用Hexo+Github搭建个人博客",
+    title: "MacOS下搭建react native的本地开发环境",
     pic: "/img/logo.jpg",
     summary: document.getElementsByName('summary')[0].content,
-    url: "http://bowiego.github.io/2016/06/30/MacOS下用Hexo+Github搭建个人博客/index.html"
+    url: "http://bowiego.github.io/2016/09/02/MacOS下搭建react native的本地开发环境/index.html"
 };
 </script>
 <div class="global-share" id="global-share">

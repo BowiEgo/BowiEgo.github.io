@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://bowiego.github.io/"/>
-  <updated>2016-07-01T13:07:53.000Z</updated>
+  <updated>2016-09-04T04:05:00.000Z</updated>
   <id>http://bowiego.github.io/</id>
   
   <author>
@@ -14,6 +14,70 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MacOS下搭建react native的本地开发环境</title>
+    <link href="http://bowiego.github.io/2016/09/02/MacOS%E4%B8%8B%E6%90%AD%E5%BB%BAreact%20native%E7%9A%84%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <id>http://bowiego.github.io/2016/09/02/MacOS下搭建react native的本地开发环境/</id>
+    <published>2016-09-02T05:30:53.000Z</published>
+    <updated>2016-09-04T04:05:00.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt; 一、准备工作 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt; 1、把系统升级到最新（-_-#，防止后面遇上突如其来的坑）。&lt;br&gt; 2、下载最新版的Xcode，Xcode是开发iOS app的必备武器。&lt;br&gt; 输入命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;xcode-select --install
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 建议安装完后重启系统，保证本地变量的正确性。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/2016/09/2/MacOS下搭建react native的本地开发环境/&quot;&gt;Read More…&lt;/a&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt; &lt;strong&gt; 二、安装工具 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt; 1、安装homebrew，Mac系统的包管理器，用于安装NodeJS和一些其他必需的工具软件(如后面的watchman和flow)。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 2、安装Watchman和Flow。&lt;br&gt; Watchman是facebook的一个开源项目，它开源用来监视文件并且记录文件的改动情况。安装此工具可以提高开发时的性能（packager可以快速捕捉文件的变化从而实现实时刷新）。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew install watchman
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; Flow是JavaScript的静态类型检查器，用于找出JavaScript代码中的类型错误。(你在很多示例中看到的奇奇怪怪的冒号问号，以及方法参数中像类型一样的写法，都是属于这个flow工具的语法。这一语法并不属于ES标准，只是Facebook自家的代码规范。所以新手可以直接跳过（即不需要安装这一工具，也不建议去费力学习flow相关语法）)。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew install flow
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;建议不仅仅安装这两个，可以一次安装如下一些常用的工具。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew install watchman flow git gcc pkg-config cairo libpng jpeg gitlib mongodb
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3、安装Nodejs，建议用nvm安装。nvm的详细使用方法可以参考&lt;a href=&quot;https://github.com/creationix/nvm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方Git页&lt;/a&gt;。&lt;br&gt;先安装nvm&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.7/install.sh | bash
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后就能通过nvm安装Nodejs&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nvm install 4.2.3
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;建议安装为本地默认版本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nvm alias default 4.2.3    
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果遇到&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;-bash: nvm: command not found
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;应该是本地的nvm路径变量在脚本中生效有问题。解决办法如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd ~
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后分别创建文件.bash_profile，.bashrc，.profile，.zshrc，如下面代码所示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;touch .bash_profile
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;分别打开这几个文件，如：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;open -e .bash_profile
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;将如下代码粘贴到这几个文件中保存即可。&lt;br&gt;    export NVM_DIR=”$HOME/.nvm”&lt;br&gt;[ -s “$NVM_DIR/nvm.sh” ] &amp;amp;&amp;amp; . “$NVM_DIR/nvm.sh” # This loads nvm&lt;/p&gt;
+&lt;p&gt;然后手动source .bash_profile或者电脑重启一下应该就可以用nvm了。&lt;/p&gt;
+&lt;p&gt;检查node版本:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;node -v
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;检查npm版本:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm -v
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;安装淘宝源cnpm:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo npm install cnpm -g
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;再次检查一下Xcode是否安装，以及是否是最新版本：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;xcode-select --install
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt; 三、测试尝鲜 &lt;/strong&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; 一、准备工作 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt; 1、把系统升级到最新（-_-#，防止后面遇上突如其来的坑）。&lt;br&gt; 2、下载最新版的Xcode，Xcode是开发iOS app的必备武器。&lt;br&gt; 输入命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;xcode-select --install
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 建议安装完后重启系统，保证本地变量的正确性。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/2016/09/2/MacOS下搭建react native的本地开发环境/&quot;&gt;Read More…&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://bowiego.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="笔记" scheme="http://bowiego.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>MacOS下用Hexo+Github搭建个人博客</title>
@@ -89,7 +153,7 @@ $ npm --registry=https://registry.npm.taobao.org install cnpm -g
     <link href="http://bowiego.github.io/2016/06/20/2016%E9%AD%94%E9%83%BD%E7%94%B5%E5%BD%B1%E8%8A%82%E4%B9%8B%E8%A1%8C/"/>
     <id>http://bowiego.github.io/2016/06/20/2016魔都电影节之行/</id>
     <published>2016-06-20T04:58:36.000Z</published>
-    <updated>2016-07-01T13:06:22.000Z</updated>
+    <updated>2016-09-02T14:36:24.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;http://o9kkuebr4.bkt.clouddn.com/blog/siff2016201604011616211174.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;5月的时候，就开始在网上被2016年SIFF的相关信息刷屏，突然就想去凑个热闹，感觉也是自然而然萌生的念头。当年才喜欢上日影的时候，就听说过SIFF有很多日片放映，当时就特别向往一窥。不过由于个人时间安排问题，以及当时电影节的购票、赶场服务还不是很方便。这个冲动也就只能一直留在了脑海之中了。现在无锡到上海1个小时，还能见见老朋友，何乐而不为呢。&lt;/p&gt;
