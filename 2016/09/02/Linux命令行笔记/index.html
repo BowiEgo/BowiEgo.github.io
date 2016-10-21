@@ -11,18 +11,51 @@
   
   <meta name="keywords" content="技术,笔记">
   <meta name="description" content="一、网络相关 
- 1、查看某端口号被哪些程序占用。    sudo lsof -n -P| grep :8080 2、pkill命令可以按照进程名杀死进程。 语法     pkill(选项)(参数) 选项     -o：仅向找到的最小（起始）进程号发送信号； -n：仅向找到的最大（结束）进程号发送信号； -P：指定父进程号发送信号； -g：指定进程组； -t：指定开启进程的终端。 参数">
+ 1、查看某端口号被哪些程序占用。
+sudo lsof -n -P| grep :8080
+ 2、pkill命令可以按照进程名杀死进程。 语法
+pkill(选项)(参数) 
+ 选项 
+-o：仅向找到的最小（起始）进程号发送信号； 
+-n：仅向找到的最大（结束）进程号发送信号； 
+-P：指定父进程号发送信号； 
+-g：指定进程组； 
+-t：指定开启进程的终端。
+ 参数 
+进程名称：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux命令行笔记">
 <meta property="og:url" content="http://bowiego.github.io/2016/09/02/Linux命令行笔记/index.html">
 <meta property="og:site_name" content="Bowiego的啵客儿">
 <meta property="og:description" content="一、网络相关 
- 1、查看某端口号被哪些程序占用。    sudo lsof -n -P| grep :8080 2、pkill命令可以按照进程名杀死进程。 语法     pkill(选项)(参数) 选项     -o：仅向找到的最小（起始）进程号发送信号； -n：仅向找到的最大（结束）进程号发送信号； -P：指定父进程号发送信号； -g：指定进程组； -t：指定开启进程的终端。 参数">
-<meta property="og:updated_time" content="2016-10-21T01:19:32.000Z">
+ 1、查看某端口号被哪些程序占用。
+sudo lsof -n -P| grep :8080
+ 2、pkill命令可以按照进程名杀死进程。 语法
+pkill(选项)(参数) 
+ 选项 
+-o：仅向找到的最小（起始）进程号发送信号； 
+-n：仅向找到的最大（结束）进程号发送信号； 
+-P：指定父进程号发送信号； 
+-g：指定进程组； 
+-t：指定开启进程的终端。
+ 参数 
+进程名称：">
+<meta property="og:updated_time" content="2016-10-21T01:24:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux命令行笔记">
 <meta name="twitter:description" content="一、网络相关 
- 1、查看某端口号被哪些程序占用。    sudo lsof -n -P| grep :8080 2、pkill命令可以按照进程名杀死进程。 语法     pkill(选项)(参数) 选项     -o：仅向找到的最小（起始）进程号发送信号； -n：仅向找到的最大（结束）进程号发送信号； -P：指定父进程号发送信号； -g：指定进程组； -t：指定开启进程的终端。 参数">
+ 1、查看某端口号被哪些程序占用。
+sudo lsof -n -P| grep :8080
+ 2、pkill命令可以按照进程名杀死进程。 语法
+pkill(选项)(参数) 
+ 选项 
+-o：仅向找到的最小（起始）进程号发送信号； 
+-n：仅向找到的最大（结束）进程号发送信号； 
+-P：指定父进程号发送信号； 
+-g：指定进程组； 
+-t：指定开启进程的终端。
+ 参数 
+进程名称：">
   
     <link rel="alternative" href="/atom.xml" title="Bowiego的啵客儿" type="application/atom+xml">
   
@@ -201,8 +234,24 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <p><strong> 一、网络相关 </strong></p>
-<p> 1、查看某端口号被哪些程序占用。<br>    sudo lsof -n -P| grep :8080<br> 2、pkill命令可以按照进程名杀死进程。<br> <strong><em>语法</em></strong><br>     pkill(选项)(参数)<br> <strong><em>选项</em></strong><br>     -o：仅向找到的最小（起始）进程号发送信号； -n：仅向找到的最大（结束）进程号发送信号； -P：指定父进程号发送信号； -g：指定进程组； -t：指定开启进程的终端。<br> <strong><em>参数</em></strong><br>     进程名称：指定要查找的进程名称，同时也支持类似grep指令中的匹配模式。<br> <strong><em>实例</em></strong><br>     pgrep -l gaim<br>     2979 gaim<br>     pkill gaim</p>
-<pre><code>//杀死ngnix进程
+<p> 1、查看某端口号被哪些程序占用。</p>
+<pre><code>sudo lsof -n -P| grep :8080
+</code></pre><p> 2、pkill命令可以按照进程名杀死进程。<br> <strong><strong>语法</strong></strong></p>
+<pre><code>pkill(选项)(参数) 
+</code></pre><p> <strong><strong>选项</strong></strong> </p>
+<pre><code>-o：仅向找到的最小（起始）进程号发送信号； 
+-n：仅向找到的最大（结束）进程号发送信号； 
+-P：指定父进程号发送信号； 
+-g：指定进程组； 
+-t：指定开启进程的终端。
+</code></pre><p> <strong><strong>参数</strong></strong> </p>
+<pre><code>进程名称：指定要查找的进程名称，同时也支持类似grep指令中的匹配模式。
+</code></pre><p> <strong><strong>实例</strong></strong> </p>
+<pre><code>pgrep -l gaim 
+2979 gaim 
+pkill gaim
+
+//杀死ngnix进程
 pkill -9 nginx
 </code></pre><p>来自: <a href="http://man.linuxde.net/pkill" target="_blank" rel="external">http://man.linuxde.net/pkill</a></p>
 <p> <strong> 二、其它 </strong></p>
