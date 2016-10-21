@@ -133,6 +133,48 @@
       <ul class="post-list">
   
     <li class="post-list-item">
+        <article id="新文章-Linux命令行笔记" 
+  class="article article-type-新文章" itemprop="blogPost">
+     
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/09/02/Linux命令行笔记/">Linux命令行笔记</a>
+    </h3>
+  
+
+
+
+    <div class="post-meta">
+        <time datetime="2016-09-02T05:30:53.000Z" itemprop="datePublished" class="post-time">
+  2016-09-02
+</time>
+
+        
+
+ 
+    </div>
+    
+    <div class="post-content" id="post-content" itemprop="postContent" >
+    
+        <p><strong> 一、网络相关 </strong></p>
+<p> 1、查看某端口号被哪些程序占用。<br>    sudo lsof -n -P| grep :8080<br> 2、pkill命令可以按照进程名杀死进程。<br> <strong><em>语法</em></strong><br>     pkill(选项)(参数)<br> <strong><em>选项</em></strong><br>     -o：仅向找到的最小（起始）进程号发送信号； -n：仅向找到的最大（结束）进程号发送信号； -P：指定父进程号发送信号； -g：指定进程组； -t：指定开启进程的终端。<br> <strong><em>参数</em></strong><br>     进程名称：指定要查找的进程名称，同时也支持类似grep指令中的匹配模式。<br> <strong><em>实例</em></strong><br>     pgrep -l gaim<br>     2979 gaim<br>     pkill gaim</p>
+<pre><code>//杀死ngnix进程
+pkill -9 nginx
+</code></pre><p>来自: <a href="http://man.linuxde.net/pkill" target="_blank" rel="external">http://man.linuxde.net/pkill</a></p>
+<p> <strong> 二、其它 </strong></p>
+<p> 1、blablabla</p>
+
+    
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+
+</article>
+    </li>
+  
+    <li class="post-list-item">
         <article id="新文章-MacOS下搭建react native的本地开发环境" 
   class="article article-type-新文章" itemprop="blogPost">
      
