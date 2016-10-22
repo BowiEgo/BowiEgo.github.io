@@ -1,0 +1,7 @@
+/* h5的全局样式 */
+
+.h5_page_face .h5_component_nameEn {
+	-webkit-writing-mode: vertical-rl;
+	writing-mode: vertical-rl;
+}
+
