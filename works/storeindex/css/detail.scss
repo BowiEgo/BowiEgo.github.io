@@ -1,4 +1,5 @@
 @import 'common.scss';
+@import 'preview.css';
 @import 'product.css';
 
 .fade {
@@ -9,136 +10,21 @@
     margin: 0 auto;
 }
 
-.ad {
-    .ad-prime {
-        img {
-            width: 100%;
-        }
-    }
-    .ad-sub {
-        margin: 10px 0;
-        img {
-            width: 100%;
-        }
-    }
-}
-
-.seconds-kill {
-    .nav {
-        background: #a2a2a2;
-        .today {
-            width: 30%;
+.ad-prime {
+    .carousel-inner {
+        .item {
             a {
-                text-align: right;
-                background: $mainred;
-                h3 {
-                    margin: 0;
-                    line-height: 40px;  
-                    padding-right: 20px;
-                }
-                p {
-                    text-align: right;
-                    line-height: 20px;
-                    font-size: 1vw;
-                    padding-right: 20px;
-                }
-            }
-            a:hover {
-                background: $mainred;
-            }
-            @media screen and (max-width: 788px) {
-                a {
-                    h3 {
-                        font-size: 18px;
-                    }
-                }
-            }
-            @media screen and (max-width: 414px) {
-                a {
-                    h3 {
-                        font-size: 12px;
-                    }
-                }
-            }
-        }
-        .today.active {
-            width: 30%;
-            // background: $mainred;
-            a {
-                background: $mainred;
-            }
-        }
-        li {
-            width: 12%;
-            // height: 60px;
-            line-height: 40px;
-            padding: 0;
-            border: none;
-            margin: 0;
-            @include transition-fast;
-            a {
-                margin: 0;
-                height: 60px;
-                padding: 0 !important;
-                text-align: center;
-                font-size: 3em;
-                color: #fff;
-                border: none;
-                @media screen and (max-width: 768px) {
-                    p {
-                        font-size: 0.5em;
-                    }
-                }
-                p {
-                    display: block;
-                    width: 100%;
-                    height: 30px;
-                    text-align: center;
-                    line-height: 30px;
-                    margin: 0;
-                }
-            }
-            a:hover {
-                color: #fff;
-                background: #7b7b7b;
-            }
-        }
-        li.active {
-            width: 22%;
-            background: #232323;
-            a {
-                font-weight: 400;
-                color: #fff;
-                background: #232323;
-            }
-        }
-    }
-    .tab-content {
-        .tab-pane {
-            // @include transition;
-            .carousel-indicators {
-                left: 66%;
-                text-align: right;
-                li {
-                    width: 20px;
-                    height: 20px;
-                    margin: 0;
-                    padding-right: 6px;
-                    line-height: 20px;
-                    border: none;
-                    color: #e91e63;
-                }
-                li.active {
-                    color: #fff;
-                    background: #e91e63;
-                }
-            }
-            .carousel-inner {
                 img {
                     width: 100%;
                 }
             }
         }
+    }
+}
+.ad-sub {
+    margin: 10px 0;
+    img {
+        width: 100%;
     }
 }
 
@@ -148,7 +34,7 @@
         background: #000;
         h2 {
             display: inline-block;
-            color: $mainred;
+            color: red;
         }
         h3 {
             display: inline-block;
@@ -211,9 +97,11 @@
 }
 
 .compound-container {
+    // position: absolute;
     background: #f4f4f4;
-    
+    // width: 100%;
     .product-floor {
+        position: relative;
         .title {
             position: relative;
             text-align: center;
@@ -275,7 +163,7 @@
         .product-container {
             @include product;
             .item {
-                width: 31.6%;
+                width: 23.4%;
                 .thumbnail {
                     height: 255px;
                 }
@@ -317,7 +205,36 @@
 
         }
     }
-  
+    .ad-banner {
+        margin: 20px 0;
+        .row {
+            .item+.item {
+            }
+            .item {
+                a {
+                    @media screen and (min-width: 768px) {
+                        img {
+                            height: 102px;
+                        }
+                    }
+                    @media screen and (min-width: 992px) {
+                        img {
+                            height: 110px;
+                        }
+                    }
+                    @media screen and (min-width: 1200px) { 
+                        img {
+                            height: 130px;
+                        }
+                    }
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
     .recommend-band {
         margin: 20px 0;
         @include lory;
@@ -355,6 +272,169 @@
     }
 }
 
+.sidebar .product-container {
+    // position: absolute;
+    @include product;
+    padding: 0;
+    .item {
+        .desc {
+            p {
+                font-size: 12px;
+                line-height: 12px;
+            }
+        }
+        .cost {
+            p {
+                font-size: 14px !important;
+            }
+            .price-origin:before {
+                top: 16px;
+            }
+        }
+    }
+}
 
+.sidebar .nav-second {
+    margin-top: -20px;
+    .hot-sale {
+        background: #6d6d6d;
+        a {
+            color: #fff;
+        }
+    }
+}
+
+.crumbs {
+    height: 50px;
+    padding: 10px 20px;
+    background: #fff;
+    border: 4px solid #ccc;
+    // box-sizing: border-box;
+    span {
+        font-size: 16px;
+    }
+}
+
+#product-select {
+    .preview {
+
+    }
+    .select {
+        .item {
+            p {
+                font-size: 16px;
+                display: inline-block;
+            }
+        }
+        .item-name {
+        }
+        .item-price {
+           
+        }
+        .item-count {
+            
+        }
+        .item-num {
+            .btn {
+                display: inline-block;
+                padding: 0;
+                width: 30px;
+                height: 30px;
+                border: none;
+                text-aling: center;
+            }
+            .num {
+                display: inline-block;
+                margin: 0;
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                background: #fff;
+            }
+        }
+        .item-spec {
+            span {
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                background: #fff;
+                text-align: center;
+                cursor: pointer;
+            }
+        }
+        .item-selected {
+        }
+        .btn-buy {
+            margin-right: 40px;
+            width: 160px;
+        }
+    }
+}
+
+.detail-tab {
+    li {
+        padding: 0;
+        a {
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+            background: #ccc;
+            text-align: center;
+            color: #000;
+        }
+    }
+    li.active {
+        a {
+            background: #d9534f;
+            color: #fff;
+        }
+        a:hover {
+            color: #fff;
+        }
+    }
+    li:hover {
+        a {
+            color: #fff;
+            background: #d9534f;
+        }
+        a:hover {
+            color: #fff;
+        }
+    }
+}
+
+#product-detail {
+    img {
+        width: 100%;
+    }
+}
+
+#page_top {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: -50px;
+    z-index: 1000;
+    -moz-transition: right 0.4s ease,bottom 0.4s ease;
+    -o-transition: right 0.4s ease,bottom 0.4s ease;
+    -webkit-transition: right 0.4s ease,bottom 0.4s ease;
+    transition: right 0.4s ease,bottom 0.4s ease;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+#page_top.scroll {
+    right: 10px;
+    -moz-transition: right 0.4s ease,bottom 0.4s ease;
+    -o-transition: right 0.4s ease,bottom 0.4s ease;
+    -webkit-transition: right 0.4s ease,bottom 0.4s ease;
+    transition: right 0.4s ease,bottom 0.4s ease;
+}
 
 
