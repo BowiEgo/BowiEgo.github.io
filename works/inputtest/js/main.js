@@ -12,10 +12,21 @@
 //添加搜索按钮代码
 (function($){
     $('.search-but .but').click(function(){
-        $('#menu .search').toggleClass('active');
         if(!$('#menu .search').hasClass('active')) {
-            $('#menu .search .search-input').focus();
+            $('#menu .search').addClass('active');
+            $('#menu .search input').focus();
         }
+        else {
+            console.log(2);
+            // $('#menu .search .search-input').blur();
+            $('#menu .search').removeClass('active');
+        }
+
+        // $('#menu .search').toggleClass('active');
+        // if(!$('#menu .search').hasClass('active')) {
+        //     $('#menu .search .search-input').focus();
+        //     console.log(2);
+        // }
     });
     
     var ww = $(window).width();
