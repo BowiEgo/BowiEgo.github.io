@@ -264,7 +264,6 @@
         var loc = window.location.pathname;
 
         if($(window).width() < 992 && $(window).height() > 400 && loc.indexOf('brand') == -1 && loc.indexOf('branddetail') == -1) {
-            alert($(window).height());
             $('.nav-bottom').css('display', 'block');
         }
         else {
@@ -273,13 +272,13 @@
     }
 
     var IID = setInterval(function() {
-        if($('.nav-bottom').eq(0).offset().top < 300) {
+        if($('.nav-bottom').eq(0)[0].offsetTop < 300) {
             $('.nav-bottom').css('display', 'none');
         }
         else {
             $('.nav-bottom').css('display', 'block');
         }
-    },500);
+    },100);
 
     if($(window).width() >= 768) {
         clearInterval(IID);
