@@ -553,8 +553,15 @@ $mainblack: #1b0527;
             }
             .search-btn {
                 visibility: hidden;
-                font-size: 24px;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 40px;
                 z-index: 99;
+                i {
+                    width: 40px;
+                    height: 40px;
+                }
             }
         }
         .search.active {
