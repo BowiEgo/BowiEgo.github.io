@@ -273,10 +273,10 @@
 
     var IID = setInterval(function() {
         if($('.nav-bottom').eq(0)[0].offsetTop < 300) {
-            $('.nav-bottom').css('display', 'none');
+            $('.nav-bottom').css('visibility', 'hidden');
         }
         else {
-            $('.nav-bottom').css('display', 'block');
+            $('.nav-bottom').css('visibility', 'visible');
         }
     },100);
 
