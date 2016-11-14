@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://bowiego.github.io/"/>
-  <updated>2016-09-04T06:03:51.000Z</updated>
+  <updated>2016-10-21T01:24:06.000Z</updated>
   <id>http://bowiego.github.io/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux命令行笔记</title>
+    <link href="http://bowiego.github.io/2016/09/02/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AC%94%E8%AE%B0/"/>
+    <id>http://bowiego.github.io/2016/09/02/Linux命令行笔记/</id>
+    <published>2016-09-02T05:30:53.000Z</published>
+    <updated>2016-10-21T01:24:06.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt; 一、网络相关 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt; 1、查看某端口号被哪些程序占用。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo lsof -n -P| grep :8080
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 2、pkill命令可以按照进程名杀死进程。&lt;br&gt; &lt;strong&gt;&lt;strong&gt;语法&lt;/strong&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pkill(选项)(参数) 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;strong&gt;&lt;strong&gt;选项&lt;/strong&gt;&lt;/strong&gt; &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;-o：仅向找到的最小（起始）进程号发送信号； 
+-n：仅向找到的最大（结束）进程号发送信号； 
+-P：指定父进程号发送信号； 
+-g：指定进程组； 
+-t：指定开启进程的终端。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;strong&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/strong&gt; &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;进程名称：指定要查找的进程名称，同时也支持类似grep指令中的匹配模式。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;strong&gt;&lt;strong&gt;实例&lt;/strong&gt;&lt;/strong&gt; &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pgrep -l gaim 
+2979 gaim 
+pkill gaim
+
+//杀死ngnix进程
+pkill -9 nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;来自: &lt;a href=&quot;http://man.linuxde.net/pkill&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://man.linuxde.net/pkill&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; &lt;strong&gt; 二、其它 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt; 1、blablabla&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; 一、网络相关 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt; 1、查看某端口号被哪些程序占用。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo lsof -n -P| grep :8080
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 2、pkill命令可以按照进程名杀死进程。&lt;br&gt; 
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://bowiego.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="笔记" scheme="http://bowiego.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>MacOS下搭建react native的本地开发环境</title>
@@ -97,54 +145,6 @@ react-native run-android
 &lt;pre&gt;&lt;code&gt;xcode-select --install
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 建议安装完后重启系统，保证本地变量的正确性。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;/2016/09/02/MacOS下搭建react native的本地开发环境/&quot;&gt;Read More…&lt;/a&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="技术" scheme="http://bowiego.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="笔记" scheme="http://bowiego.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux命令行笔记</title>
-    <link href="http://bowiego.github.io/2016/09/02/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AC%94%E8%AE%B0/"/>
-    <id>http://bowiego.github.io/2016/09/02/Linux命令行笔记/</id>
-    <published>2016-09-02T05:30:53.000Z</published>
-    <updated>2016-10-21T01:24:06.000Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;strong&gt; 一、网络相关 &lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt; 1、查看某端口号被哪些程序占用。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo lsof -n -P| grep :8080
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 2、pkill命令可以按照进程名杀死进程。&lt;br&gt; &lt;strong&gt;&lt;strong&gt;语法&lt;/strong&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pkill(选项)(参数) 
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;strong&gt;&lt;strong&gt;选项&lt;/strong&gt;&lt;/strong&gt; &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;-o：仅向找到的最小（起始）进程号发送信号； 
--n：仅向找到的最大（结束）进程号发送信号； 
--P：指定父进程号发送信号； 
--g：指定进程组； 
--t：指定开启进程的终端。
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;strong&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/strong&gt; &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;进程名称：指定要查找的进程名称，同时也支持类似grep指令中的匹配模式。
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;strong&gt;&lt;strong&gt;实例&lt;/strong&gt;&lt;/strong&gt; &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pgrep -l gaim 
-2979 gaim 
-pkill gaim
-
-//杀死ngnix进程
-pkill -9 nginx
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;来自: &lt;a href=&quot;http://man.linuxde.net/pkill&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://man.linuxde.net/pkill&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt; &lt;strong&gt; 二、其它 &lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt; 1、blablabla&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt; 一、网络相关 &lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt; 1、查看某端口号被哪些程序占用。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo lsof -n -P| grep :8080
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 2、pkill命令可以按照进程名杀死进程。&lt;br&gt; 
     
     </summary>
     
