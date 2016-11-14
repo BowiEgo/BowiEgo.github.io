@@ -12,21 +12,21 @@
 //添加搜索按钮代码
 (function($){
     $('.search-but .but').click(function(){
-        if(!$('#menu .search').hasClass('active')) {
-            $('#menu .search').addClass('active');
-            $('#menu .search input').focus();
-        }
-        else {
-            console.log(2);
-            // $('#menu .search .search-input').blur();
-            $('#menu .search').removeClass('active');
-        }
-
-        // $('#menu .search').toggleClass('active');
         // if(!$('#menu .search').hasClass('active')) {
-        //     $('#menu .search .search-input').focus();
-        //     console.log(2);
+        //     $('#menu .search').addClass('active');
+        //     $('#menu .search input').focus();
         // }
+        // else {
+        //     console.log(2);
+        //     // $('#menu .search .search-input').blur();
+        //     $('#menu .search').removeClass('active');
+        // }
+
+        $('#menu .search').toggleClass('active');
+        if(!$('#menu .search').hasClass('active')) {
+            $('#menu .search .search-input').focus();
+            console.log(2);
+        }
     });
     
     var ww = $(window).width();
@@ -270,6 +270,19 @@
         else {
             $('.nav-bottom').css('display', 'none');
         }
+    }
+
+    var IID = setInterval(function() {
+        if($('.nav-bottom').eq(0).offset().top < 300) {
+            $('.nav-bottom').css('display', 'none');
+        }
+        else {
+            $('.nav-bottom').css('display', 'block');
+        }
+    },500);
+
+    if($(window).width() >= 768) {
+        clearInterval(IID);
     }
 
     $(window).resize(function() {
