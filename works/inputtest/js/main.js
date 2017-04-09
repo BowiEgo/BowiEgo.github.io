@@ -17,7 +17,6 @@
         //     $('#menu .search input').focus();
         // }
         // else {
-        //     console.log(2);
         //     // $('#menu .search .search-input').blur();
         //     $('#menu .search').removeClass('active');
         // }
@@ -25,7 +24,6 @@
         $('#menu .search').toggleClass('active');
         if(!$('#menu .search').hasClass('active')) {
             $('#menu .search .search-input').focus();
-            console.log(2);
         }
     });
     
