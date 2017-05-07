@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>BPRefresh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <link rel="stylesheet" href="scss/BPRefresh.css">
+  <link rel="stylesheet" href="scss/style.css">
+</head>
+
+<body>
+    <div class="phone">
+        <div id="demo" class="demo">
+            <div class="BPRefresh__content">
+                <div class="demo__el"></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+    <script type="text/javascript">
+        new BPRefresh({
+            el: 'demo',
+            loading: 'img/loading.svg',
+        }, function(reset) {
+            var tempEl = document.createElement('div');
+            tempEl.className = 'demo__el';
+            document.getElementsByClassName('BPRefresh__content')[0].appendChild(tempEl);
+            reset();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html, body {
+	font-size: 62.5%;
+	
+	@media (max-width: 320px) {
+		font-size: 45%;
+	}
+}
+body {
+	background: #393A56;
+}
+
+$gapVert: 4rem;
+
+$resetAT: 0.5s;
+$releaseStep1AT: 0.5s;
+$releaseStep2AT: 0.3s;
+
+.BPRefresh {
+	position: relative;
+	height: 100%;
+
+	&.reset {
+		transition: transform $resetAT;
+		transform: translate3d(0,0,0) !important;
+	}
+
+	&.waiting {
+		transition: transform $releaseStep2AT;
+		transform: translate3d(0,$gapVert,0) !important;
+	}
+	
+	@media (max-width: 320px) {
+		height: 500px;
+		padding: 0;
+	}
+
+	&__svg-bg {
+		overflow: visible;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		
+		@media (max-width: 320px) {
+			height: 390px;
+		}
+
+		&__path {
+			fill: #FAFAFB;
+			stroke: transparent;
+		}
+	}
+
+	&__loading {
+		width: $gapVert;
+		height: $gapVert;
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, -$gapVert);
+	}
+
+	&__content {
+		padding-top: 60px;
+		&.reset {
+			transition: transform $resetAT;
+			transform: translate3d(0,0,0) !important;
+		}
+	}
+}
+
+@keyframes rotating {
+	to {
+		transform: rotate(360deg);
+	}
+}

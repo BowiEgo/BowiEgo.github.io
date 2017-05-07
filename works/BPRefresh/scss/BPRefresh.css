@@ -1,0 +1,57 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  font-size: 62.5%; }
+  @media (max-width: 320px) {
+    html, body {
+      font-size: 45%; } }
+
+body {
+  background: #393A56; }
+
+.BPRefresh {
+  position: relative;
+  height: 100%; }
+  .BPRefresh.reset {
+    transition: transform 0.5s;
+    transform: translate3d(0, 0, 0) !important; }
+  .BPRefresh.waiting {
+    transition: transform 0.3s;
+    transform: translate3d(0, 4rem, 0) !important; }
+  @media (max-width: 320px) {
+    .BPRefresh {
+      height: 500px;
+      padding: 0; } }
+  .BPRefresh__svg-bg {
+    overflow: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; }
+    @media (max-width: 320px) {
+      .BPRefresh__svg-bg {
+        height: 390px; } }
+    .BPRefresh__svg-bg__path {
+      fill: #FAFAFB;
+      stroke: transparent; }
+  .BPRefresh__loading {
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -4rem); }
+  .BPRefresh__content {
+    padding-top: 60px; }
+    .BPRefresh__content.reset {
+      transition: transform 0.5s;
+      transform: translate3d(0, 0, 0) !important; }
+
+@keyframes rotating {
+  to {
+    transform: rotate(360deg); } }
+
+/*# sourceMappingURL=BPRefresh.css.map */

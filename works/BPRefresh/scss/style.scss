@@ -1,0 +1,57 @@
+html {
+    font-size: 4.375vw;
+}
+
+.phone {
+    position: relative;
+    width: 100%;
+    // height: $phoneH;
+    // padding: $padVert - $phoneBorderW $padSide - $phoneBorderW;
+    margin: 3rem auto 3rem;
+    background: #00BCD4;
+    // border-radius: 5.6rem;
+    // border: $phoneBorderW solid #B5B5B5;
+    overflow: hidden;
+}
+
+.demo {
+    &__el {
+        position: relative;
+        height: 7rem;
+        margin-bottom: 2rem;
+        background: #ffffff;
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: 1.5rem;
+            top: 1.5rem;
+            width: 4rem;
+            height: 4rem;
+            border-radius: .3rem;
+            background: #5A534F;
+            
+            @media (max-width: 320px) {
+                left: 4.5rem;
+            }
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 8rem;
+            top: 1.5rem;
+            width: 14rem;
+            height: .6rem;
+            border-radius: 0.7rem;
+            background: #5A534F;
+            color: #5A534F;
+            box-shadow: 0 1.4rem, 0 3rem;
+            
+            @media (max-width: 320px) {
+                left: 16rem;
+                width: 24rem;
+            }
+        }
+    }
+}
