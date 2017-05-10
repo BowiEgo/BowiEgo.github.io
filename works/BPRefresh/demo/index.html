@@ -9,17 +9,16 @@
 </head>
 
 <body>
-    <div class="phone">
-        <div id="demo" class="demo">
-            <div class="BPRefresh__content">
-                <div class="demo__el"></div>
-            </div>
+    <div id="demo" class="demo">
+        <div class="BPRefresh__content">
+            <div class="demo__el"></div>
         </div>
     </div>
     <script src="js/index.js"></script>
     <script type="text/javascript">
         new BPRefresh({
             el: 'demo',
+            pullBgColor: 'rgba(0,0,0,0.3)',
             loading: 'img/loading.svg',
         }, function(reset) {
             var tempEl = document.createElement('div');
