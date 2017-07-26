@@ -1,0 +1,360 @@
+@import 'common.scss';
+@import 'product.css';
+
+.fade {
+    opacity: 0.8;
+}
+
+#wrap {
+    margin: 0 auto;
+}
+
+.ad {
+    .ad-prime {
+        img {
+            width: 100%;
+        }
+    }
+    .ad-sub {
+        margin: 10px 0;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.seconds-kill {
+    .nav {
+        background: #a2a2a2;
+        .today {
+            width: 30%;
+            a {
+                text-align: right;
+                background: $mainred;
+                h3 {
+                    margin: 0;
+                    line-height: 40px;  
+                    padding-right: 20px;
+                }
+                p {
+                    text-align: right;
+                    line-height: 20px;
+                    font-size: 1vw;
+                    padding-right: 20px;
+                }
+            }
+            a:hover {
+                background: $mainred;
+            }
+            @media screen and (max-width: 788px) {
+                a {
+                    h3 {
+                        font-size: 18px;
+                    }
+                }
+            }
+            @media screen and (max-width: 414px) {
+                a {
+                    h3 {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+        .today.active {
+            width: 30%;
+            // background: $mainred;
+            a {
+                background: $mainred;
+            }
+        }
+        li {
+            width: 12%;
+            // height: 60px;
+            line-height: 40px;
+            padding: 0;
+            border: none;
+            margin: 0;
+            @include transition-fast;
+            a {
+                margin: 0;
+                height: 60px;
+                padding: 0 !important;
+                text-align: center;
+                font-size: 3em;
+                color: #fff;
+                border: none;
+                @media screen and (max-width: 768px) {
+                    p {
+                        font-size: 0.5em;
+                    }
+                }
+                p {
+                    display: block;
+                    width: 100%;
+                    height: 30px;
+                    text-align: center;
+                    line-height: 30px;
+                    margin: 0;
+                }
+            }
+            a:hover {
+                color: #fff;
+                background: #7b7b7b;
+            }
+        }
+        li.active {
+            width: 22%;
+            background: #232323;
+            a {
+                font-weight: 400;
+                color: #fff;
+                background: #232323;
+            }
+        }
+    }
+    .tab-content {
+        .tab-pane {
+            // @include transition;
+            .carousel-indicators {
+                left: 66%;
+                text-align: right;
+                li {
+                    width: 20px;
+                    height: 20px;
+                    margin: 0;
+                    padding-right: 6px;
+                    line-height: 20px;
+                    border: none;
+                    color: #e91e63;
+                }
+                li.active {
+                    color: #fff;
+                    background: #e91e63;
+                }
+            }
+            .carousel-inner {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.new-product {
+    .head {
+        @include banner-title;
+        background: #000;
+        h2 {
+            display: inline-block;
+            color: $mainred;
+        }
+        h3 {
+            display: inline-block;
+            }
+    }
+
+    .product-container {
+        @include product;
+        .item {
+            width: 23.4%;
+            .thumbnail {
+                height: 226px;
+            }
+            .cost {
+                margin-top: 20px;
+            }
+        }
+        @media screen and (max-width: 1200px) {
+            .item {
+                .thumbnail {
+                    height: 190px;
+                }
+                .cost {
+                    .buy {
+                        float: left;
+                    }
+                }
+            }
+
+        }
+        @media screen and (max-width: 992px) { 
+            .item {
+                width: 31.6%;
+                .thumbnail {
+                    height: 190px;
+                    
+                }
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .item {
+                width: 48.2%;
+                .thumbnail {
+                    height: 100%;
+                    // min-height: 200px;
+                    img {
+                        max-width: 100%;
+                        min-width: 100%;
+                        // height: 100%;
+                    }
+                }
+                .cost {
+                    .buy {
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.compound-container {
+    background: #f4f4f4;
+    
+    .product-floor {
+        .title {
+            position: relative;
+            text-align: center;
+            @include banner-title;
+            h1 {
+            }
+            .floor-num {
+                display: block;
+                position: absolute;
+                box-sizing: border-box;
+                height: 100%;
+                padding-top: 10px;
+                margin: 0 20px 0 0;
+                color: #000;
+                right: 56%;
+            }
+            @media screen and (max-width: 992px) { 
+                .floor-num {
+                    right: 60%;
+                }
+            }
+            .floor-name {
+                display: inline-block;
+            }
+        }
+        .more {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            a {
+                position: absolute;
+                right: 0;
+                width: 200px;
+                border: 4px solid #e9e9e9;
+                text-align: center;
+                background: #fff;
+                p {
+                    display: inline-block;
+                    height: 50px;
+                    line-height: 50px;
+                    margin: 0;
+                }
+                p:first-child {
+                    font-size: 20px;
+                    color: #000;
+                }
+                p:last-child {
+                    font-size: 20px;
+                    color: #ccc;
+                }
+            }
+            a:hover {
+                background: #a7a7a7;
+                p {
+                    color: #fff;
+                }
+            }
+        }
+        .product-container {
+            @include product;
+            .item {
+                width: 31.6%;
+                .thumbnail {
+                    height: 255px;
+                }
+            }
+            @media screen and (max-width: 1200px) {
+                .item {
+                    .thumbnail {
+                        height: 213px;
+                    }
+                    .cost {
+                        .buy {
+                            float: left;
+                        }
+                    }
+                }
+            }
+            @media screen and (max-width: 992px) { 
+                .item {
+                    width: 31.6%;
+                    .thumbnail {
+                        height: 190px;
+                        
+                    }
+                }
+            }
+            @media screen and (max-width: 768px) {
+                .item {
+                    width: 48.2%;
+                    .thumbnail {
+                        height: 100%;
+                    }
+                    .cost {
+                        .buy {
+                            float: right;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+  
+    .recommend-band {
+        margin: 20px 0;
+        @include lory;
+        background: #fff;
+        .slider {
+            position: relative;
+            @mixin slide-btn {
+                position: absolute;
+                width: 30px;
+                height: 80px;
+                top: 0;
+                padding-top: 30px;
+                padding-left: 8px;
+                background: #e9e9e9;
+                box-sizing: border-box;
+                img {
+                    height: 20px;
+                }
+            }
+            .js_prev {
+                @include slide-btn;
+                left: 0;
+            }
+            .js_next {
+                @include slide-btn;
+                right: 0;
+            }
+            .js_prev:hover {
+                background: #989898;
+            }
+            .js_next:hover {
+                background: #989898;
+            }
+        }
+    }
+}
+
+
+
+

@@ -1,0 +1,11 @@
+.panel {
+    img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .img-thumbnail {
+        margin-bottom: 5px;
+    }
+}

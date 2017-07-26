@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>calculator</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" media="screen and (max-width: 480px)" href="css/mobile.css"/> -->
+	<!-- <link rel="stylesheet" media="screen and (max-width: 480px)" href="css/mobile.css" type="text/css" /> -->
+</head>
+<body>
+	<div class="progress">
+		<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+			<span class="sr-only">45% Complete</span>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="display"></div>
+		<div class="btn-group">
+			<button class="btn btn-danger" id="btn-AC">AC</button>
+			<button class="btn btn-danger" id="btn-CE">CE</button>
+			<button class="btn btn-default btn-operator">%</button>
+			<button class="btn btn-default btn-operator">/</button>
+			<button class="btn btn-default btn-num">7</button>
+			<button class="btn btn-default btn-num">8</button>
+			<button class="btn btn-default btn-num">9</button>
+			<button class="btn btn-default btn-operator">*</button>
+			<button class="btn btn-default btn-num">4</button>
+			<button class="btn btn-default btn-num" onclick="5">5</button>
+			<button class="btn btn-default btn-num">6</button>
+			<button class="btn btn-default btn-operator">-</button>
+			<button class="btn btn-default btn-num">1</button>
+			<button class="btn btn-default btn-num">2</button>
+			<button class="btn btn-default btn-num">3</button>
+			<button class="btn btn-default btn-operator">+</button>
+			<button class="btn btn-default" id="btn-dot">.</button>
+			<button class="btn btn-default btn-num">0</button>
+			<button class="btn btn-success btn-wide" id="btn-equal">=</button>
+		</div>
+	</div>
+	<script type="text/javascript"> 
+		var bar = document.querySelector(".progress-bar");
+		bar.style.width = "20%";
+		//第一个进度节点 
+	</script> 
+	<audio id="1" src="audio/1.wav"></audio>
+	<audio id="2" src="audio/2.wav"></audio>
+	<audio id="3" src="audio/3.wav"></audio>
+	<audio id="4" src="audio/4.wav"></audio>
+	<audio id="5" src="audio/5.wav"></audio>
+	<audio id="6" src="audio/6.wav"></audio>
+	<audio id="7" src="audio/7.wav"></audio>
+	<audio id="8" src="audio/8.wav"></audio>
+	<audio id="9" src="audio/9.wav"></audio>
+	<audio id="0" src="audio/0.wav"></audio>
+	<audio id="dot" src="audio/点.wav"></audio>
+	<audio id="plus" src="audio/加.wav"></audio>
+	<audio id="minus" src="audio/减.wav"></audio>
+	<audio id="multiply" src="audio/乘.wav"></audio>
+	<audio id="divide" src="audio/除以.wav"></audio>
+	<audio id="equal" src="audio/等于.wav"></audio>
+	<audio id="clear" src="audio/清除.wav"></audio>
+	<script type="text/javascript"> 
+		var bar = document.querySelector(".progress-bar");
+		bar.style.width = "30%";
+		//第二个进度节点 
+	</script> 
+	<script src="js/jquery-1.12.3.js"></script>
+	<script type="text/javascript"> 
+		var bar = document.querySelector(".progress-bar");
+		bar.style.width = "60%";
+		//第二个进度节点 
+	</script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript"> 
+		var bar = document.querySelector(".progress-bar");
+		bar.style.width = "90%";
+		//第二个进度节点 
+	</script>
+	<script src="js/main.js"></script>
+	<script type="text/javascript"> 
+		var bar = document.querySelector(".progress-bar");
+		var progress = document.querySelector(".progress");
+		bar.style.width = "100%";
+		progress.style.opacity = "0";
+		//第三个进度节点 
+	</script> 
+</body>
+</html>

@@ -1,0 +1,36 @@
+html {
+  font-size: 4.375vw; }
+
+.phone {
+  position: relative;
+  width: 100%;
+  margin: 3rem auto 3rem;
+  background: #393a56;
+  overflow: hidden; }
+
+.demo__el {
+  position: relative;
+  height: 7rem;
+  background: #ffffff; }
+  .demo__el:before {
+    content: "";
+    position: absolute;
+    left: 1.5rem;
+    top: 1.5rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: .3rem;
+    background: #5A534F; }
+  .demo__el:after {
+    content: "";
+    position: absolute;
+    left: 8rem;
+    top: 1.5rem;
+    width: 14rem;
+    height: .6rem;
+    border-radius: 0.7rem;
+    background: #5A534F;
+    color: #5A534F;
+    box-shadow: 0 1.4rem, 0 3rem; }
+
+/*# sourceMappingURL=style.css.map */

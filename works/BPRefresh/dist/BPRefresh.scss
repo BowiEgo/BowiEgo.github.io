@@ -1,0 +1,65 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html, body {
+	font-size: 62.5%;
+}
+body {
+	background: #393A56;
+}
+
+$gapVert: 4rem;
+
+$resetAT: 0.5s;
+$releaseStep1AT: 0.5s;
+$releaseStep2AT: 0.3s;
+
+.BPRefresh {
+	background: #fff;
+	position: relative;
+
+	&.reset {
+		transition: transform $resetAT;
+		transform: translate3d(0,0,0) !important;
+	}
+
+	&.waiting {
+		transition: transform $releaseStep2AT;
+		transform: translate3d(0,$gapVert,0) !important;
+	}
+	
+	&__svg-bg {
+		overflow: visible;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		z-index: 2;
+		&__path {
+			stroke: transparent;
+		}
+	}
+
+	&__loading {
+		width: $gapVert;
+		height: $gapVert;
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, -$gapVert);
+	}
+
+	&__content {
+		&.reset {
+			transition: transform $resetAT;
+			transform: translate3d(0,0,0) !important;
+		}
+	}
+}
+
+@keyframes rotating {
+	to {
+		transform: rotate(360deg);
+	}
+}
