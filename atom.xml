@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://bowiego.github.io/"/>
-  <updated>2017-08-09T15:44:15.000Z</updated>
+  <updated>2017-08-09T15:50:19.000Z</updated>
   <id>http://bowiego.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://bowiego.github.io/2017/08/09/PostCSS/"/>
     <id>http://bowiego.github.io/2017/08/09/PostCSS/</id>
     <published>2017-08-09T12:30:53.000Z</published>
-    <updated>2017-08-09T15:44:15.000Z</updated>
+    <updated>2017-08-09T15:50:19.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;strong&gt;&lt;em&gt;1、什么是PostCSS (A tool for transforming CSS with JavaScript)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -119,9 +119,9 @@
 &lt;li&gt;&lt;p&gt;减少手写属性&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;合并规则&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;npm install cssnano -D&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;npm install cssnano -D&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;before:&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;/* normalize selectors */&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;h1::before, h1:before &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  /* reduce shorthand even further */&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  margin: 10px 20px 10px 20px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  /* reduce color values */&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  color: #ff0000;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  /* remove duplicated properties */&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  font-weight: 400;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  font-weight: 400;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  /* reduce position values */&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  background-position: bottom right;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  /* normalize wrapping quotes */&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  quotes: &amp;apos;«&amp;apos; &amp;quot;»&amp;quot;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  /* reduce gradient parameters */&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  background: linear-gradient(to bottom, #ffe500 0%, #ffe500 50%, #121 50%, #121 100%);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  /* replace initial values */&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  min-width: initial;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/* correct invalid placement */&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;@charset &amp;quot;utf-8&amp;quot;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;after:&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;@charset &amp;quot;utf-8&amp;quot;;h1:before&amp;#123;margin:10px 20px;color:red;font-weight:400;background-position:100% 100%;quotes:&amp;quot;«&amp;quot; &amp;quot;»&amp;quot;;background:linear-gradient(180deg,#ffe500,#ffe500 50%,#121 0,#121);min-width:0&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/MoOx/postcss-cssnext&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;CSSNext&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;

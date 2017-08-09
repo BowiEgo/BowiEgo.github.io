@@ -20,7 +20,7 @@ PostCSS 本身是一个功能比较单一的工具。它提供了一种方式用
 <meta property="og:description" content="1、什么是PostCSS (A tool for transforming CSS with JavaScript)
 
 PostCSS 本身是一个功能比较单一的工具。它提供了一种方式用 JavaScript 代码来处理 CSS。它负责把 CSS 代码解析成抽象语法树结构（Abstract Syntax Tree，AST），再交由插件来进行处理。插件基于 CSS 代码的 AST 所能进行的操作是多种">
-<meta property="og:updated_time" content="2017-08-09T15:44:15.000Z">
+<meta property="og:updated_time" content="2017-08-09T15:50:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PostCSS简介">
 <meta name="twitter:description" content="1、什么是PostCSS (A tool for transforming CSS with JavaScript)
@@ -300,9 +300,9 @@ PostCSS 本身是一个功能比较单一的工具。它提供了一种方式用
 <li><p>减少手写属性</p>
 </li>
 <li><p>合并规则</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install cssnano -D</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install cssnano -D</div></pre></td></tr></table></figure>
 <p>before:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">/* normalize selectors */</div><div class="line">h1::before, h1:before &#123;</div><div class="line">  /* reduce shorthand even further */</div><div class="line">  margin: 10px 20px 10px 20px;</div><div class="line">  /* reduce color values */</div><div class="line">  color: #ff0000;</div><div class="line">  /* remove duplicated properties */</div><div class="line">  font-weight: 400;</div><div class="line">  font-weight: 400;</div><div class="line">  /* reduce position values */</div><div class="line">  background-position: bottom right;</div><div class="line">  /* normalize wrapping quotes */</div><div class="line">  quotes: &apos;«&apos; &quot;»&quot;;</div><div class="line">  /* reduce gradient parameters */</div><div class="line">  background: linear-gradient(to bottom, #ffe500 0%, #ffe500 50%, #121 50%, #121 100%);</div><div class="line">  /* replace initial values */</div><div class="line">  min-width: initial;</div><div class="line">&#125;</div><div class="line">/* correct invalid placement */</div><div class="line">@charset &quot;utf-8&quot;;</div></pre></td></tr></table></figure></p>
 <p>after:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@charset &quot;utf-8&quot;;h1:before&#123;margin:10px 20px;color:red;font-weight:400;background-position:100% 100%;quotes:&quot;«&quot; &quot;»&quot;;background:linear-gradient(180deg,#ffe500,#ffe500 50%,#121 0,#121);min-width:0&#125;</div></pre></td></tr></table></figure></p>
 <p><a href="https://github.com/MoOx/postcss-cssnext" target="_blank" rel="external"><strong>CSSNext</strong></a></p>
