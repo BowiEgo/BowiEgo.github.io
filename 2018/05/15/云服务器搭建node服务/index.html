@@ -24,7 +24,7 @@
 注意：fdisk -l与df -h都为查看数据盘信息命令，但在没有分区和格式化数据盘之前，使用df -h命令无法看到数据盘。
 
 123456789101112fdisk -l---Disk /dev/vda: 53.7 GB, 53687091200 bytes, 104857600 sector">
-<meta property="og:updated_time" content="2018-05-15T09:10:11.000Z">
+<meta property="og:updated_time" content="2018-05-15T09:33:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在云服务器上搭建nodejs服务">
 <meta name="twitter:description" content="登录云服务器ssh -q -l root -p 22 XXX.XXX.XXX.XXX
@@ -35,7 +35,12 @@
   
     <link rel="alternative" href="/atom.xml" title="Bowiego的啵客儿" type="application/atom+xml">
   
-  <meta name="summary" content="null">
+  <meta name="summary" content="&lt;h3 id=&quot;登录云服务器&quot;&gt;&lt;a href=&quot;#登录云服务器&quot; class=&quot;headerlink&quot; title=&quot;登录云服务器&quot;&gt;&lt;/a&gt;&lt;a name=&quot;general-pane&quot;&gt;&lt;/a&gt;登录云服务器&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;ssh -q -l root -p 22 XXX.XXX.XXX.XXX
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;查看硬盘信息&quot;&gt;&lt;a href=&quot;#查看硬盘信息&quot; class=&quot;headerlink&quot; title=&quot;查看硬盘信息&quot;&gt;&lt;/a&gt;查看硬盘信息&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;注意：&lt;mark&gt;fdisk -l&lt;/mark&gt;与&lt;mark&gt;df -h&lt;/mark&gt;都为查看数据盘信息命令，但在没有分区和格式化数据盘之前，使用&lt;mark&gt;df -h&lt;/mark&gt;命令无法看到数据盘。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;fdisk -l&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;---&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Disk /dev/vda: 53.7 GB, 53687091200 bytes, 104857600 sectors&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Units = sectors of 1 * 512 = 512 bytes&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Sector size (logical/physical): 512 bytes / 512 bytes&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;I/O size (minimum/optimal): 512 bytes / 512 bytes&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Disk label type: dos&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Disk identifier: 0x0005fc9a&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  Device Boot      Start         End      Blocks   Id  System&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/dev/vda1   *        2048   104857566    52427759+  83  Linux&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;---&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a href=&quot;/2018/05/15/云服务器搭建node服务/&quot;&gt;Read More…&lt;/a&gt;&lt;br&gt;">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
   
@@ -214,6 +219,7 @@
 <p>注意：<mark>fdisk -l</mark>与<mark>df -h</mark>都为查看数据盘信息命令，但在没有分区和格式化数据盘之前，使用<mark>df -h</mark>命令无法看到数据盘。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">fdisk -l</div><div class="line">---</div><div class="line">Disk /dev/vda: 53.7 GB, 53687091200 bytes, 104857600 sectors</div><div class="line">Units = sectors of 1 * 512 = 512 bytes</div><div class="line">Sector size (logical/physical): 512 bytes / 512 bytes</div><div class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</div><div class="line">Disk label type: dos</div><div class="line">Disk identifier: 0x0005fc9a</div><div class="line"></div><div class="line">  Device Boot      Start         End      Blocks   Id  System</div><div class="line">/dev/vda1   *        2048   104857566    52427759+  83  Linux</div><div class="line">---</div></pre></td></tr></table></figure>
+<p><a href="/2018/05/15/云服务器搭建node服务/">Read More…</a><br><a id="more"></a></p>
 <h3 id="查看文件目录"><a href="#查看文件目录" class="headerlink" title="查看文件目录"></a>查看文件目录</h3><blockquote>
 <p>这里我将数据库数据放入<mark>/data</mark>，代码则放在<mark>/usr</mark>下面</p>
 </blockquote>

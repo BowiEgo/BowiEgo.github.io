@@ -20,7 +20,7 @@ PostCSS 本身是一个功能比较单一的工具。它提供了一种方式用
 <meta property="og:description" content="1、什么是PostCSS (A tool for transforming CSS with JavaScript)
 
 PostCSS 本身是一个功能比较单一的工具。它提供了一种方式用 JavaScript 代码来处理 CSS。它负责把 CSS 代码解析成抽象语法树结构（Abstract Syntax Tree，AST），再交由插件来进行处理。插件基于 CSS 代码的 AST 所能进行的操作是多种">
-<meta property="og:updated_time" content="2017-08-09T15:50:19.000Z">
+<meta property="og:updated_time" content="2018-05-15T09:32:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PostCSS简介">
 <meta name="twitter:description" content="1、什么是PostCSS (A tool for transforming CSS with JavaScript)
@@ -29,7 +29,13 @@ PostCSS 本身是一个功能比较单一的工具。它提供了一种方式用
   
     <link rel="alternative" href="/atom.xml" title="Bowiego的啵客儿" type="application/atom+xml">
   
-  <meta name="summary" content="null">
+  <meta name="summary" content="&lt;p&gt;&lt;strong&gt;&lt;em&gt;1、什么是PostCSS (A tool for transforming CSS with JavaScript)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;PostCSS 本身是一个功能比较单一的工具。它提供了一种方式用 JavaScript 代码来处理 CSS。它负责把 CSS 代码解析成抽象语法树结构（Abstract Syntax Tree，AST），再交由插件来进行处理。插件基于 CSS 代码的 AST 所能进行的操作是多种多样的，比如可以支持变量和混入（mixin），增加浏览器相关的声明前缀，或是把使用将来的 CSS 规范的样式规则转译（transpile）成当前的 CSS 规范支持的格式。从这个角度来说，PostCSS 的强大之处在于其不断发展的插件体系。目前 PostCSS 已经有 200 多个功能各异的插件。开发人员也可以根据项目的需要，开发出自己的 PostCSS 插件。&lt;/p&gt;
+&lt;p&gt;PostCSS 从其诞生之时就带来了社区对其类别划分的争议。这主要是由于其名称中的 post，很容易让人联想到 PostCSS 是用来做 CSS 后处理（post-processor）的，从而与已有的 CSS 预处理（pre-processor）语言，如 SASS 和 LESS 等进行类比。实际上，PostCSS 的主要功能只有两个：第一个就是前面提到的把 CSS 解析成 JavaScript 可以操作的 AST，第二个就是调用插件来处理 AST 并得到结果。因此，不能简单的把 PostCSS 归类成 CSS 预处理或后处理工具。PostCSS 所能执行的任务非常多，同时涵盖了传统意义上的预处理和后处理。&lt;/p&gt;
+&lt;p&gt;如果你喜欢使用PostCSS，但又不想抛弃你最喜欢的预处理器。不用担心，你不需要作出二选一的选择，你可以把PostCSS和预处理器(Sass、Stylus或LESS)结合起来使用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;/2017/08/09/PostCSS/&quot;&gt;Read More…&lt;/a&gt;&lt;br&gt;">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
   
@@ -209,6 +215,7 @@ PostCSS 本身是一个功能比较单一的工具。它提供了一种方式用
 <p>PostCSS 从其诞生之时就带来了社区对其类别划分的争议。这主要是由于其名称中的 post，很容易让人联想到 PostCSS 是用来做 CSS 后处理（post-processor）的，从而与已有的 CSS 预处理（pre-processor）语言，如 SASS 和 LESS 等进行类比。实际上，PostCSS 的主要功能只有两个：第一个就是前面提到的把 CSS 解析成 JavaScript 可以操作的 AST，第二个就是调用插件来处理 AST 并得到结果。因此，不能简单的把 PostCSS 归类成 CSS 预处理或后处理工具。PostCSS 所能执行的任务非常多，同时涵盖了传统意义上的预处理和后处理。</p>
 <p>如果你喜欢使用PostCSS，但又不想抛弃你最喜欢的预处理器。不用担心，你不需要作出二选一的选择，你可以把PostCSS和预处理器(Sass、Stylus或LESS)结合起来使用。</p>
 </blockquote>
+<p><a href="/2017/08/09/PostCSS/">Read More…</a><br><a id="more"></a></p>
 <p><strong><em>2、为什么要用PostCSS</em></strong></p>
 <ul>
 <li><p>多样化的功能插件，创建了一个生态的插件系统</p>

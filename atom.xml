@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://bowiego.github.io/"/>
-  <updated>2018-05-15T09:10:11.000Z</updated>
+  <updated>2018-05-15T09:33:00.000Z</updated>
   <id>http://bowiego.github.io/</id>
   
   <author>
@@ -20,13 +20,14 @@
     <link href="http://bowiego.github.io/2018/05/15/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BAnode%E6%9C%8D%E5%8A%A1/"/>
     <id>http://bowiego.github.io/2018/05/15/云服务器搭建node服务/</id>
     <published>2018-05-15T03:30:00.000Z</published>
-    <updated>2018-05-15T09:10:11.000Z</updated>
+    <updated>2018-05-15T09:33:00.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;登录云服务器&quot;&gt;&lt;a href=&quot;#登录云服务器&quot; class=&quot;headerlink&quot; title=&quot;登录云服务器&quot;&gt;&lt;/a&gt;&lt;a name=&quot;general-pane&quot;&gt;&lt;/a&gt;登录云服务器&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;ssh -q -l root -p 22 XXX.XXX.XXX.XXX
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;查看硬盘信息&quot;&gt;&lt;a href=&quot;#查看硬盘信息&quot; class=&quot;headerlink&quot; title=&quot;查看硬盘信息&quot;&gt;&lt;/a&gt;查看硬盘信息&lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;注意：&lt;mark&gt;fdisk -l&lt;/mark&gt;与&lt;mark&gt;df -h&lt;/mark&gt;都为查看数据盘信息命令，但在没有分区和格式化数据盘之前，使用&lt;mark&gt;df -h&lt;/mark&gt;命令无法看到数据盘。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;fdisk -l&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;---&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Disk /dev/vda: 53.7 GB, 53687091200 bytes, 104857600 sectors&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Units = sectors of 1 * 512 = 512 bytes&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Sector size (logical/physical): 512 bytes / 512 bytes&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;I/O size (minimum/optimal): 512 bytes / 512 bytes&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Disk label type: dos&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Disk identifier: 0x0005fc9a&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  Device Boot      Start         End      Blocks   Id  System&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/dev/vda1   *        2048   104857566    52427759+  83  Linux&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;---&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a href=&quot;/2018/05/15/云服务器搭建node服务/&quot;&gt;Read More…&lt;/a&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;查看文件目录&quot;&gt;&lt;a href=&quot;#查看文件目录&quot; class=&quot;headerlink&quot; title=&quot;查看文件目录&quot;&gt;&lt;/a&gt;查看文件目录&lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;这里我将数据库数据放入&lt;mark&gt;/data&lt;/mark&gt;，代码则放在&lt;mark&gt;/usr&lt;/mark&gt;下面&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -154,7 +155,12 @@ vi minimall.conf
     
     <summary type="html">
     
-      &lt;h3 id=&quot;登录云服务器&quot;&gt;&lt;a href=&quot;#登录云服务器&quot; class=&quot;headerlink&quot; title=&quot;登录云服务器&quot;&gt;&lt;/a&gt;&lt;a name=&quot;general-pane&quot;&gt;&lt;/a&gt;登录云服务器&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;ssh -q -l root -p
+      &lt;h3 id=&quot;登录云服务器&quot;&gt;&lt;a href=&quot;#登录云服务器&quot; class=&quot;headerlink&quot; title=&quot;登录云服务器&quot;&gt;&lt;/a&gt;&lt;a name=&quot;general-pane&quot;&gt;&lt;/a&gt;登录云服务器&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;ssh -q -l root -p 22 XXX.XXX.XXX.XXX
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;查看硬盘信息&quot;&gt;&lt;a href=&quot;#查看硬盘信息&quot; class=&quot;headerlink&quot; title=&quot;查看硬盘信息&quot;&gt;&lt;/a&gt;查看硬盘信息&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;注意：&lt;mark&gt;fdisk -l&lt;/mark&gt;与&lt;mark&gt;df -h&lt;/mark&gt;都为查看数据盘信息命令，但在没有分区和格式化数据盘之前，使用&lt;mark&gt;df -h&lt;/mark&gt;命令无法看到数据盘。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;fdisk -l&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;---&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Disk /dev/vda: 53.7 GB, 53687091200 bytes, 104857600 sectors&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Units = sectors of 1 * 512 = 512 bytes&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Sector size (logical/physical): 512 bytes / 512 bytes&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;I/O size (minimum/optimal): 512 bytes / 512 bytes&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Disk label type: dos&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Disk identifier: 0x0005fc9a&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  Device Boot      Start         End      Blocks   Id  System&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/dev/vda1   *        2048   104857566    52427759+  83  Linux&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;---&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a href=&quot;/2018/05/15/云服务器搭建node服务/&quot;&gt;Read More…&lt;/a&gt;&lt;br&gt;
     
     </summary>
     
@@ -170,7 +176,7 @@ vi minimall.conf
     <link href="http://bowiego.github.io/2017/08/09/PostCSS/"/>
     <id>http://bowiego.github.io/2017/08/09/PostCSS/</id>
     <published>2017-08-09T12:30:53.000Z</published>
-    <updated>2017-08-09T15:50:19.000Z</updated>
+    <updated>2018-05-15T09:32:32.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;strong&gt;&lt;em&gt;1、什么是PostCSS (A tool for transforming CSS with JavaScript)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -178,6 +184,7 @@ vi minimall.conf
 &lt;p&gt;PostCSS 从其诞生之时就带来了社区对其类别划分的争议。这主要是由于其名称中的 post，很容易让人联想到 PostCSS 是用来做 CSS 后处理（post-processor）的，从而与已有的 CSS 预处理（pre-processor）语言，如 SASS 和 LESS 等进行类比。实际上，PostCSS 的主要功能只有两个：第一个就是前面提到的把 CSS 解析成 JavaScript 可以操作的 AST，第二个就是调用插件来处理 AST 并得到结果。因此，不能简单的把 PostCSS 归类成 CSS 预处理或后处理工具。PostCSS 所能执行的任务非常多，同时涵盖了传统意义上的预处理和后处理。&lt;/p&gt;
 &lt;p&gt;如果你喜欢使用PostCSS，但又不想抛弃你最喜欢的预处理器。不用担心，你不需要作出二选一的选择，你可以把PostCSS和预处理器(Sass、Stylus或LESS)结合起来使用。&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;/2017/08/09/PostCSS/&quot;&gt;Read More…&lt;/a&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;2、为什么要用PostCSS&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;多样化的功能插件，创建了一个生态的插件系统&lt;/p&gt;
@@ -288,7 +295,11 @@ vi minimall.conf
     
       &lt;p&gt;&lt;strong&gt;&lt;em&gt;1、什么是PostCSS (A tool for transforming CSS with JavaScript)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;PostCSS 本身是一个功能比较单一的工具。它提供了一种方式用
+&lt;p&gt;PostCSS 本身是一个功能比较单一的工具。它提供了一种方式用 JavaScript 代码来处理 CSS。它负责把 CSS 代码解析成抽象语法树结构（Abstract Syntax Tree，AST），再交由插件来进行处理。插件基于 CSS 代码的 AST 所能进行的操作是多种多样的，比如可以支持变量和混入（mixin），增加浏览器相关的声明前缀，或是把使用将来的 CSS 规范的样式规则转译（transpile）成当前的 CSS 规范支持的格式。从这个角度来说，PostCSS 的强大之处在于其不断发展的插件体系。目前 PostCSS 已经有 200 多个功能各异的插件。开发人员也可以根据项目的需要，开发出自己的 PostCSS 插件。&lt;/p&gt;
+&lt;p&gt;PostCSS 从其诞生之时就带来了社区对其类别划分的争议。这主要是由于其名称中的 post，很容易让人联想到 PostCSS 是用来做 CSS 后处理（post-processor）的，从而与已有的 CSS 预处理（pre-processor）语言，如 SASS 和 LESS 等进行类比。实际上，PostCSS 的主要功能只有两个：第一个就是前面提到的把 CSS 解析成 JavaScript 可以操作的 AST，第二个就是调用插件来处理 AST 并得到结果。因此，不能简单的把 PostCSS 归类成 CSS 预处理或后处理工具。PostCSS 所能执行的任务非常多，同时涵盖了传统意义上的预处理和后处理。&lt;/p&gt;
+&lt;p&gt;如果你喜欢使用PostCSS，但又不想抛弃你最喜欢的预处理器。不用担心，你不需要作出二选一的选择，你可以把PostCSS和预处理器(Sass、Stylus或LESS)结合起来使用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;/2017/08/09/PostCSS/&quot;&gt;Read More…&lt;/a&gt;&lt;br&gt;
     
     </summary>
     
