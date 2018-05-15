@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://bowiego.github.io/"/>
-  <updated>2017-08-09T15:50:19.000Z</updated>
+  <updated>2018-05-15T04:43:32.000Z</updated>
   <id>http://bowiego.github.io/</id>
   
   <author>
@@ -14,6 +14,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在云服务器上搭建nodejs服务</title>
+    <link href="http://bowiego.github.io/2018/05/15/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BAnode%E6%9C%8D%E5%8A%A1/"/>
+    <id>http://bowiego.github.io/2018/05/15/云服务器搭建node服务/</id>
+    <published>2018-05-15T03:30:00.000Z</published>
+    <updated>2018-05-15T04:43:32.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;登录云服务器&quot;&gt;&lt;a href=&quot;#登录云服务器&quot; class=&quot;headerlink&quot; title=&quot;登录云服务器&quot;&gt;&lt;/a&gt;&lt;a name=&quot;general-pane&quot;&gt;&lt;/a&gt;登录云服务器&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;ssh -q -l root -p 22 XXX.XXX.XXX.XXX
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;查看硬盘信息&quot;&gt;&lt;a href=&quot;#查看硬盘信息&quot; class=&quot;headerlink&quot; title=&quot;查看硬盘信息&quot;&gt;&lt;/a&gt;查看硬盘信息&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;注意：&lt;br&gt;fdisk -l与df -h 都为查看数据盘信息命令，但在没有分区和格式化数据盘之前，使用df -h 命令无法看到数据盘。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;[root@VM_0_12_centos ~]# fdisk -l
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&amp;gt;&lt;br&gt;=&amp;gt;&lt;br&gt;&amp;gt;&lt;br&gt;    Disk /dev/vda: 53.7 GB, 53687091200 bytes, 104857600 sectors&lt;br&gt;    Units = sectors of 1 * 512 = 512 bytes&lt;br&gt;    Sector size (logical/physical): 512 bytes / 512 bytes&lt;br&gt;    I/O size (minimum/optimal): 512 bytes / 512 bytes&lt;br&gt;    Disk label type: dos&lt;br&gt;    Disk identifier: 0x0005fc9a&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  Device Boot      Start         End      Blocks   Id  System
+/dev/vda1   *        2048   104857566    52427759+  83  Linux
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;查看文件目录&quot;&gt;&lt;a href=&quot;#查看文件目录&quot; class=&quot;headerlink&quot; title=&quot;查看文件目录&quot;&gt;&lt;/a&gt;查看文件目录&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;cd /
+ls
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&amp;gt;&lt;br&gt;=&amp;gt;&lt;br&gt;&amp;gt;&lt;br&gt;    bin   dev   lib         media  proc  sbin  tmp&lt;br&gt;    boot  etc   lib64       mnt    root  srv   usr&lt;br&gt;    data  home  lost+found  opt    run   sys   var&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这里我将数据库数据放入/data，代码则放在/usr下面&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;配置环境&quot;&gt;&lt;a href=&quot;#配置环境&quot; class=&quot;headerlink&quot; title=&quot;配置环境&quot;&gt;&lt;/a&gt;配置环境&lt;/h3&gt;&lt;p&gt;1.首先安装nodejs(这里以CentOS为例)：&lt;a href=&quot;https://nodejs.org/en/download/package-manager/#enterprise-linux-and-fedora&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参考官网&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl --silent --location https://rpm.nodesource.com/setup_10.x | sudo bash -
+
+sudo yum -y install nodejs
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2.接下来安装git：&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-install-git-on-centos-7&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参考文章&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这里使用yum来安装，这是比较简单快速的方式，缺点是可能安装的版本并不是最新的。如果想要安装最新的版本，可以从源地址下载安装包安装。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;sudo yum install git
+git --version
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;登录云服务器&quot;&gt;&lt;a href=&quot;#登录云服务器&quot; class=&quot;headerlink&quot; title=&quot;登录云服务器&quot;&gt;&lt;/a&gt;&lt;a name=&quot;general-pane&quot;&gt;&lt;/a&gt;登录云服务器&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;ssh -q -l root -p
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://bowiego.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="笔记" scheme="http://bowiego.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>PostCSS简介</title>
