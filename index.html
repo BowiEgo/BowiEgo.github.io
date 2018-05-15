@@ -183,6 +183,109 @@ sudo yum install yarn
 </blockquote>
 <pre><code>sudo yum install git
 git --version
+</code></pre><p>3.安装<a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/" target="_blank" rel="external">MongoDB</a></p>
+<blockquote>
+<p>配置yum</p>
+</blockquote>
+<pre><code>vi /etc/yum.repos.d/mongodb-org-3.6.repo
+</code></pre><blockquote>
+<p>拷贝以下配置到mongodb-org-3.6.repo文件</p>
+</blockquote>
+<pre><code>[mongodb-org-3.6]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.6/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
+</code></pre><blockquote>
+<p>安装MongoDB</p>
+</blockquote>
+<pre><code>sudo yum install -y mongodb-org
+</code></pre><blockquote>
+<p>启动、关闭、重启MongoDB</p>
+</blockquote>
+<pre><code>sudo service mongod start | stop | restart
+</code></pre><p>4.安装<a href="https://pm2.keymetrics.io/docs/usage/quick-start/" target="_blank" rel="external">pm2</a></p>
+<pre><code>npm install pm2 -g
+</code></pre><blockquote>
+<p>使用配置文件 process.yml</p>
+</blockquote>
+<pre><code>apps:
+    - script   : app.js
+        instances: 4
+        exec_mode: cluster
+    - script : worker.js
+        watch  : true
+        env    :
+            NODE_ENV: development
+        env_production:
+            NODE_ENV: production
+</code></pre><blockquote>
+<p>启动</p>
+</blockquote>
+<pre><code>pm2 start process.yml
+</code></pre><blockquote>
+<p>pm2查看，开启，关闭，重启，删除进程</p>
+</blockquote>
+<pre><code>pm2 list
+
+pm2 start app.js
+
+pm2 stop 0
+pm2 stop all
+
+pm2 restart 0
+pm2 restart all
+
+pm2 delete 0
+pm2 delete all
+</code></pre><p>5.使用ngnix映射端口</p>
+<blockquote>
+<p>安装<a href="https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/#prebuilt_redhat" target="_blank" rel="external">nginx</a></p>
+</blockquote>
+<pre><code>sudo vi /etc/yum.repos.d/nginx.repo
+</code></pre><blockquote>
+<p>添加如下配置到nginx.repo</p>
+</blockquote>
+<pre><code>[nginx]
+name=nginx repo
+baseurl=https://nginx.org/packages/mainline/centos/7/$basearch/
+gpgcheck=0
+enabled=1
+</code></pre><blockquote>
+<p>安装nginx</p>
+</blockquote>
+<pre><code>sudo yum update
+yum install nginx -y
+</code></pre><blockquote>
+<p>启动nginx</p>
+</blockquote>
+<pre><code>sudo nginx
+</code></pre><h3 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a><a href="https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/" target="_blank" rel="external">配置nginx</a></h3><blockquote>
+<p>添加nginx的server配置文件minimall.conf（nginx目录可能为/usr/local/nginx/conf,/etc/nginx, or /usr/local/etc/nginx）</p>
+</blockquote>
+<pre><code>cd /etc/nginx
+mkdir servers
+cd servers
+vi minimall.conf
+</code></pre><blockquote>
+<p>添加如下配置</p>
+</blockquote>
+<pre><code>server{
+  listen 80;
+  server_name 127.0.0.1;
+  location / {
+    proxy_pass http://127.0.0.1:3000;
+  }
+}
+</code></pre><blockquote>
+<p>添加如下配置到nginx配置文件nginx.conf</p>
+</blockquote>
+<pre><code>include /etc/nginx/servers/miniMall.conf;
+</code></pre><blockquote>
+<p>重启nginx</p>
+</blockquote>
+<pre><code>nginx -s reload
 </code></pre>
     
     </div>
@@ -338,45 +441,6 @@ git --version
     </li>
   
     <li class="post-list-item">
-        <article id="新文章-MacOS下搭建react native的本地开发环境" 
-  class="article article-type-新文章" itemprop="blogPost">
-     
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/09/02/MacOS下搭建react native的本地开发环境/">MacOS下搭建react native的本地开发环境</a>
-    </h3>
-  
-
-
-
-    <div class="post-meta">
-        <time datetime="2016-09-02T05:30:53.000Z" itemprop="datePublished" class="post-time">
-  2016-09-02
-</time>
-
-        
-
- 
-    </div>
-    
-    <div class="post-content" id="post-content" itemprop="postContent" >
-    
-        <p><strong> 一、准备工作 </strong></p>
-<p> 1、把系统升级到最新（-_-#，防止后面遇上突如其来的坑）。<br> 2、下载最新版的Xcode，Xcode是开发iOS app的必备武器。<br> 输入命令</p>
-<pre><code>xcode-select --install
-</code></pre><p> 建议安装完后重启系统，保证本地变量的正确性。</p>
-<p><a href="/2016/09/02/MacOS下搭建react native的本地开发环境/">Read More…</a><br>
-    
-    </div>
-    
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-
-</article>
-    </li>
-  
-    <li class="post-list-item">
         <article id="新文章-Linux命令行笔记" 
   class="article article-type-新文章" itemprop="blogPost">
      
@@ -426,6 +490,45 @@ pkill -9 nginx
 <p> <strong> 二、其它 </strong></p>
 <p> 1、blablabla</p>
 
+    
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+
+</article>
+    </li>
+  
+    <li class="post-list-item">
+        <article id="新文章-MacOS下搭建react native的本地开发环境" 
+  class="article article-type-新文章" itemprop="blogPost">
+     
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/09/02/MacOS下搭建react native的本地开发环境/">MacOS下搭建react native的本地开发环境</a>
+    </h3>
+  
+
+
+
+    <div class="post-meta">
+        <time datetime="2016-09-02T05:30:53.000Z" itemprop="datePublished" class="post-time">
+  2016-09-02
+</time>
+
+        
+
+ 
+    </div>
+    
+    <div class="post-content" id="post-content" itemprop="postContent" >
+    
+        <p><strong> 一、准备工作 </strong></p>
+<p> 1、把系统升级到最新（-_-#，防止后面遇上突如其来的坑）。<br> 2、下载最新版的Xcode，Xcode是开发iOS app的必备武器。<br> 输入命令</p>
+<pre><code>xcode-select --install
+</code></pre><p> 建议安装完后重启系统，保证本地变量的正确性。</p>
+<p><a href="/2016/09/02/MacOS下搭建react native的本地开发环境/">Read More…</a><br>
     
     </div>
     

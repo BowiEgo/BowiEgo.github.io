@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://bowiego.github.io/"/>
-  <updated>2018-05-15T05:12:16.000Z</updated>
+  <updated>2018-05-15T09:10:11.000Z</updated>
   <id>http://bowiego.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://bowiego.github.io/2018/05/15/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BAnode%E6%9C%8D%E5%8A%A1/"/>
     <id>http://bowiego.github.io/2018/05/15/云服务器搭建node服务/</id>
     <published>2018-05-15T03:30:00.000Z</published>
-    <updated>2018-05-15T05:12:16.000Z</updated>
+    <updated>2018-05-15T09:10:11.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;登录云服务器&quot;&gt;&lt;a href=&quot;#登录云服务器&quot; class=&quot;headerlink&quot; title=&quot;登录云服务器&quot;&gt;&lt;/a&gt;&lt;a name=&quot;general-pane&quot;&gt;&lt;/a&gt;登录云服务器&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;ssh -q -l root -p 22 XXX.XXX.XXX.XXX
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;查看硬盘信息&quot;&gt;&lt;a href=&quot;#查看硬盘信息&quot; class=&quot;headerlink&quot; title=&quot;查看硬盘信息&quot;&gt;&lt;/a&gt;查看硬盘信息&lt;/h3&gt;&lt;blockquote&gt;
@@ -47,6 +47,109 @@ sudo yum install yarn
 &lt;/blockquote&gt;
 &lt;pre&gt;&lt;code&gt;sudo yum install git
 git --version
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3.安装&lt;a href=&quot;https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MongoDB&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;配置yum&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;vi /etc/yum.repos.d/mongodb-org-3.6.repo
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;拷贝以下配置到mongodb-org-3.6.repo文件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;[mongodb-org-3.6]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.6/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;安装MongoDB&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;sudo yum install -y mongodb-org
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;启动、关闭、重启MongoDB&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;sudo service mongod start | stop | restart
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;4.安装&lt;a href=&quot;https://pm2.keymetrics.io/docs/usage/quick-start/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;pm2&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install pm2 -g
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;使用配置文件 process.yml&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;apps:
+    - script   : app.js
+        instances: 4
+        exec_mode: cluster
+    - script : worker.js
+        watch  : true
+        env    :
+            NODE_ENV: development
+        env_production:
+            NODE_ENV: production
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;启动&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;pm2 start process.yml
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;pm2查看，开启，关闭，重启，删除进程&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;pm2 list
+
+pm2 start app.js
+
+pm2 stop 0
+pm2 stop all
+
+pm2 restart 0
+pm2 restart all
+
+pm2 delete 0
+pm2 delete all
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;5.使用ngnix映射端口&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;安装&lt;a href=&quot;https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/#prebuilt_redhat&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;nginx&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;sudo vi /etc/yum.repos.d/nginx.repo
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;添加如下配置到nginx.repo&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;[nginx]
+name=nginx repo
+baseurl=https://nginx.org/packages/mainline/centos/7/$basearch/
+gpgcheck=0
+enabled=1
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;安装nginx&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;sudo yum update
+yum install nginx -y
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;启动nginx&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;sudo nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;配置nginx&quot;&gt;&lt;a href=&quot;#配置nginx&quot; class=&quot;headerlink&quot; title=&quot;配置nginx&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;配置nginx&lt;/a&gt;&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;添加nginx的server配置文件minimall.conf（nginx目录可能为/usr/local/nginx/conf,/etc/nginx, or /usr/local/etc/nginx）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;cd /etc/nginx
+mkdir servers
+cd servers
+vi minimall.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;添加如下配置&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;server{
+  listen 80;
+  server_name 127.0.0.1;
+  location / {
+    proxy_pass http://127.0.0.1:3000;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;添加如下配置到nginx配置文件nginx.conf&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;include /etc/nginx/servers/miniMall.conf;
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;重启nginx&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;nginx -s reload
 &lt;/code&gt;&lt;/pre&gt;</content>
     
     <summary type="html">
@@ -197,6 +300,54 @@ git --version
   </entry>
   
   <entry>
+    <title>Linux命令行笔记</title>
+    <link href="http://bowiego.github.io/2016/09/02/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AC%94%E8%AE%B0/"/>
+    <id>http://bowiego.github.io/2016/09/02/Linux命令行笔记/</id>
+    <published>2016-09-02T05:30:53.000Z</published>
+    <updated>2016-10-21T01:24:06.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt; 一、网络相关 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt; 1、查看某端口号被哪些程序占用。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo lsof -n -P| grep :8080
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 2、pkill命令可以按照进程名杀死进程。&lt;br&gt; &lt;strong&gt;&lt;strong&gt;语法&lt;/strong&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pkill(选项)(参数) 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;strong&gt;&lt;strong&gt;选项&lt;/strong&gt;&lt;/strong&gt; &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;-o：仅向找到的最小（起始）进程号发送信号； 
+-n：仅向找到的最大（结束）进程号发送信号； 
+-P：指定父进程号发送信号； 
+-g：指定进程组； 
+-t：指定开启进程的终端。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;strong&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/strong&gt; &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;进程名称：指定要查找的进程名称，同时也支持类似grep指令中的匹配模式。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;strong&gt;&lt;strong&gt;实例&lt;/strong&gt;&lt;/strong&gt; &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pgrep -l gaim 
+2979 gaim 
+pkill gaim
+
+//杀死ngnix进程
+pkill -9 nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;来自: &lt;a href=&quot;http://man.linuxde.net/pkill&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://man.linuxde.net/pkill&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; &lt;strong&gt; 二、其它 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt; 1、blablabla&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; 一、网络相关 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt; 1、查看某端口号被哪些程序占用。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo lsof -n -P| grep :8080
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 2、pkill命令可以按照进程名杀死进程。&lt;br&gt; 
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://bowiego.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="笔记" scheme="http://bowiego.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>MacOS下搭建react native的本地开发环境</title>
     <link href="http://bowiego.github.io/2016/09/02/MacOS%E4%B8%8B%E6%90%AD%E5%BB%BAreact%20native%E7%9A%84%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
     <id>http://bowiego.github.io/2016/09/02/MacOS下搭建react native的本地开发环境/</id>
@@ -278,54 +429,6 @@ react-native run-android
 &lt;pre&gt;&lt;code&gt;xcode-select --install
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 建议安装完后重启系统，保证本地变量的正确性。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;/2016/09/02/MacOS下搭建react native的本地开发环境/&quot;&gt;Read More…&lt;/a&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="技术" scheme="http://bowiego.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="笔记" scheme="http://bowiego.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux命令行笔记</title>
-    <link href="http://bowiego.github.io/2016/09/02/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AC%94%E8%AE%B0/"/>
-    <id>http://bowiego.github.io/2016/09/02/Linux命令行笔记/</id>
-    <published>2016-09-02T05:30:53.000Z</published>
-    <updated>2016-10-21T01:24:06.000Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;strong&gt; 一、网络相关 &lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt; 1、查看某端口号被哪些程序占用。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo lsof -n -P| grep :8080
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 2、pkill命令可以按照进程名杀死进程。&lt;br&gt; &lt;strong&gt;&lt;strong&gt;语法&lt;/strong&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pkill(选项)(参数) 
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;strong&gt;&lt;strong&gt;选项&lt;/strong&gt;&lt;/strong&gt; &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;-o：仅向找到的最小（起始）进程号发送信号； 
--n：仅向找到的最大（结束）进程号发送信号； 
--P：指定父进程号发送信号； 
--g：指定进程组； 
--t：指定开启进程的终端。
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;strong&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/strong&gt; &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;进程名称：指定要查找的进程名称，同时也支持类似grep指令中的匹配模式。
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;strong&gt;&lt;strong&gt;实例&lt;/strong&gt;&lt;/strong&gt; &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pgrep -l gaim 
-2979 gaim 
-pkill gaim
-
-//杀死ngnix进程
-pkill -9 nginx
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;来自: &lt;a href=&quot;http://man.linuxde.net/pkill&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://man.linuxde.net/pkill&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt; &lt;strong&gt; 二、其它 &lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt; 1、blablabla&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt; 一、网络相关 &lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt; 1、查看某端口号被哪些程序占用。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo lsof -n -P| grep :8080
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 2、pkill命令可以按照进程名杀死进程。&lt;br&gt; 
     
     </summary>
     

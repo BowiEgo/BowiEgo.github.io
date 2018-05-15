@@ -24,7 +24,7 @@
 注意：fdisk -l与df -h都为查看数据盘信息命令，但在没有分区和格式化数据盘之前，使用df -h命令无法看到数据盘。
 
 123456789101112fdisk -l---Disk /dev/vda: 53.7 GB, 53687091200 bytes, 104857600 sector">
-<meta property="og:updated_time" content="2018-05-15T05:12:16.000Z">
+<meta property="og:updated_time" content="2018-05-15T09:10:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在云服务器上搭建nodejs服务">
 <meta name="twitter:description" content="登录云服务器ssh -q -l root -p 22 XXX.XXX.XXX.XXX
@@ -201,7 +201,7 @@
 
             
             <nav class="post-toc-wrap" id="post-toc">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#登录云服务器"><span class="post-toc-text">登录云服务器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看硬盘信息"><span class="post-toc-text">查看硬盘信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看文件目录"><span class="post-toc-text">查看文件目录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置环境"><span class="post-toc-text">配置环境</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#登录云服务器"><span class="post-toc-text">登录云服务器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看硬盘信息"><span class="post-toc-text">查看硬盘信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看文件目录"><span class="post-toc-text">查看文件目录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置环境"><span class="post-toc-text">配置环境</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置nginx"><span class="post-toc-text">配置nginx</span></a></li></ol>
             </nav>
             
         </aside>
@@ -234,6 +234,109 @@ sudo yum install yarn
 </blockquote>
 <pre><code>sudo yum install git
 git --version
+</code></pre><p>3.安装<a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/" target="_blank" rel="external">MongoDB</a></p>
+<blockquote>
+<p>配置yum</p>
+</blockquote>
+<pre><code>vi /etc/yum.repos.d/mongodb-org-3.6.repo
+</code></pre><blockquote>
+<p>拷贝以下配置到mongodb-org-3.6.repo文件</p>
+</blockquote>
+<pre><code>[mongodb-org-3.6]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.6/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
+</code></pre><blockquote>
+<p>安装MongoDB</p>
+</blockquote>
+<pre><code>sudo yum install -y mongodb-org
+</code></pre><blockquote>
+<p>启动、关闭、重启MongoDB</p>
+</blockquote>
+<pre><code>sudo service mongod start | stop | restart
+</code></pre><p>4.安装<a href="https://pm2.keymetrics.io/docs/usage/quick-start/" target="_blank" rel="external">pm2</a></p>
+<pre><code>npm install pm2 -g
+</code></pre><blockquote>
+<p>使用配置文件 process.yml</p>
+</blockquote>
+<pre><code>apps:
+    - script   : app.js
+        instances: 4
+        exec_mode: cluster
+    - script : worker.js
+        watch  : true
+        env    :
+            NODE_ENV: development
+        env_production:
+            NODE_ENV: production
+</code></pre><blockquote>
+<p>启动</p>
+</blockquote>
+<pre><code>pm2 start process.yml
+</code></pre><blockquote>
+<p>pm2查看，开启，关闭，重启，删除进程</p>
+</blockquote>
+<pre><code>pm2 list
+
+pm2 start app.js
+
+pm2 stop 0
+pm2 stop all
+
+pm2 restart 0
+pm2 restart all
+
+pm2 delete 0
+pm2 delete all
+</code></pre><p>5.使用ngnix映射端口</p>
+<blockquote>
+<p>安装<a href="https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/#prebuilt_redhat" target="_blank" rel="external">nginx</a></p>
+</blockquote>
+<pre><code>sudo vi /etc/yum.repos.d/nginx.repo
+</code></pre><blockquote>
+<p>添加如下配置到nginx.repo</p>
+</blockquote>
+<pre><code>[nginx]
+name=nginx repo
+baseurl=https://nginx.org/packages/mainline/centos/7/$basearch/
+gpgcheck=0
+enabled=1
+</code></pre><blockquote>
+<p>安装nginx</p>
+</blockquote>
+<pre><code>sudo yum update
+yum install nginx -y
+</code></pre><blockquote>
+<p>启动nginx</p>
+</blockquote>
+<pre><code>sudo nginx
+</code></pre><h3 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a><a href="https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/" target="_blank" rel="external">配置nginx</a></h3><blockquote>
+<p>添加nginx的server配置文件minimall.conf（nginx目录可能为/usr/local/nginx/conf,/etc/nginx, or /usr/local/etc/nginx）</p>
+</blockquote>
+<pre><code>cd /etc/nginx
+mkdir servers
+cd servers
+vi minimall.conf
+</code></pre><blockquote>
+<p>添加如下配置</p>
+</blockquote>
+<pre><code>server{
+  listen 80;
+  server_name 127.0.0.1;
+  location / {
+    proxy_pass http://127.0.0.1:3000;
+  }
+}
+</code></pre><blockquote>
+<p>添加如下配置到nginx配置文件nginx.conf</p>
+</blockquote>
+<pre><code>include /etc/nginx/servers/miniMall.conf;
+</code></pre><blockquote>
+<p>重启nginx</p>
+</blockquote>
+<pre><code>nginx -s reload
 </code></pre>
 
             </div>
