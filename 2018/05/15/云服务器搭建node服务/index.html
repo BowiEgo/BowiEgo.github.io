@@ -12,29 +12,26 @@
   <meta name="keywords" content="技术,笔记">
   <meta name="description" content="登录云服务器ssh -q -l root -p 22 XXX.XXX.XXX.XXX
 查看硬盘信息
-注意：fdisk -l与df -h 都为查看数据盘信息命令，但在没有分区和格式化数据盘之前，使用df -h 命令无法看到数据盘。
+注意：fdisk -l与df -h都为查看数据盘信息命令，但在没有分区和格式化数据盘之前，使用df -h命令无法看到数据盘。
 
-[root@VM_0_12_centos ~]# fdisk -l
-&amp;gt;=&amp;gt;&amp;gt;    Disk /dev/vda: 53.7 GB, 53687091">
+123456789101112fdisk -l---Disk /dev/vda: 53.7 GB, 53687091200 bytes, 104857600 sector">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在云服务器上搭建nodejs服务">
 <meta property="og:url" content="http://bowiego.github.io/2018/05/15/云服务器搭建node服务/index.html">
 <meta property="og:site_name" content="Bowiego的啵客儿">
 <meta property="og:description" content="登录云服务器ssh -q -l root -p 22 XXX.XXX.XXX.XXX
 查看硬盘信息
-注意：fdisk -l与df -h 都为查看数据盘信息命令，但在没有分区和格式化数据盘之前，使用df -h 命令无法看到数据盘。
+注意：fdisk -l与df -h都为查看数据盘信息命令，但在没有分区和格式化数据盘之前，使用df -h命令无法看到数据盘。
 
-[root@VM_0_12_centos ~]# fdisk -l
-&amp;gt;=&amp;gt;&amp;gt;    Disk /dev/vda: 53.7 GB, 53687091">
-<meta property="og:updated_time" content="2018-05-15T04:43:32.000Z">
+123456789101112fdisk -l---Disk /dev/vda: 53.7 GB, 53687091200 bytes, 104857600 sector">
+<meta property="og:updated_time" content="2018-05-15T05:12:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在云服务器上搭建nodejs服务">
 <meta name="twitter:description" content="登录云服务器ssh -q -l root -p 22 XXX.XXX.XXX.XXX
 查看硬盘信息
-注意：fdisk -l与df -h 都为查看数据盘信息命令，但在没有分区和格式化数据盘之前，使用df -h 命令无法看到数据盘。
+注意：fdisk -l与df -h都为查看数据盘信息命令，但在没有分区和格式化数据盘之前，使用df -h命令无法看到数据盘。
 
-[root@VM_0_12_centos ~]# fdisk -l
-&amp;gt;=&amp;gt;&amp;gt;    Disk /dev/vda: 53.7 GB, 53687091">
+123456789101112fdisk -l---Disk /dev/vda: 53.7 GB, 53687091200 bytes, 104857600 sector">
   
     <link rel="alternative" href="/atom.xml" title="Bowiego的啵客儿" type="application/atom+xml">
   
@@ -214,22 +211,23 @@
             <div class="post-content" id="post-content" itemprop="postContent">
             <h3 id="登录云服务器"><a href="#登录云服务器" class="headerlink" title="登录云服务器"></a><a name="general-pane"></a>登录云服务器</h3><pre><code>ssh -q -l root -p 22 XXX.XXX.XXX.XXX
 </code></pre><h3 id="查看硬盘信息"><a href="#查看硬盘信息" class="headerlink" title="查看硬盘信息"></a>查看硬盘信息</h3><blockquote>
-<p>注意：<br>fdisk -l与df -h 都为查看数据盘信息命令，但在没有分区和格式化数据盘之前，使用df -h 命令无法看到数据盘。</p>
+<p>注意：<mark>fdisk -l</mark>与<mark>df -h</mark>都为查看数据盘信息命令，但在没有分区和格式化数据盘之前，使用<mark>df -h</mark>命令无法看到数据盘。</p>
 </blockquote>
-<pre><code>[root@VM_0_12_centos ~]# fdisk -l
-</code></pre><p>&gt;<br>=&gt;<br>&gt;<br>    Disk /dev/vda: 53.7 GB, 53687091200 bytes, 104857600 sectors<br>    Units = sectors of 1 * 512 = 512 bytes<br>    Sector size (logical/physical): 512 bytes / 512 bytes<br>    I/O size (minimum/optimal): 512 bytes / 512 bytes<br>    Disk label type: dos<br>    Disk identifier: 0x0005fc9a</p>
-<pre><code>  Device Boot      Start         End      Blocks   Id  System
-/dev/vda1   *        2048   104857566    52427759+  83  Linux
-</code></pre><h3 id="查看文件目录"><a href="#查看文件目录" class="headerlink" title="查看文件目录"></a>查看文件目录</h3><pre><code>cd /
-ls
-</code></pre><p>&gt;<br>=&gt;<br>&gt;<br>    bin   dev   lib         media  proc  sbin  tmp<br>    boot  etc   lib64       mnt    root  srv   usr<br>    data  home  lost+found  opt    run   sys   var</p>
-<blockquote>
-<p>这里我将数据库数据放入/data，代码则放在/usr下面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">fdisk -l</div><div class="line">---</div><div class="line">Disk /dev/vda: 53.7 GB, 53687091200 bytes, 104857600 sectors</div><div class="line">Units = sectors of 1 * 512 = 512 bytes</div><div class="line">Sector size (logical/physical): 512 bytes / 512 bytes</div><div class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</div><div class="line">Disk label type: dos</div><div class="line">Disk identifier: 0x0005fc9a</div><div class="line"></div><div class="line">  Device Boot      Start         End      Blocks   Id  System</div><div class="line">/dev/vda1   *        2048   104857566    52427759+  83  Linux</div><div class="line">---</div></pre></td></tr></table></figure>
+<h3 id="查看文件目录"><a href="#查看文件目录" class="headerlink" title="查看文件目录"></a>查看文件目录</h3><blockquote>
+<p>这里我将数据库数据放入<mark>/data</mark>，代码则放在<mark>/usr</mark>下面</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">cd /</div><div class="line">ls</div><div class="line">---</div><div class="line">bin   dev   lib         media  proc  sbin  tmp</div><div class="line">boot  etc   lib64       mnt    root  srv   usr</div><div class="line">data  home  lost+found  opt    run   sys   var</div><div class="line">---</div></pre></td></tr></table></figure>
 <h3 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h3><p>1.首先安装nodejs(这里以CentOS为例)：<a href="https://nodejs.org/en/download/package-manager/#enterprise-linux-and-fedora" target="_blank" rel="external">参考官网</a></p>
 <pre><code>curl --silent --location https://rpm.nodesource.com/setup_10.x | sudo bash -
 
-sudo yum -y install nodejs
+sudo yum install -y nodejs
+</code></pre><blockquote>
+<p>安装yarn（可选）</p>
+</blockquote>
+<pre><code>curl -sL https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
+
+sudo yum install yarn
 </code></pre><p>2.接下来安装git：<a href="https://www.digitalocean.com/community/tutorials/how-to-install-git-on-centos-7" target="_blank" rel="external">参考文章</a></p>
 <blockquote>
 <p>这里使用yum来安装，这是比较简单快速的方式，缺点是可能安装的版本并不是最新的。如果想要安装最新的版本，可以从源地址下载安装包安装。</p>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://bowiego.github.io/"/>
-  <updated>2018-05-15T04:43:32.000Z</updated>
+  <updated>2018-05-15T05:12:16.000Z</updated>
   <id>http://bowiego.github.io/</id>
   
   <author>
@@ -20,26 +20,27 @@
     <link href="http://bowiego.github.io/2018/05/15/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BAnode%E6%9C%8D%E5%8A%A1/"/>
     <id>http://bowiego.github.io/2018/05/15/云服务器搭建node服务/</id>
     <published>2018-05-15T03:30:00.000Z</published>
-    <updated>2018-05-15T04:43:32.000Z</updated>
+    <updated>2018-05-15T05:12:16.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;登录云服务器&quot;&gt;&lt;a href=&quot;#登录云服务器&quot; class=&quot;headerlink&quot; title=&quot;登录云服务器&quot;&gt;&lt;/a&gt;&lt;a name=&quot;general-pane&quot;&gt;&lt;/a&gt;登录云服务器&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;ssh -q -l root -p 22 XXX.XXX.XXX.XXX
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;查看硬盘信息&quot;&gt;&lt;a href=&quot;#查看硬盘信息&quot; class=&quot;headerlink&quot; title=&quot;查看硬盘信息&quot;&gt;&lt;/a&gt;查看硬盘信息&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;注意：&lt;br&gt;fdisk -l与df -h 都为查看数据盘信息命令，但在没有分区和格式化数据盘之前，使用df -h 命令无法看到数据盘。&lt;/p&gt;
+&lt;p&gt;注意：&lt;mark&gt;fdisk -l&lt;/mark&gt;与&lt;mark&gt;df -h&lt;/mark&gt;都为查看数据盘信息命令，但在没有分区和格式化数据盘之前，使用&lt;mark&gt;df -h&lt;/mark&gt;命令无法看到数据盘。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;[root@VM_0_12_centos ~]# fdisk -l
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&amp;gt;&lt;br&gt;=&amp;gt;&lt;br&gt;&amp;gt;&lt;br&gt;    Disk /dev/vda: 53.7 GB, 53687091200 bytes, 104857600 sectors&lt;br&gt;    Units = sectors of 1 * 512 = 512 bytes&lt;br&gt;    Sector size (logical/physical): 512 bytes / 512 bytes&lt;br&gt;    I/O size (minimum/optimal): 512 bytes / 512 bytes&lt;br&gt;    Disk label type: dos&lt;br&gt;    Disk identifier: 0x0005fc9a&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;  Device Boot      Start         End      Blocks   Id  System
-/dev/vda1   *        2048   104857566    52427759+  83  Linux
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;查看文件目录&quot;&gt;&lt;a href=&quot;#查看文件目录&quot; class=&quot;headerlink&quot; title=&quot;查看文件目录&quot;&gt;&lt;/a&gt;查看文件目录&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;cd /
-ls
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&amp;gt;&lt;br&gt;=&amp;gt;&lt;br&gt;&amp;gt;&lt;br&gt;    bin   dev   lib         media  proc  sbin  tmp&lt;br&gt;    boot  etc   lib64       mnt    root  srv   usr&lt;br&gt;    data  home  lost+found  opt    run   sys   var&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;这里我将数据库数据放入/data，代码则放在/usr下面&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;fdisk -l&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;---&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Disk /dev/vda: 53.7 GB, 53687091200 bytes, 104857600 sectors&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Units = sectors of 1 * 512 = 512 bytes&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Sector size (logical/physical): 512 bytes / 512 bytes&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;I/O size (minimum/optimal): 512 bytes / 512 bytes&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Disk label type: dos&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Disk identifier: 0x0005fc9a&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  Device Boot      Start         End      Blocks   Id  System&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/dev/vda1   *        2048   104857566    52427759+  83  Linux&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;---&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;查看文件目录&quot;&gt;&lt;a href=&quot;#查看文件目录&quot; class=&quot;headerlink&quot; title=&quot;查看文件目录&quot;&gt;&lt;/a&gt;查看文件目录&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;这里我将数据库数据放入&lt;mark&gt;/data&lt;/mark&gt;，代码则放在&lt;mark&gt;/usr&lt;/mark&gt;下面&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;cd /&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ls&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;---&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;bin   dev   lib         media  proc  sbin  tmp&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;boot  etc   lib64       mnt    root  srv   usr&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;data  home  lost+found  opt    run   sys   var&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;---&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;配置环境&quot;&gt;&lt;a href=&quot;#配置环境&quot; class=&quot;headerlink&quot; title=&quot;配置环境&quot;&gt;&lt;/a&gt;配置环境&lt;/h3&gt;&lt;p&gt;1.首先安装nodejs(这里以CentOS为例)：&lt;a href=&quot;https://nodejs.org/en/download/package-manager/#enterprise-linux-and-fedora&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参考官网&lt;/a&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;curl --silent --location https://rpm.nodesource.com/setup_10.x | sudo bash -
 
-sudo yum -y install nodejs
+sudo yum install -y nodejs
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;安装yarn（可选）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;curl -sL https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
+
+sudo yum install yarn
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2.接下来安装git：&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-install-git-on-centos-7&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参考文章&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;这里使用yum来安装，这是比较简单快速的方式，缺点是可能安装的版本并不是最新的。如果想要安装最新的版本，可以从源地址下载安装包安装。&lt;/p&gt;
@@ -196,54 +197,6 @@ git --version
   </entry>
   
   <entry>
-    <title>Linux命令行笔记</title>
-    <link href="http://bowiego.github.io/2016/09/02/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AC%94%E8%AE%B0/"/>
-    <id>http://bowiego.github.io/2016/09/02/Linux命令行笔记/</id>
-    <published>2016-09-02T05:30:53.000Z</published>
-    <updated>2016-10-21T01:24:06.000Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;strong&gt; 一、网络相关 &lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt; 1、查看某端口号被哪些程序占用。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo lsof -n -P| grep :8080
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 2、pkill命令可以按照进程名杀死进程。&lt;br&gt; &lt;strong&gt;&lt;strong&gt;语法&lt;/strong&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pkill(选项)(参数) 
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;strong&gt;&lt;strong&gt;选项&lt;/strong&gt;&lt;/strong&gt; &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;-o：仅向找到的最小（起始）进程号发送信号； 
--n：仅向找到的最大（结束）进程号发送信号； 
--P：指定父进程号发送信号； 
--g：指定进程组； 
--t：指定开启进程的终端。
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;strong&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/strong&gt; &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;进程名称：指定要查找的进程名称，同时也支持类似grep指令中的匹配模式。
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;strong&gt;&lt;strong&gt;实例&lt;/strong&gt;&lt;/strong&gt; &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pgrep -l gaim 
-2979 gaim 
-pkill gaim
-
-//杀死ngnix进程
-pkill -9 nginx
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;来自: &lt;a href=&quot;http://man.linuxde.net/pkill&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://man.linuxde.net/pkill&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt; &lt;strong&gt; 二、其它 &lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt; 1、blablabla&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt; 一、网络相关 &lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt; 1、查看某端口号被哪些程序占用。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo lsof -n -P| grep :8080
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 2、pkill命令可以按照进程名杀死进程。&lt;br&gt; 
-    
-    </summary>
-    
-    
-      <category term="技术" scheme="http://bowiego.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="笔记" scheme="http://bowiego.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
     <title>MacOS下搭建react native的本地开发环境</title>
     <link href="http://bowiego.github.io/2016/09/02/MacOS%E4%B8%8B%E6%90%AD%E5%BB%BAreact%20native%E7%9A%84%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
     <id>http://bowiego.github.io/2016/09/02/MacOS下搭建react native的本地开发环境/</id>
@@ -325,6 +278,54 @@ react-native run-android
 &lt;pre&gt;&lt;code&gt;xcode-select --install
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 建议安装完后重启系统，保证本地变量的正确性。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;/2016/09/02/MacOS下搭建react native的本地开发环境/&quot;&gt;Read More…&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://bowiego.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="笔记" scheme="http://bowiego.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux命令行笔记</title>
+    <link href="http://bowiego.github.io/2016/09/02/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AC%94%E8%AE%B0/"/>
+    <id>http://bowiego.github.io/2016/09/02/Linux命令行笔记/</id>
+    <published>2016-09-02T05:30:53.000Z</published>
+    <updated>2016-10-21T01:24:06.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt; 一、网络相关 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt; 1、查看某端口号被哪些程序占用。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo lsof -n -P| grep :8080
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 2、pkill命令可以按照进程名杀死进程。&lt;br&gt; &lt;strong&gt;&lt;strong&gt;语法&lt;/strong&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pkill(选项)(参数) 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;strong&gt;&lt;strong&gt;选项&lt;/strong&gt;&lt;/strong&gt; &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;-o：仅向找到的最小（起始）进程号发送信号； 
+-n：仅向找到的最大（结束）进程号发送信号； 
+-P：指定父进程号发送信号； 
+-g：指定进程组； 
+-t：指定开启进程的终端。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;strong&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/strong&gt; &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;进程名称：指定要查找的进程名称，同时也支持类似grep指令中的匹配模式。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;strong&gt;&lt;strong&gt;实例&lt;/strong&gt;&lt;/strong&gt; &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pgrep -l gaim 
+2979 gaim 
+pkill gaim
+
+//杀死ngnix进程
+pkill -9 nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;来自: &lt;a href=&quot;http://man.linuxde.net/pkill&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://man.linuxde.net/pkill&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; &lt;strong&gt; 二、其它 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt; 1、blablabla&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; 一、网络相关 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt; 1、查看某端口号被哪些程序占用。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo lsof -n -P| grep :8080
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 2、pkill命令可以按照进程名杀死进程。&lt;br&gt; 
     
     </summary>
     
